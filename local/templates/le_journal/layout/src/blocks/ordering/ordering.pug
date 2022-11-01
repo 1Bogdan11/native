@@ -1,0 +1,171 @@
+mixin ordering
+    .ordering.js-ordering
+        .ordering__head.media-min--tab
+            +select({
+                list: [
+                    { text: "Пункт 1", value: "1" },
+                    { text: "Пункт 2", value: "2" },
+                    { text: "Пункт 3", value: "3" },
+                ],
+                placeholder: "Детали заказа" })
+            .ordering__price 26 700₽
+        button.ordering-back.js-ordering-back.media-max--tab
+            +svg("arrow-left-thin")
+        .ordering__main
+            .ordering__main_counter.js-ordering-counter.is-active 1 из 3
+            .ordering__main_part
+                .ordering__content.is-active(data-ordering-step="1")
+                    .ordering__content_title Личные данные
+                    form.ordering__form.js-form
+                        .ordering__form_part.ordering__form_part--full.is-active
+                            +input({
+                                    type: "text",
+                                    required: false,
+                                    label: "Email / Телефон"
+                                })(data-form-step-field="2")
+                        .ordering__form_part(data-form-step="2")
+                            +input({
+                                    type: "text",
+                                    required: false,
+                                    label: "Имя"
+                                })
+                        .ordering__form_part(data-form-step="2")
+                            +input({
+                                    type: "text",
+                                    required: false,
+                                    label: "Фамилия"
+                                })
+                        .ordering__form_part.ordering__form_part--full(data-form-step="2")
+                            +checkbox-circle({ id: "account", text: "Создать аккаунт" })
+                        .ordering__form_part(data-form-step="2")
+                            button.ordering__form_button(data-ordering-button="2") Указать способ доставки
+
+
+                .ordering__content(data-ordering-step="2")
+                     .ordering__content_title Условия доставки
+                     form.ordering__form.js-form
+                        .ordering__form_part
+                             +select({
+                                list: [
+                                    { text: "Россия", value: "1" },
+                                    { text: "Украина", value: "2" },
+                                    { text: "Япония", value: "3" },
+                                ],
+                             })(data-cascade-select-parent="region")
+                        .ordering__form_part
+                            +select({
+                                list: [
+                                    { text: "Москва", value: "1" },
+                                    { text: "Санкт-Петербург", value: "2" },
+                                    { text: "Мурманск", value: "3" },
+                                ],
+                            })(data-cascade-select-child="region")
+                        .ordering__form_part.ordering__form_part--full
+                            +delivery
+                        .ordering__form_part.ordering__form_part--full(data-delivery-content="courier-delivery").is-active
+                            +input({
+                                type: "text",
+                                required: false,
+                                label: "Адрес",
+                                suggestions: true,
+                            })(data-suggestions="2d079eca4e48d3d743e857a7c4d58480e2b8d96b")
+                            button.ordering__form_part_button(data-modal-open="address-modal") изменить
+
+                        .ordering__form_part(data-delivery-content="courier-delivery").is-active
+                            +input({
+                                type: "text",
+                                required: false,
+                                label: "Телефон"
+                            })
+                        .ordering__form_part(data-delivery-content="courier-delivery").is-active
+                            +input({
+                                type: "text",
+                                required: false,
+                                label: "Email",
+                                hint: "Необходим для отправки чека"
+                            })
+                        .ordering__form_part.ordering__form_part--full(data-delivery-content="courier-delivery").is-active
+                            +input({
+                                type: "text",
+                                required: false,
+                                label: "Комментарий к заказу"
+                            })
+                        .ordering__form_part.ordering__form_part--full(data-delivery-content="self-delivery")
+                            +select({
+                                list: [
+                                    { text: "Шоурум на Восстания. Авангардная ул., д.3, оф.2301", value: "1" },
+                                    { text: "Шоурум на Авангардной. Большая Никитская ул., д. 14/2, стр.6", value: "2" }
+                                ],
+                            })
+                        .ordering__form_part
+                            button.ordering__form_button(data-ordering-button="3") Выбрать способ оплаты
+
+                .ordering__content(data-ordering-step="3")
+                    .ordering__content_title Способ оплаты
+                    form.ordering__form.js-form
+                        .ordering__form_part.ordering__form_part--full
+                            +way-of-payment
+                        .ordering__form_part.ordering__form_part--full
+                            +checkbox-circle({ id: "sertificate", text: "Подарочный сертификат" })
+                        +sertificate.ordering__form_part.ordering__form_part--full
+                        .ordering__form_part.ordering__form_part--full
+                            .ordering__loyalty
+                                .ordering__loyalty-title Оплатить бонусами
+                                table.ordering__loyalty-content
+                                    tbody
+                                        tr
+                                            td На вашем счету
+                                            td 10 000 бонусов
+                                        tr
+                                            td Можно потратить на оплату этого заказа
+                                            td 8 000 бонусов
+                                +input({
+                                    type: "text",
+                                    required: false,
+                                    label: "Сколько бонусов списываем?"
+                                })
+                        .ordering__form_part
+                            button.ordering__form_button(data-ordering-button="4") Проверить детали и перейти к оплате
+
+                .ordering__content(data-ordering-step="4")
+                    form.ordering-final.js-form
+                        .ordering-final__part
+                            .ordering-final__head
+                                .ordering-final__counter 1 из 3
+                                .ordering-final__head_part
+                                    .ordering__content_title Личные данные
+                                    button.ordering-final__back(data-ordering-button="1") Редактировать
+                            .ordering-final__content
+                                p Милана Мединская
+                                p mmedinskaya@gmail.com
+                        .ordering-final__part
+                            .ordering-final__head
+                                .ordering-final__counter 2 из 3
+                                .ordering-final__head_part
+                                    .ordering__content_title Условия доставки
+                                    button.ordering-final__back(data-ordering-button="2") Редактировать
+                            .ordering-final__content
+                                .ordering-final__content_part
+                                    b Курьером по Москве / 400₽
+                                    p Срок доставки в течении 1-3 дней
+                                .ordering-final__content_part
+                                    p Москва, ул. Декабристов, д. 26, к. 2, кв. 63
+                                    p mmedinskaya@gmail.com
+                                    p +7 (931) 360-26-20
+
+                        .ordering-final__part
+                            .ordering-final__head
+                                .ordering-final__counter 3 из 3
+                                .ordering-final__head_part
+                                    .ordering__content_title Способ оплаты
+                                    button.ordering-final__back(data-ordering-button="3") Редактировать
+                            .ordering-final__content
+                                .ordering-final__payment
+                                    .payment-list
+                                        .payment-list__item
+                                            +svg("apple-pay")
+                                    span Apple Pay
+                                p Подарочный сертификат № 4320 4892 41
+
+                        button.button-brand(data-modal-open="ordering-success")
+                            +svg("apple-pay")

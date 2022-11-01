@@ -1,0 +1,37 @@
+.burger
+  width: 23px
+  height: 23px
+  position: relative
+  &:before, &:after, span
+    content: ''
+    position: absolute
+    +absolute-center
+    transition-timing-function: cubic-bezier(.165,.84,.44,1)
+    width: 100%
+    transition-duration: .5s
+    height: 1px
+    transform-origin: center
+    background-color: $black
+  &:before
+    transform: translateY(4px)
+  &:after
+    transform: translateY(-4px)
+  span
+    opacity: 0
+    transform-origin: right
+    transform: scaleX(0px) translateX(10px)
+  &.is-active
+    &:before
+      transform: rotate(45deg)
+    &:after
+      transform: rotate(-45deg)
+  &.is-nested
+    &:before
+      transform: rotate(45deg) scaleX(.5) translate(0px, 5px)
+    &:after
+      transform: rotate(-45deg) scaleX(.5) translate(1px, -5px)
+    span
+      opacity: 1
+      transform: scaleX(1) translateX(5px)
+  @media (max-width: $tab)
+    transition-delay: .6s

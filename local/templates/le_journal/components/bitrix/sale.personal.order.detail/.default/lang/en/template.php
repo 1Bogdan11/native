@@ -1,0 +1,14 @@
+<?php
+
+$MESS['ORDER_DETAIL_ITEM_NAME'] = 'Order ##NUMBER#';
+$MESS['ORDER_DETAIL_DATE'] = 'Date';
+$MESS['ORDER_DETAIL_DELIVERY'] = 'Delivery terms';
+$MESS['ORDER_DETAIL_PAYMENT'] = 'Payment system';
+$MESS['ORDER_DETAIL_PAY'] = 'Pay';
+$MESS['ORDER_DETAIL_PAYED'] = '(payed)';
+$MESS['ORDER_DETAIL_CANCEL'] = 'Cancel order';
+$MESS['ORDER_DETAIL_TOTAL'] = 'Total';
+
+$MESS['ORDER_BASKET_COUNT_ONE'] = 'item';
+$MESS['ORDER_BASKET_COUNT_TWO'] = 'items';
+$MESS['ORDER_BASKET_COUNT_MANY'] = 'items';

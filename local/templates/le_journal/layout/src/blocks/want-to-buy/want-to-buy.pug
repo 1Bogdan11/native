@@ -1,0 +1,27 @@
++modal('want-to-buy', 'right')
+    button.modal__close.media-min--tab(data-modal-close="want-to-buy")
+    form.want-to-buy
+        .want-to-buy__head
+            .product-modal__title Хочу купить
+            .want-to-buy__description Укажите ваши контактные данные. Как только размер появится в наличии, мы направим уведомление на почту или позвоним
+        .want-to-buy__fields
+            +input({
+                type: "text",
+                required: true,
+                label: "Имя"
+            })
+            +input({
+                type: "email",
+                required: true,
+                label: "E-mail"
+            })
+            +input({
+                type: "text",
+                required: true,
+                label: "Телефон"
+            })
+            .want-to-buy__subscribe 
+                +checkbox-circle({ id: "ch1", text: "Подписаться на новости Le Journal Intime" })
+        .want-to-buy__footer 
+            button.button-bordered Получить уведомление
+            .t-footnote Нажимая на кнопку «Получить уведомление», вы соглашаетесь на <a href="#">обработку персональных данных</a> и подтверждаете согласие с <a href="#">политикой конфиденциальности</a>

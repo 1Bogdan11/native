@@ -1,0 +1,71 @@
+mixin footer(data)
+  footer.footer.container&attributes(attributes)
+    .footer__column.footer__column--span-1
+      ul.footer__menu
+        li
+          a(href="#").t-link--m.link__underline--hover Каталог
+        li
+          a(href="#").t-link--m.link__underline--hover По виду операции
+        li
+          a(href="#").t-link--m.link__underline--hover Аксессуары
+        li
+          a(href="#").t-link--m.link__underline--hover Акции
+        li
+          a(href="#").t-link--m.link__underline--hover Блог
+    .footer__column.footer__column--span-1
+      ul.footer__menu
+        li
+          a(href="#").t-link--m.link__underline--hover О нас
+        li
+          a(href="#").t-link--m.link__underline--hover Контакты
+        li
+          a(href="#").t-link--m.link__underline--hover Таблица размеров
+        li
+          a(href="#").t-link--m.link__underline--hover Доставка и оплата
+        li
+          a(href="#").t-link--m.link__underline--hover Отзывы
+        li
+    .footer__column.footer__column--span-1
+      ul.footer__menu
+        li
+          a(href="#").t-link--m.link__underline--hover Врачам и дилерам
+        li
+          a(href="#").t-link--m.link__underline--hover Сертификаты
+        li
+          a(href="#").t-link--m.link__underline--hover Политика конфиденциальности
+        li
+
+    .footer__column.footer__contacts
+      a(href="#").phone.phone--lg.t-link
+        .phone__number +7 (499) 322 01 88
+        .phone__title Москва
+
+      a(href="#").phone.phone--lg.t-link
+        .phone__number +7 (925) 017-14-34
+        .phone__title Санкт-Петербург
+
+    .footer__column.footer__column--span-2
+      form.footer__feedback
+        .media-max--tab.footer__text--b Подпишитесь на рассылку, чтобы быть в курсе акций и специальных предложений
+        .footer__feedback-input
+          +input({
+            type: "email",
+            required: true,
+            label: "Введите ваш E-mail"
+          })
+          button.form__button
+            +svg("arrow-thin")
+        .form__confidentiality Отправляя данную форму я даю согласие на обработку персональных данных в соответствии с <a href="#">Политикой конфиденциальности</a>
+
+        +payment-list({
+          items: ['visa', 'mir-pay', 'master-card']
+        }).footer__payment-list
+
+    .footer__column.footer__column--span-3.footer__column--bottom
+      +copyright
+      a(href="#").t-link--m.link__underline--hover.footer__politic Политика конфиденциальности
+
+    .footer__column.footer__column--last.footer__column--bottom
+      .footer__company
+        span Дизайн и разработка
+        a(href  ="#") its.agency

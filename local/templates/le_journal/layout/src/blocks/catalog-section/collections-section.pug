@@ -1,0 +1,203 @@
+mixin collections-section(data)
+    section.catalog-section
+        +collection-head({
+            title: "Duncan",
+            text: "Коллекция Дункан – это история о смелой, лёгкой женщине, крутящейся в вихре жизни как в танце – с особым чувством ритма, своего тела, своего предназначения. Коллекция вдохновлена прекрасными танцовщицами своего времени, меняющими мир, влияющими на события жизни, создающими целые направления в искусстве, моде, музыке, Айседоре Дункан, Анне Павловой, Майе Плесецкой, Пине Бауш, а также Дженифер Лопес, Паола Абдул и другие."
+        })
+        .catalog-section__head(data-scroll)
+            .catalog-section__head-row.catalog-section__head-row--double
+                .catalog__sort
+                    +select({ 
+                        list: [
+                            { text: "По умолчанию", value: "1" },
+                            { text: "По возрастанию цены", value: "2" },
+                            { text: "По уменьшению цены", value: "3" },
+                            { text: "По алфавиту", value: "4" },
+                            { text: "По популярности", value: "5" },
+                        ],
+                        placeholder: "Сортировать"
+                    }).select--overlay(data-select-overlay)
+                .catalog-section__btn.js-filters-btn
+                    button(data-modal-open="filters") Фильтры
+                    .filter-status.js-filter-reset
+                        span.filter-status__counter 3
+                        .filter-status__close
+                
+        ul.catalog-section__list(data-scroll)
+            li.catalog-section__banner.media-max--tab
+                +collection-banner({image: "/assets/img/eng-plug.jpg"})
+                
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Viki",
+                    price: "5 600",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-1.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Delica",
+                    price: "9 500",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/full/card-1.jpg",
+                        type: "full"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Бралетт Monroe",
+                    price: "6 666",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-3.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Бандо Jadi Eyes",
+                    price: "5 800",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/no_photo.svg",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Viki",
+                    price: "5 600",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/full/card-2.jpg",
+                        type: "full"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Delica",
+                    price: "9 500",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-1.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Бралетт Monroe",
+                    price: "6 666",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-3.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Бандо Jadi Eyes",
+                    price: "5 800",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-4.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Viki",
+                    price: "5 600",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-2.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Delica",
+                    price: "9 500",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-1.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Бралетт Monroe",
+                    price: "6 666",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-3.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Бандо Jadi Eyes",
+                    price: "5 800",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/full/card-3.jpg",
+                        type: "full"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Бюстгальтер Viki",
+                    price: "5 600",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-3.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+            li.catalog-section__item
+                +card({
+                    title: "Delica",
+                    price: "9 500",
+                    oldPrice: "15 500",
+                    type: "catalog",
+                    image: {
+                        src: "assets/img/card/png/card-2.png",
+                        type: "item"
+                    },
+                    colorCircles: true
+                })
+        .catalog-section__footer 
+            +btn({ text: 'Показать больше' }).btn--lines
+            +pagination({
+                type: 'catalog',
+                pages: ['1', '2', '...', '12'],
+            })

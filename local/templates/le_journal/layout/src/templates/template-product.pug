@@ -1,0 +1,173 @@
+doctype html
+html(lang='ru')
+  include ../templates/mixins.pug
+  include ../templates/head.pug
+
+  body(style="visibility: hidden;")
+    include ../templates/modals.pug
+    include ../templates/blocks.pug
+    block modals
+    .modals.js-modals
+    +profile-modal-desktop({view: "login"})
+    +mobile-menu-modal({view: "login"})
+    +sizes-modal({view: "login"})
+    //- Main content
+    +header({ className: "is-product", type: "default"})
+    main#js-scroll-native.is-product
+      block content
+      +footer
+    script.
+      const galleryData = [
+        {
+          id: "default",
+          photos: [
+            {
+              id: 1,
+              src: "assets/img/card-slider/product-jpg.jpg",
+              srcset: "assets/img/card-slider/product-jpg.jpg",
+              preview: "assets/img/card-slider/product-jpg.jpg",
+              fullscreen: "assets/img/card-slider/product-jpg.jpg",
+              title: "Основное фото",
+              alt: "Основное фото",
+              pins: [
+                {
+                  location: [30, 25],
+                  title: "Название",
+                  description: `Описание`
+                },
+                {
+                  location: [34, 55],
+                  title: "Название",
+                  description: `Описание`
+                },
+              ]
+            },
+            {
+              id: 3,
+              src: "assets/img/card-slider/card-3.jpg",
+              srcset: "assets/img/card-slider/card-mobile-2.jpg",
+              preview: "assets/img/card-slider/card-1.jpg",
+              fullscreen: "assets/img/card-slider/card-fullscreen-3.jpg",
+              title: "Основное фото",
+              alt: "Основное фото",
+              pins: [
+                {
+                  location: [67, 14],
+                  title: "Название",
+                  description: `Описание`
+                }
+              ]
+            },
+          ]
+        },
+        {
+          id: 10,
+          photos: [
+            {
+              id: 1,
+              src: "assets/img/card-slider/card-1.jpg",
+              srcset: "assets/img/card-slider/card-mobile-1.jpg",
+              preview: "assets/img/card-slider/card-1.jpg",
+              fullscreen: "assets/img/card-slider/card-fullscreen-1.jpg",
+              title: "Основное фото",
+              alt: "Основное фото",
+              pins: [
+                {
+                  location: [28, 23],
+                  title: "Название",
+                  description: `Описание`
+                },
+                {
+                  location: [67, 14],
+                  title: "Название",
+                  description: `Описание`
+                }
+              ]
+            },
+            {
+              id: 2,
+              src: "assets/img/card-slider/card-2.jpg",
+              srcset: "assets/img/card-slider/card-mobile-2.jpg",
+              preview: "assets/img/card-slider/card-2.jpg",
+              fullscreen: "assets/img/card-slider/card-fullscreen-2.jpg",
+              title: "Основное фото",
+              alt: "Основное фото",
+              pins: [
+                {
+                  location: [30, 25],
+                  title: "Название",
+                  description: `Описание`
+                },
+                {
+                  location: [28, 35],
+                  title: "Название",
+                  description: `Описание`
+                },
+              ]
+            },
+          ]
+        },
+        {
+          id: 13,
+          photos: [
+            {
+              id: 3,
+              src: "assets/img/card-slider/card-3.jpg",
+              srcset: "assets/img/card-slider/card-mobile-2.jpg",
+              preview: "assets/img/card-slider/card-1.jpg",
+              fullscreen: "assets/img/card-slider/card-fullscreen-3.jpg",
+              title: "Основное фото",
+              alt: "Основное фото",
+              pins: [
+                {
+                  location: [67, 14],
+                  title: "Название",
+                  description: `Описание`
+                }
+              ]
+            },
+            {
+              id: 1,
+              src: "assets/img/card-slider/card-1.jpg",
+              srcset: "assets/img/card-slider/card-mobile-1.jpg",
+              preview: "assets/img/card-slider/card-1.jpg",
+              fullscreen: "assets/img/card-slider/card-fullscreen-1.jpg",
+              title: "Основное фото",
+              alt: "Основное фото",
+              pins: [
+                {
+                  location: [30, 25],
+                  title: "Название",
+                  description: `Описание`
+                },
+                {
+                  location: [24, 65],
+                  title: "Название",
+                  description: `Описание`
+                },
+              ]
+            },
+            {
+              id: 4,
+              src: "assets/img/card-slider/card-2.jpg",
+              srcset: "assets/img/card-slider/card-mobile-2.jpg",
+              preview: "assets/img/card-slider/card-2.jpg",
+              fullscreen: "assets/img/card-slider/card-fullscreen-2.jpg",
+              title: "Основное фото",
+              alt: "Основное фото",
+              pins: [
+                {
+                  location: [34, 35],
+                  title: "Название",
+                  description: `Описание`
+                },
+                {
+                  location: [38, 23],
+                  title: "Название",
+                  description: `Описание`
+                },
+              ]
+            },
+          ]
+        }
+      ]

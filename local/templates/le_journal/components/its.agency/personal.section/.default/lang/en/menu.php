@@ -1,0 +1,8 @@
+<?php
+
+$MESS['PERSONAL_MENU_ORDERS'] = 'Orders';
+$MESS['PERSONAL_MENU_FAVORITE'] = 'Favorite';
+$MESS['PERSONAL_MENU_PROFILE'] = 'Profile';
+$MESS['PERSONAL_MENU_ADDRESS'] = 'Address';
+$MESS['PERSONAL_MENU_SEND'] = 'Subscribe';
+$MESS['PERSONAL_MENU_EXIT'] = 'Logout';

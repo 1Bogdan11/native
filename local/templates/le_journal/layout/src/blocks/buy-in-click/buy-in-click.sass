@@ -1,0 +1,48 @@
+.buy-in-click
+    display: flex
+    flex-direction: column
+    grid-gap: 40px
+    width: 100%
+
+.buy-in-click__title
+    +yo('font-size', (375px: 24px, 1440px: 30px))
+
+.buy-in-click__part
+    width: 100%
+    display: grid
+    grid-gap: 30px
+    .unique-phone
+        width: 100%
+    .btn
+        width: 100%
+
+.modal--buy-in-click
+    .modal__container
+        @media (min-width: $tab + 1)
+            width: 500px
+
+    .modal__content
+        @media (min-width: $tab + 1)
+            padding: 50px 80px
+    .modal__mobile-close
+        @media (max-width: $tab)
+            transform: translateY(20px)
+            z-index: 1
+            background: none
+            top: 20px
+            left: initial
+            bottom: initial
+            transition-delay: 0s
+            right: $unit
+            width: 23px
+            height: 23px
+            &:before, &:after
+                width: 100%
+
+    &.modal--active
+        .modal__mobile-close
+            @media (max-width: $tab)
+                opacity: 1
+                transition-delay: .2s
+                transform: translateY(0)
+                pointer-events: all

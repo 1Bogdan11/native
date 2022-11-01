@@ -1,0 +1,29 @@
+mixin way-of-payment(data)
+  .way-of-payment.js-toggle-list&attributes(attributes)
+    .way-of-payment__item.js-toggle-item
+      .way-of-payment__head 
+        .way-of-payment__title При получении
+        .way-of-payment__description Наличными или картой
+      .way-of-payment__icon
+        +svg("gift")
+    .way-of-payment__item.js-toggle-item.is-active
+      .way-of-payment__head 
+        .way-of-payment__title Картой онлайн
+        .way-of-payment__description с помощью ChronoPay
+      .payment-list
+        .payment-list__item
+            +svg("visa")
+        .payment-list__item.payment-list__item--nofill
+            +svg("master-card")
+    .way-of-payment__item.js-toggle-item
+      .way-of-payment__head 
+        .way-of-payment__title Apple Pay
+      .payment-list
+        .payment-list__item
+            +svg("apple-pay")
+    .way-of-payment__item.js-toggle-item
+      .way-of-payment__head 
+        .way-of-payment__title Google Pay
+      .payment-list
+        .payment-list__item
+            +svg("google-pay")

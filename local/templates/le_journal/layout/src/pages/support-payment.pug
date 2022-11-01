@@ -1,0 +1,39 @@
+extends ../templates/template.pug
+block content
+  .container.support.js-toggle
+    +support-header({ title: 'Способы оплаты' })
+    .support__main
+      +support-nav([
+        { title: "Оплата", href: "/support-payment.html", active: true },
+        { title: "Доставка", href: "/support-delivery.html" },
+        { title: "Гарантия и возврат", href: "/support-warrant.html" },
+        { title: "Таблица размеров", href: "/support-size-chart.html" },
+        { title: "Пользовательское соглашение", href: "/support-privacy-policy.html" },
+        {title: "Оптовые заказы", href: "/support-personal.html"},
+        {title: "Белье на заказ", href: "/support-personal.html"}
+      ])
+      .support__content.support__modify-area
+        +payment-list({
+          items: ['visa', 'master-card', 'apple-pay', 'google-pay']
+        })
+        .support__list
+          h6 При получении
+          p Наличными или банковской картой курьеру в Москве
+          h6 Банковской картой онлайн
+          p Все операции по пластиковым картам осуществляются с помощью электронного платежного шлюза
+            span  ChronoPay
+          h6 Apple Pay и Google Pay
+          p Быстрая оплата с мобильного телефона. Достаточно выбрать карту и подтвердить оплату
+          h6 Квитанцией в банке
+          p Подойдет любое удобное отделение вашего банка
+        hr
+        h6 ChronoPay
+        p Компания ChronoPay специализируется на обеспечении безопасности карточных онлайн-платежей.
+        ol.support__list-with-numbers
+          li  При осуществлении платежа ChronoPay принимает данные Вашей пластиковой карты.
+          li  Информация по защищенному каналу связи SSL передается на авторизационный сервер ChronoPay.
+          li  Данные Вашей карты передаются только в зашифрованном виде.
+          li  Для передачи информации ChronoPay использует специальные технологии безопасности карточных онлайн-платежей Verifed by Visa и MasterCard Secure Code.
+          li  Все операции по Вашей карте осуществляются при полном соблюдении требований VISA International и MasterCard.
+          li  Безопасность обработки Интернет-платежей через ChronoPay гарантирована международными сертификатами безопасности PCI DSS.
+          li  Платежная страница, поддерживаемая компанией ChronoPay, использует хостинг компании RackSpace – один из наиболее безопасных хостингов в мире. В cоответствии с требованиями международных платежных систем, данные Вашей карты после завершения платежа не сохраняются ни в онлайн-магазине, ни на авторизационном сервере ChronoPay.

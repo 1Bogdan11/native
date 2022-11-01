@@ -1,0 +1,11 @@
+extends ../templates/template-scroll.pug
+
+block modals
+  include ../blocks/categories-modal/categories-modal.pug
+
+block content
+  .container.section__wrapper
+    +breadcrumbs("Каталог").breadcrumbs--full
+  .container.section__wrapper
+    +catalog-section({ type: "catalog-root", title: "Каталог товаров" })
+    

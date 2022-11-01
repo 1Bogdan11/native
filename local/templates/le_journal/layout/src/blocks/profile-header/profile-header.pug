@@ -1,0 +1,21 @@
+mixin profile-header(data)
+  .profile__header
+    +breadcrumbs("Личный кабинет", data.title).breadcrumbs--absolute.breadcrumbs--full
+    .profile__header-left
+      h4.profile__header-welcome Привет, Милана
+    .profile__header-right
+      .profile__header-title-wrapper
+        h5.profile__header-title #{ data.title }
+        if data.indicator
+          span.profile__header-title-indicator #{ data.indicator }
+      .profile__m-menu
+        span.profile__m-menu-arrow
+        .profile__m-menu-content.js-toggle__btn
+          .profile__m-menu-list
+            a.profile__m-menu-option(href="/profile-orders.html") Мои заказы
+              span.profile__m-menu-indicator 1
+            a.profile__m-menu-option.is-active(href="/profile-favourites.html") Избранное
+              span.profile__m-menu-indicator 8
+            a.profile__m-menu-option(href="/profile-personal.html") Профиль
+            a.profile__m-menu-option(href="/profile-address.html") Адреса
+            a.profile__m-menu-option(href="/profile-subscribe.html") Рассылка

@@ -1,0 +1,17 @@
+mixin sizes-modal(data)
+    +modal('sizes', 'aside').modal--bordered
+        .sizes-modal
+            .sizes-modal__body
+                +sizes({
+                    head: ['Размер', 'Обхват под грудью'],
+                    list: [
+                        { title: 'XS', html: '<div>XS</div><div>60-65</div>', checked: true},
+                        { title: 'S', html: '<div>S</div><div>65-70</div>'},
+                        { title: 'M', html: '<div>M</div><div>70-75</div>'},
+                        { title: 'L', html: '<div>L</div><div>80-85</div>'},
+                        { title: 'XL', html: '<div>XL</div><div>85-90</div>', disabled: true},
+                    ],
+                    type: "mobile"
+                })
+            .sizes-modal__footer
+                button Таблица размеров

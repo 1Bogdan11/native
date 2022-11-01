@@ -1,0 +1,68 @@
++modal('payment-modal', 'right')(data-tabs-modal)
+    button.modal__close.media-min--tab(data-modal-close="payment-modal")
+    .aside-tabs
+        .aside-tabs__links.js-modal__tabs
+            button(data-modal-tab="delivery").aside-tabs__link Доставка
+            button(data-modal-tab="payment").aside-tabs__link Оплата
+        .aside-tabs__area.js-modal__contents
+            .aside-tabs__content(data-modal-content="delivery")
+                .product-modal__main
+                    .product-modal__body
+                        .product-modal__title Доставка
+                        .product-list 
+                            .product-list__item
+                                .product-list__item_title Самовывоз
+                                .product-list__item_part
+                                    .product-list__item_content Из шоурумов в Москве и Санкт-Петербурге
+                                    .product-list__item_price Бесплатно
+                            .product-list__item
+                                .product-list__item_title Курьером по Москве
+                                .product-list__item_part
+                                    .product-list__item_content Стандартная в пределах МКАД
+                                    .product-list__item_price 400 ₽
+                                .product-list__item_part
+                                    .product-list__item_content При покупке на сумму от 15 000 ₽
+                                    .product-list__item_price Бесплатно
+                            .product-list__item
+                                .product-list__item_title Курьером в Подмосковье
+                                .product-list__item_part
+                                    .product-list__item_content В пределах 50 км от МКАД. Рассчитывается по тарифам курьерских служб. Срок доставки: 1-3 дня
+                                    .product-list__item_price от 700 ₽
+                            .product-list__item
+                                .product-list__item_title Почтой России
+                                .product-list__item_part
+                                    .product-list__item_content Рассчитывается по тарифам курьерских служб.
+                                    .product-list__item_price от 1000 ₽
+                                .product-list__item_part
+                                    .product-list__item_content При покупке на сумму от 15 000 ₽
+                                    .product-list__item_price Бесплатно
+                            .product-list__item.product-list__item--single
+                                .product-list__item_title Доставка в страны СНГ
+                                .product-list__item_price 1200 ₽
+                            .product-list__item.product-list__item--single
+                                .product-list__item_title Доставка по всему миру
+                                .product-list__item_price $35 (~2250 ₽)
+                        .product-modal__footer
+                            a(href="#").t-link Условия возврата
+
+            .aside-tabs__content(data-modal-content="payment")
+                .product-modal__main
+                    .product-modal__body
+                        .product-modal__title Способы оплаты
+                        .product-list 
+                            .product-list__item
+                                .product-list__item_title При получении
+                                .product-list__item_description Наличными или банковской картой курьеру в Москве
+                            .product-list__item
+                                .product-list__item_title Банковской картой онлайн
+                                .product-list__item_description Все операции по пластиковым картам осуществляются с помощью электронного платежного шлюза ChronoPay
+                            .product-list__item
+                                .product-list__item_title Apple Pay и Google Pay
+                                .product-list__item_description Быстрая оплата с мобильного телефона. Достаточно выбрать карту и подтвердить оплату
+                            .product-list__item
+                                .product-list__item_title Квитанцией в банке
+                                .product-list__item_description Подойдет любое удобное отделение вашего банка
+                        .product-modal__footer
+                            +payment-list({
+                                items: ['visa', 'master-card', 'apple-pay', 'google-pay']
+                            })

@@ -1,0 +1,12 @@
+extends ../templates/template-scroll.pug
+
+block modals
+  include ../blocks/categories-modal/categories-modal.pug
+  include ../blocks/filters-modal/filters-modal.pug
+  
+block content
+  .container.section__wrapper
+    +breadcrumbs("Коллекции", "Duncan").breadcrumbs--full
+  .container.section__wrapper
+    +collections-section
+    +recently-section({ scroll: true })

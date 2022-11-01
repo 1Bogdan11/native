@@ -1,0 +1,49 @@
+.card-recently
+    margin-left: calc(var(--unit) * -1)
+    margin-right: calc(var(--unit) * -1)
+    position: relative
+    @media (max-width: $tab)
+        overflow: hidden
+
+.card-recently__tabs
+    margin-bottom: 40px
+    @media (max-width: $tab)
+        margin-bottom: 20px
+        margin-right: $unit
+.card-recently__tabs_inner
+    display: flex
+    align-items: flex-end
+    padding-left: $unit
+    padding-right: $unit
+    grid-gap: 40px
+    @media (max-width: $tab)
+        grid-gap: 20px
+
+
+.card-recently__tab
+    +yo('font-size', (375px: 18px, 1440px: 30px))
+    transition-duration: .4s
+    opacity: .5
+    cursor: pointer
+    white-space: nowrap
+    &:hover
+        opacity: .7
+    &.is-active
+        opacity: 1
+    @media (max-width: $tab)
+        font-weight: 400
+
+.card-recently__head-mobile
+    display: flex
+    justify-content: center
+    padding-left: var(--unit)
+    padding-right: var(--unit)
+
+.card-recently__content
+    overflow: hidden
+    @media (max-width: $tab)
+        padding-left: $unit
+
+.card-recently__content_inner
+    display: grid
+    +yo('grid-gap', (375px: 30px, 1440px: 60px))

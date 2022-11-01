@@ -1,0 +1,81 @@
+$card-height: var(--product-height)
+
+.fashion-finish
+    width: 100%
+    overflow: visible
+    @media (max-width: $tab)
+        overflow: hidden
+
+.fashion-finish__inner
+    display: grid
+    grid-gap: 3px
+    position: relative
+    width: 100%
+    box-sizing: initial
+    grid-template-columns: repeat(4, 1fr)
+    @media (max-width: $tab)
+        grid-gap: 1px
+
+
+.fashion-finish__item
+    transition-duration: .6s
+    opacity: 0
+    transform: translateX(50px)
+    transition-timing-function: ease
+    transition-property: initial
+    position: relative
+    height: 100%
+    .card__image
+        background-color: $beige-l
+        picture
+            position: static
+    &:nth-child(1)
+        transition-delay: .1s
+        z-index: 4
+        .card__content
+            @media (min-width: $tab + 1)
+                padding-left: 20px
+        .card__icon
+            transition-delay: .4s
+    &:nth-child(2)
+        transition-delay: .2s
+        z-index: 3
+        .card__icon
+            transition-delay: .6s
+    &:nth-child(3)
+        transition-delay: .3s
+        z-index: 2
+        .card__icon
+            transition-delay: .8s
+    &:nth-child(4)
+        transition-delay: .4s
+        z-index: 1
+
+.fashion-finish__total
+    height: calc(#{$card-height} - 90px)
+    position: relative
+    padding: 45px
+    display: flex
+    align-items: flex-end
+    background-color: $beige-l
+    @media (max-width: $tab)
+        padding: 20px
+        height: calc(#{$card-height} - 40px)
+
+.fashion-finish__price
+    font-weight: 500
+    font-size: 24px
+    color: black
+    position: absolute
+    +absolute-center
+    display: flex
+    flex-direction: column
+    text-align: center
+    align-items: center
+    justify-content: center
+
+.fashion-finish__oldprice
+    font-weight: 500
+    color: black
+    text-decoration: line-through
+    font-size: 16px

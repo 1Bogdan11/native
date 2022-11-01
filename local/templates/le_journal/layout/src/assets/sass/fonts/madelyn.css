@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Madelyn';
+  src: url("../fonts/madelyn/Madelyn-Regular.woff2") format("woff2"), url("../fonts/madelyn/Madelyn-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+/*# sourceMappingURL=madelyn.css.map */

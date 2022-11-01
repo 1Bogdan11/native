@@ -1,0 +1,12 @@
+mixin delivery(data)
+  .delivery.js-toggle-list&attributes(attributes)
+    .delivery-item.js-toggle-item(data-delivery-type="self-delivery")
+      .delivery-item__head 
+        .delivery-item__title Самовывоз
+        .delivery-item__description Заберите заказ в удобное время
+      .delivery-item__price Бесплатно
+    .delivery-item.js-toggle-item(data-delivery-type="courier-delivery").is-active
+      .delivery-item__head 
+        .delivery-item__title Курьером
+        .delivery-item__description Защищенная доставка до двери
+      .delivery-item__price 400₽

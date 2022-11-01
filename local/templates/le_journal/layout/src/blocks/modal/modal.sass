@@ -1,0 +1,402 @@
+.modal
+  z-index: 25
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  +vh
+  pointer-events: none
+  & *::-webkit-scrollbar-thumb
+    background-color: $beige-l
+    border-radius: 5px
+
+// Active state
+.modal--active
+  pointer-events: auto
+
+  .modal__overlay
+    pointer-events: auto
+    opacity: 1
+
+// Overlay
+.modal__overlay
+  z-index: -1
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(197, 223, 236, 0.71);
+  backdrop-filter: blur(5px);
+  transition: $trs-4
+  pointer-events: none
+  opacity: 0
+
+.modal__mobile-close, .modal__close
+  &:before, &:after
+    content: ''
+    width: 30%
+    height: 1px
+    background: $black
+    position: absolute
+    +absolute-center
+  &:before
+    transform: rotate(45deg)
+  &:after
+    transform: rotate(-45deg)
+
+.modal__close
+  width: 24px
+  height: 24px
+  position: absolute
+  top: 20px
+  right: $unit
+  &:before, &:after
+    width: 80%
+
+.modal__mobile-close
+  display: none
+  width: 48px
+  height: 48px
+  position: absolute
+  bottom: 30px
+  background-color: $grey-4
+  border-radius: 100%
+  transition: $trs-4
+  pointer-events: none
+  left: 0
+  right: 0
+  margin: auto
+  opacity: 0
+  transform: translateY(80px)
+  &:before, &:after
+    content: ''
+    width: 30%
+    height: 1px
+    background: $black
+    position: absolute
+    +absolute-center
+  &:before
+    transform: rotate(45deg)
+  &:after
+    transform: rotate(-45deg)
+  @media (max-width: $tab)
+    display: flex
+
+// Aside modal
+.modal--aside
+  z-index: 4
+  .modal__content
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    padding: 50px 40px
+    width: 100%
+    max-height: 100%
+    overflow: visible
+
+  .modal__container
+    position: relative
+    width: 560px
+    height: 100%
+    transform: translateX(-101%)
+    transition: $trs-4
+    background: #fff
+
+    @media (max-width: $tab)
+      width: 100%
+
+.modal--aside.modal--active .modal__container
+  transform: translateX(0)
+
+
+// Center modal
+.modal--center
+  .modal__content
+    max-height: 100%
+
+  .modal__container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, 0%)
+
+    +scrollbar
+    padding-bottom: 0
+
+    max-height: 100%
+
+    width: 440px
+    max-width: calc(100% - #{$unit} * 2)
+
+    background: #fff
+    transition: $trs-4
+    opacity: 0
+
+    @media (max-width: $mob)
+      width: 100%
+
+.modal--center.modal--active .modal__container
+  opacity: 1
+  transform: translate(-50%, -50%)
+
+
+// Right modal
+.modal--right
+  .modal__content
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    padding: 50px 110px 110px
+    width: 100%
+    max-height: 100%
+    +scrollbar
+    &::-webkit-scrollbar-thumb
+      background-color: $beige-l
+    @media (max-width: $desktop)
+      padding: 50px 90px 50px
+    @media (max-width: $tab)
+      padding: 50px $unit 0
+    @media (max-width: $mob)
+      padding: $unit $unit 0
+  .modal__container
+    position: absolute
+    right: 0
+    height: 100%
+    transform: translateX(101%)
+    transition: $trs-4
+    background: #fff
+    width: 720px
+    @media (max-width: $tab)
+      width: 100%
+
+.modal--right.modal--active .modal__container
+  transform: translateX(0)
+
+// Filters modal
+.modal--filters
+  display: flex
+  justify-content: flex-end
+  .modal__container
+    width: 450px
+    padding: 40px
+    height: calc(100% - 40px * 2)
+    background: white
+    top: 0
+    bottom: 0
+    margin: 40px 0
+    transition-delay: 0s
+    border-radius: 8px
+    overflow: hidden
+    @media (max-width: $tab)
+      width: calc(100% - 16px)
+      margin: 0 8px $unit
+      top: 8px
+      height: calc(100% - 100px)
+      transform: translateY(calc(100% + 160px))
+    .modal__content
+      width: calc(100% - 10px)
+      margin: 8px 8px 0 0
+      @media (max-width: $tab)
+        padding-top: 8px
+        width: 100%
+        margin: 0
+        &::-webkit-scrollbar
+          width: 0
+
+  .modal__content
+    padding: 0
+  .modal__overlay
+    transition-delay: .3s
+
+.modal--filters.modal--active
+  .modal__overlay
+    transition-delay: 0s
+  .modal__container
+    transition-delay: .2s
+    transform: translateX(-48px)
+    @media (max-width: $tab)
+      transform: translateX(0)
+  .modal__mobile-close
+    transition-delay: .35s
+    transform: translateY(0)
+    opacity: 1
+
+// Beige modal
+.modal--beige
+  .modal__container
+    +absolute-center
+    background: none
+    width: fit-content
+    height: fit-content
+    padding: 40px $unit
+    transform: translate(0)
+    @media (max-width: $tab)
+      width: calc(100% - 16px)
+      max-width: calc(100% - 16px)
+      margin: 0 8px $unit
+      height: calc(100% - 100px)
+      padding: 0
+      transform: translateY(calc(100% + 160px))
+      &::-webkit-scrollbar
+        width: 0
+  .modal__overlay
+    transition-delay: .4s
+  .modal__content
+      @media (max-width: $tab)
+        padding-top: 8px
+        height: 100%
+        &::-webkit-scrollbar
+          width: 0
+
+
+.modal--beige.modal--active
+  .modal__container
+    transform: translate(0)
+  .modal__overlay
+    transition-delay: 0s
+  .modal__mobile-close
+    transform: translateY(0)
+    opacity: 1
+
+// Payment
+.modal--payment-modal
+    .aside-tabs__content
+        @media (max-width: $tab)
+            &::-webkit-scrollbar
+                width: 0px
+
+// Product
+.modal--product-modal
+  .modal__close
+    transition-delay: 0s
+    transform: translateY(10px)
+    opacity: 0
+    transition-duration: .4s
+    pointer-events: none
+    right: 40px
+    top: 40px
+    width: 48px
+    height: 48px
+    background-color: $beige
+    border-radius: 100%
+    &:before, &:after
+      width: 40%
+    @media (max-width: $tab)
+      opacity: 1
+      right: 0px
+      top: 5px
+      pointer-events: all
+      background-color: transparent
+  .aside-tabs__link
+    @media (max-width: $tab)
+      font-size: 18px
+    &:before
+      @media (max-width: $tab)
+        display: none
+  .modal__content
+    @media (max-width: $tab)
+      padding: 27px $unit 0
+  .aside-tabs__content
+    @media (max-width: $tab)
+      padding-top: 0
+  .modal__container
+    @media (max-width: $tab)
+      background-color: $base-bg
+  .aside-tabs__area
+    width: calc(100% - (var(--unit) * -1) * 2)
+    margin: 0 0 0 calc(var(--unit) * -1)
+    th
+      white-space: nowrap
+
+  &.is-fullscreen
+    .modal__close
+      opacity: 1
+      transition-delay: .4s
+      pointer-events: all
+      transform: translateY(0px)
+  .aside-tabs__content.is-active
+    transition-delay: .4s
+
+// Aside-modal
+.modal--aside-modal
+  .aside-tabs__content
+    display: flex
+    flex-direction: column
+
+// Fulscreen
+.modal.is-fullscreen
+  .aside-tabs__content, .modal__content
+    overflow: initial
+  .modal__container
+    width: 100%
+    transition-delay: .2s
+    background-color: $beige-1
+
+// Bordered
+
+.modal--bordered
+  .modal__container
+    @media (max-width: $tab)
+      width: 100%
+      background-color: $base-bg
+      transform: translate(0, calc(100% + 80px))
+      border-radius: 16px 16px 0 0
+    &:before
+      @media (max-width: $tab)
+        content: ""
+        position: absolute
+        width: 48px
+        height: 3px
+        left: 0
+        right: 0
+        opacity: 1
+        margin: auto
+        border-radius: 4px
+        top: -8px
+        background-color: hsla(0,0%,100%,.8)
+  &.modal--active
+    .modal__container
+      @media (max-width: $tab)
+        transform: translate(0, 50px)
+
+
+
+// Top modal
+
+.modal--top
+  z-index: 4
+  .modal__content
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    padding: 50px 40px
+    width: 100%
+    max-height: 100%
+    overflow: visible
+
+  .modal__container
+    position: relative
+    width: 100%
+    height: 600px
+    transform: translateY(-101%)
+    transition: $trs-4
+    background: #fff
+
+    @media (max-width: $tab)
+      height: 100%
+
+.modal--top.modal--active .modal__container
+  transform: translateY(0)
+
+.modal--top-modal
+  .aside-tabs__content
+    display: flex
+    flex-direction: column

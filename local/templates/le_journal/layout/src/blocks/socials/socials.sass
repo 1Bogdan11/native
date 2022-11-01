@@ -1,0 +1,83 @@
+.socials
+    display: flex
+    align-items: center
+    grid-gap: 10px
+    @media (max-width: $mob)
+        grid-gap: 8px
+
+.socials__item
+    a
+        width: 40px
+        border-radius: 100%
+        position: relative
+        border: 1px solid $black
+        overflow: hidden
+        height: 40px
+        display: block
+        transition-duration: .4s
+        @media (max-width: $mob)
+            width: 35px
+            height: 35px
+        &:before
+            content: ''
+            position: absolute
+            width: 60px
+            background-color: $black
+            height: 60px
+            border-radius: inherit
+            transform-origin: center
+            top: -10px
+            will-change: transform
+            left: -10px
+            transform: scale(0)
+            opacity: 0
+            transition-duration: inherit
+            transition-timing-function: ease
+        &:hover
+            &:before
+                opacity: 1
+                transform: scale(1)
+            svg
+                fill: $base-bg
+        svg
+            width: 17px
+            height: 17px
+            transition-duration: inherit
+            position: absolute
+            +absolute-center
+            @media (max-width: $mob)
+                width: 14px
+                height: 14px
+    &.is-stroke
+        a
+            svg
+                stroke: $black
+                fill: none
+            &:hover
+                svg
+                    fill: none
+                    stroke: $base-bg
+
+// Grey theme
+.socials--grey
+    grid-gap: 8px
+    a
+        width: 56px
+        height: 56px
+        border: 1px solid lighten($black, 50%)
+        @media (max-width: $tab)
+            width: 48px
+            height: 48px
+        &:before
+            display: none
+        svg
+            width: 20px
+            height: 20px
+            fill: lighten($black, 50%)
+            @media (max-width: $tab)
+                width: 16px
+                height: 16px
+        &:hover
+            border: 1px solid $black
+            svg
+                fill: $black

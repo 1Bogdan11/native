@@ -1,0 +1,79 @@
+.modal--lang-modal
+    &.modal--active .modal__container
+        bottom: 0
+
+        height: max-content
+
+        @media (max-width: $tab)
+            top: unset
+            transform: translateY(0)
+    .modal__content
+        padding: 80px 20px
+        @media (max-width: $tab)
+            padding: 40px $unit
+    .modal__container
+        width: 100%
+        max-width: unset
+
+        @media (max-width: $tab)
+            bottom: 0
+            left: 0
+
+            overflow: visible
+        &:before
+            @media (min-width: $tab + 1)
+                content: ''
+                position: absolute
+                top: 0
+                right: 0
+                z-index: 1
+                background-color: rgba(0,0,0,.6)
+                transition: $trs-4
+                pointer-events: none
+                opacity: 0
+                width: 100vw
+                height: 100%
+        @media (max-width: $tab)
+            width: 100%
+.lang-modal
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    width: max-content
+    max-width: 100%
+    margin: auto
+
+    &__selects
+        display: flex
+        align-items: center
+        width: 100%
+        margin: 56px 0 0 0
+
+        @media (max-width: $tab)
+            flex-direction: column
+
+    &__select
+        flex: 1
+        margin: 0 24px 0 0
+
+        &:nth-last-child(1)
+            margin: 0
+
+        @media (max-width: $tab)
+            width: 100%
+            margin: 0 0 24px 0
+
+            &:nth-last-child(1)
+                margin: 0
+
+    &__title
+        font-weight: 400
+        font-size: 24px
+        line-height: 100%
+        text-align: center
+        color: #1F2020
+    &__button
+        width: 584px
+        max-width: 100%
+        margin: 39px 0 0 0

@@ -1,0 +1,8 @@
+mixin news-card(data)
+    a(href="#").news-card
+        .news-card__img
+            img(src=data.img)
+        .news-card__content
+            .news-card__date !{data.date}
+            .news-card__title !{data.title}
+            .news-card__desc !{data.description}

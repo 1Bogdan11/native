@@ -1,0 +1,98 @@
+doctype html
+html(lang='ru')
+  include ../templates/mixins.pug
+  include ../templates/head.pug
+
+  body(style="visibility: hidden;")
+    include ../templates/modals.pug
+    include ../templates/blocks.pug
+    include ../blocks/map-modal/map-modal.pug
+    .modals.js-modals
+
+    +profile-modal-desktop({view: "login"})
+    +mobile-menu-modal({view: "login"})
+    +header({ className: "is-inview", type: "shop-contacts" })
+    main#js-scroll.no-padding
+      block content
+      +footer.media-min--tab
+
+    script.
+      const regionsMapData = [
+        {
+          type: 'FeatureCollection',
+          id: "1",
+          features: [
+            {
+              type: 'Feature',
+              id: "2",
+              geometry: {
+                type: 'Point',
+                coordinates: [37.60579549999998, 55.75666506897904],
+              },
+            },
+            {
+              type: 'Feature',
+              id: "3",
+              geometry: {
+                type: 'Point',
+                coordinates: [37.491080499999995, 55.84312106890302]
+              },
+            },
+            {
+              type: 'Feature',
+              id: "4",
+              geometry: {
+                type: 'Point',
+                coordinates: [37.585403500000005, 55.75770806898169]
+              },
+            },
+          ]
+        },
+        {
+          type: 'FeatureCollection',
+          id: "2",
+          active: true,
+          features: [
+            {
+              type: 'Feature',
+              id: "5",
+              mainRegionPoint: true,
+              centered: true,
+              geometry: {
+                type: 'Point',
+                coordinates: [30.35885336433385, 59.92775884284126]
+              },
+            },
+            {
+              type: 'Feature',
+              id: "6",
+              geometry: {
+                type: 'Point',
+                coordinates: [30.203858698633383, 59.98698410834451],
+              },
+            },
+          ]
+        },
+        {
+          type: 'FeatureCollection',
+          id: "3",
+          features: [
+            {
+              type: 'Feature',
+              id: "7",
+              geometry: {
+                type: 'Point',
+                coordinates: [33.082610742938435, 68.97459902285445],
+              },
+            },
+            {
+              type: 'Feature',
+              id: "8",
+              geometry: {
+                type: 'Point',
+                coordinates: [33.06984342802754, 68.95297502632111],
+              },
+            },
+          ]
+        },
+      ]

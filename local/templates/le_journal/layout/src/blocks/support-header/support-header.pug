@@ -1,0 +1,23 @@
+mixin support-header(data)
+  .support__header
+    +breadcrumbs("Личный кабинет", data.title).breadcrumbs--absolute.breadcrumbs--full
+    .support__header-left
+      h1.support__header-welcome.t-h4 Поддержка
+    .support__header-right
+      .support__header-title-wrapper
+        h5.support__header-title #{ data.title }
+        if data.indicator
+          span.support__header-title-indicator #{ data.indicator }
+      .support__m-menu
+        span.support__m-menu-arrow
+        .support__m-menu-content.js-toggle__btn
+          .support__m-menu-list
+            a.support__m-menu-option(href="/support-payment.html") Оплата
+              span.support__m-menu-indicator 1
+            a.support__m-menu-option.is-active(href="/support-delivery.html") Доставка
+              span.support__m-menu-indicator 8
+            a.support__m-menu-option(href="/support-warrant.html") Гарантия и возврат
+            a.support__m-menu-option(href="/support-size-chart.html") Таблица размеров
+            a.support__m-menu-option(href="/support-privacy-policy.html") Пользовательское соглашение
+            a.support__m-menu-option(href="/support-subscribe.html") Оптовые заказы
+            a.support__m-menu-option(href="/support-subscribe.html") Белье на заказ

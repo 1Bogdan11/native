@@ -1,0 +1,13 @@
+// Ограничить построчно
+=overflow-clamp($lines)
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: $lines
+    overflow: hidden
+
+// Ограничить в рамках одной строки
+=overflow-line
+    max-width: 100%
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap

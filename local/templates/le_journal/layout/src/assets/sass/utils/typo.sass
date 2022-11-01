@@ -1,0 +1,162 @@
+/**
+ * Headings.
+ *
+ * Redefine our heading styles against utility classes. This gives us a double
+ * stranded heading hierarchy whereby we can style one heading as another, e.g.:
+ *
+     <h4 class="t-h1">I am an H4 that is the same size as an H1</h4>
+ *
+ */
+
+=heading-typo
+  letter-spacing: -0.02em
+  line-height: 0.96
+
+.t-h1
+  +heading-size-1
+  +heading-typo
+  font-weight: 200
+
+.t-h2
+  +heading-size-2
+  +heading-typo
+  font-weight: 300
+
+.t-h3
+  +heading-size-3
+  +heading-typo
+  font-weight: 300
+
+.t-h4
+  +heading-size-4
+  +heading-typo
+  font-weight: 300
+
+.t-h5
+  +heading-size-5
+  +heading-typo
+  line-height: 1.2
+  font-weight: 300
+
+.t-h6
+  +heading-size-6
+  +heading-typo
+  font-weight: 400
+
+
+/**
+ * Text Uppercase styled
+ */
+.t-ttu
+  font-weight: 500
+  line-height: 1
+  font-size: 14px
+  letter-spacing: 0.04em
+  text-transform: uppercase
+
+/**
+ * Text alignments.
+ */
+
+.t-tar
+  text-align: right
+
+.t-tal
+  text-align: left
+
+.t-tac
+  text-align: center
+
+.t-link
+  font-weight: 300
+  white-space: nowrap
+
+.t-link--m
+  font-weight: 500
+  white-space: nowrap
+
+.t-button--search
+  width: 18px
+  height: 18px
+  position: relative
+  display: block
+  svg
+    fill: none
+    width: 100%
+    height: 100%
+
+.t-sm
+  font-size: 14px
+
+.fw-300
+  font-weight: 300 !important
+
+.t-uppercase
+  text-transform: uppercase !important
+  letter-spacing: .04em !important
+
+.basket-button
+  width: 28px
+  height: 28px
+  position: relative
+  background-color: $brand
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-shrink: 0
+  border-radius: 100%
+  color: $inverse
+  &:visited
+    color: white
+  &.is-active
+    .basket-button__count
+      opacity: 1
+      transform: translateY(0)
+      transition-delay: .4s
+    svg
+      transition-delay: 0s
+      transform: translateY(8px)
+      opacity: 0
+  @media (max-width: $tab)
+    width: 22px
+    height: 22px
+    font-size: 10px
+    font-weight: 500
+
+  svg
+    position: relative
+    top: -1px
+    width: 60%
+    fill: white
+    height: 60%
+    transition-delay: .4s
+    transform: translateY(0)
+
+  .basket-button__count, svg
+    transition-duration: .4s
+    transition-timing-function: ease
+
+.basket-button__count
+  position: absolute
+  width: 100%
+  opacity: 0
+  height: 100%
+  transition-delay: 0s
+  top: 0
+  left: 0
+  transform: translateY(-8px)
+  justify-content: center
+  align-items: center
+  display: flex
+  color: white
+  font-size: 11px
+  font-weight: 600
+
+.t-footnote
+  font-size: 12px
+  color: rgba(0,0,0,.5)
+  line-height: 1.2
+  font-weight: 400
+  a
+    color: rgba(0,0,0,.5)
+    text-decoration: underline

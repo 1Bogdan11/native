@@ -1,0 +1,5 @@
+<?php
+
+$MESS['ITS_AGENCY_COMPONENT_FORM_SAMPLE_NAME'] = 'Простая форма';
+$MESS['ITS_AGENCY_COMPONENT_FORM_SAMPLE_DESCRIPTION'] = 'Простая форма для инфоблока';
+$MESS['ITS_AGENCY_COMPONENT_FORM_SAMPLE_CATEGORY'] = 'its.agency';

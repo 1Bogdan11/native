@@ -1,0 +1,9 @@
+extends ../templates/template-registration.pug
+
+block content
+  .container.section__wrapper.not-found
+    .not-found__head 
+      +star-title("Страница с регистрацией")
+      .not-found__head_description(data-scroll data-observe="fade-y") Просто нажми на "Профиль" в шапке сайта
+    +hero({ title: false })
+    +recently-section({ scroll: true })

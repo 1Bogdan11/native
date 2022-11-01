@@ -1,0 +1,19 @@
+mixin search-form(data)
+    form.search-form&attributes(attributes)
+        if data.empty
+            +input({
+                type: "text",
+                required: true,
+                label: "Поиск", 
+                value: "Гольфы"
+            })
+            .search-form__status Товары не найдены
+        else
+            +input({
+                type: "text",
+                required: true,
+                label: "Найти товар",
+                value: "Гольфы"
+            })
+        button.search-form__submit
+            +svg("search")

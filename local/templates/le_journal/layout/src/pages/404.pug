@@ -1,0 +1,10 @@
+extends ../templates/template-scroll.pug
+
+block content
+  .container.section__wrapper.not-found
+    +breadcrumbs("Страница не найдена").breadcrumbs--absolute.breadcrumbs--full
+    .not-found__head 
+      +star-title("Страница не найдена")
+      .not-found__head_description(data-scroll data-observe="fade-y") Иногда такое случается. Воспользуйтесь поиском или посмотрите на товары из новой коллекции
+    +hero({ title: false })
+    +recently-section({ scroll: true })

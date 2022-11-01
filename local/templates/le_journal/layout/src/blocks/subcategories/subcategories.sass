@@ -1,0 +1,65 @@
+.subcategories
+  @media (max-width: $tab)
+    width: 100vw
+    padding-left: $unit
+    overflow: auto
+    -ms-overflow-style: none
+    scrollbar-width: none
+    &::-webkit-scrollbar
+      width: 0
+
+.subcategories__inner
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  gap: 20px 30px
+  +yo('gap', (768px: 20px, 1920px: 60px))
+  @media (max-width: $tab)
+    margin-left: auto
+    margin-right: auto
+    flex-wrap: nowrap
+    width: fit-content
+
+.subcategories__link
+  max-width: 150px
+  display: flex
+  flex-direction: column
+  align-items: center
+  row-gap: 20px
+  &:hover
+    .subcategories__img path
+      stroke: $azure
+    .subcategories__text
+      color: $azure
+  @media (max-width: $desktop-m)
+    max-width: 130px
+  @media (max-width: $tab)
+    max-width: 110px
+    row-gap: 14px
+    &:last-child
+      margin-right: $unit
+
+.subcategories__img
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 80px
+  height: 60px
+  // @media (max-width: $desktop-m)
+  //   width: 80px
+  //   height: 60px
+  // @media (max-width: $tab)
+  //   width: 80px
+  //   height: 60px
+  path
+    transition: $trs-4
+
+.subcategories__text
+  font-size: 16px
+  line-height: 130%
+  color: $major
+  font-weight: 400
+  text-align: center
+  transition: $trs-4
+  @media (max-width: $desktop-m)
+    font-size: 14px

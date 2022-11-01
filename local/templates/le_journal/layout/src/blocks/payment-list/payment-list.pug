@@ -1,0 +1,6 @@
+mixin payment-list(data)
+    .payment-list&attributes(attributes)
+        each item in data.items        
+            .payment-list__item(class=`${item === 'master-card' ? 'payment-list__item--nofill' : ''}`)
+                +svg(item)
+                

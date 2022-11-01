@@ -1,0 +1,128 @@
+extends ../templates/template-scroll.pug
+
+block modals
+    include ../blocks/categories-modal/categories-modal.pug
+
+block content
+    +hero-banners
+    +subcategories.main__subcategories
+
+    .main__catalog.container
+        h2.main__title Каталог товаров
+        ul.catalog-section__categories-cards
+            li.catalog-section__item
+                +card-category({
+                    title: "Бюстгальтеры, топы",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-1.jpg",
+                        type: "item"
+                    },
+                })
+            li.catalog-section__item
+                +card-category({
+                    title: "Next Step",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-2.jpg",
+                        type: "item"
+                    },
+                })
+            li.catalog-section__item
+                +card-category({
+                    title: "Корректирующее белье",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-3.jpg",
+                        type: "item"
+                    },
+                })
+            li.catalog-section__item
+                +card-category({
+                    title: "Боди, комбинезоны, грации",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-4.jpg",
+                        type: "item"
+                    },
+                })
+            li.catalog-section__item
+                +card-category({
+                    title: "Штаны, гольфы, наколенники",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-5.jpg",
+                        type: "item"
+                    },
+                })
+            li.catalog-section__item
+                +card-category({
+                    title: "Маски, бандажи для лица",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-6.jpg",
+                        type: "item"
+                    },
+                })
+            li.catalog-section__item
+                +card-category({
+                    title: "Бандажи",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-7.jpg",
+                        type: "item"
+                    },
+                })
+            li.catalog-section__item
+                +card-category({
+                    title: "Корректирующее белье",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-3.jpg",
+                        type: "item"
+                    },
+                })
+            li.catalog-section__item
+                +card-category({
+                    title: "Мужчинам",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-8.jpg",
+                        type: "item"
+                    },
+                })
+            li.catalog-section__item
+                +card-category({
+                    title: "Рубашки, жилеты, рукава",
+                    image: {
+                        src: "assets/img/catalog/subcategory-photo-9.jpg",
+                        type: "item"
+                    },
+                })
+
+    .main__article.article.container
+        .main__article-section.main__article-section--centered
+            img(src="assets/img/native/main-article-1.jpg" alt="")
+            .main__article-content
+                h2 Компрессионное послеоперационное белье
+                p Компрессионное послеоперационное белье — это особый вид трикотажа, который предназначен для восстановления после операций по пластической хирургии и мамопластике. Благодаря усилиям компаний, занимающихся производством трикотажа, а также тесному сотрудничеству с ведущими пластическими хирургами, современное компрессионное белье все чаще используется как женщинами, так и мужчинами. 
+                p Наша компания занимается разработкой, изготовлением и продажей технологичного компрессионного белья для самых разных целей, постоянно занимаясь усовершенствованием продукции и расширением ассортимента. 
+        .main__article-section.main__article-section--left
+            img(src="assets/img/native/main-article-2.jpg" alt="")
+            .main__article-content
+                p В интернет-магазине Nativeclub вы можете купить компрессионный трикотаж в Москве по цене производителя. Наш магазин технологичного компрессионного белья предлагает большой каталог моделей для женщин и мужчин.
+                p Послеоперационное белье после мамопластики и пластических операций в наличии.
+                p Наш компрессионный трикотаж предназначен для равномерного распределения давления по окружности тела, ускорения процессов заживления и наилучших результатов после пластической операции - ровная поверхность, равномерное заживление.
+        .main__article-section.main__article-section--right
+            img(src="assets/img/native/main-article-3.jpg" alt="")
+            .main__article-content
+                h2 Технологичное послеоперационное белье: что это такое?
+                p Компрессионный трикотаж изготавливается в соответствии со специальными технологиями и используется для ускорения восстановления после операции или корректировки фигуры. Выбор компрессионного белья зависит от конкретной ситуации и назначается только после тщательного осмотра у специалиста. Чаще всего использование компрессионного трикотажа будет иметь эффект в следующих случаях:
+                ul 
+                    li после проведения операции;
+                    li использование в послеродовой период;
+                    li после мамопластики;
+                    li в качестве компрессионного белья для восстановления после пластической хирургии.
+                p Для изготовления послеоперационного белья Native мы используем только современные профессиональные материалы, которые, в отличие от хлопка, задерживающего влагу, обладают высокими показателями водо и воздухопроводимости, гипоаллергенностью и износостойкостью. 
+        .main__article-section.main__article-section--left
+            img(src="assets/img/native/main-article-4.jpg" alt="")
+            .main__article-content
+                p В качестве основного материала для изготовления белья может использоваться полиамид или микрофибра, обеспечивающие поддерживающий эффект. Основная ткань, используемая во всех коллекциях белья Нэйтив — это высокотехнологичный сетчатый трикотаж PowerNet, обладающий профессиональными функциями компрессии. 
+                p Купить компрессионный трикотаж в Москве можно в интернет-магазине Nativeclub.ru: мы предлагаем технологичное послеоперационное белье, в том числе изготовленное по индивидуальным замерам и потребностям.
+        .main__article-section.main__article-section--centered
+            img(src="assets/img/native/main-article-5.jpg" alt="")
+            .main__article-content
+                h2 Магазин компрессионного белья в Москве Nativeclub.ru: что мы предлагаем?
+                p Наше послеоперационное белье отличается высоким качеством, которое достигается благодаря тесному сотрудничеству с ведущими мировыми хирургами, а также постоянным внедрением новых технологий и материалов производства. В ассортименте нашего магазина можно найти послеоперационное компрессионное белье после маммопластики, липосакции, абдоминопластики, а также маски и бандажи для лица, ног, торса и других частей тела. 
+                p Вся продукция собрана в каталоге компрессионного белья и для большего удобства разбита на отдельные категории, что значительно упрощает поиск. Более подробную информацию можно получить в виде консультации нашими специалистами: мы готовы ответить на ваши вопросы и подобрать белье подходящего типа и категории для достижения максимальной эффективности без вреда для здоровья.

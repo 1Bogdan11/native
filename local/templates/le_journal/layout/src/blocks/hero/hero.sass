@@ -1,0 +1,74 @@
+.hero__title
+    display: grid
+    grid-gap: 5px
+    max-width: 960px
+    +yo('padding-top', (375px: 50px, 1440px: 100px))
+    margin: 0 auto 0
+    text-align: center
+    line-height: 110%
+    justify-content: center
+    transform: translateY(15px)
+    transition-delay: .6s
+    +yo('font-size', (320px: 30px, 375px: 32px, 1440px: 72px))
+    @media (max-width: $tab)
+        grid-gap: 8px
+    svg
+        width: 18px
+        height: 18px
+        margin: auto
+        @media (max-width: $tab)
+            width: 12px
+            height: 12px
+.hero__area
+    padding-top: 80px
+    display: grid
+    align-items: center
+    grid-template-columns: 1fr minmax(30vw, 1fr)
+    grid-gap: 5vw
+    margin-left: calc(var(--unit) * -1)
+    @media (max-width: $desktop)
+        grid-template-columns: minmax(50vw, 1fr) minmax(30vw, 1fr)
+    @media (max-width: $tab)
+        grid-template-columns: initial
+        margin-right: calc(var(--unit) * -1)
+
+.hero__area-part
+    position: relative
+    &:first-child
+        max-height: 110vh
+        .hero__image
+            height: 100%
+    &:last-child
+        display: flex
+        justify-content: center
+        @media (max-width: $tab)
+            display: none
+
+.hero__area-item_title
+    font-size: 16px
+    font-weight: 400
+
+.hero__image
+    overflow: hidden
+    height: 100%
+    display: block
+    max-height: inherit
+    width: 100%
+    transition-delay: .4s
+    img
+        display: block
+        object-position: center
+        object-fit: cover
+        @media (max-width: $tab)
+            width: 100%
+
+.hero__area-item
+    max-width: 30vw
+    height: 100%
+    grid-gap: 10px
+    display: grid
+    .hero__image
+        transition-delay: .5s
+        max-height: 70vh
+        img
+            width: 100%

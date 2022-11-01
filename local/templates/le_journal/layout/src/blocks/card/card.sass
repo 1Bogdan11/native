@@ -1,0 +1,194 @@
+$card-height: var(--product-height)
+
+.card
+    position: relative
+    .sizes
+        position: absolute
+        bottom: 100px
+        width: 100%
+        left: 0
+        justify-content: center
+        @media (max-width: $tab)
+            bottom: 80px
+
+.card--catalog
+    .card__content
+        max-width: 100%
+        @media (max-width: $tab)
+            justify-content: initial
+            grid-gap: 0px
+            flex-direction: column
+
+.card__favorite
+    position: absolute
+    z-index: 2
+    bottom: 19px
+    right: 20px
+    width: 17px
+    height: 24px
+    transition-duration: .3s
+    will-change: transform
+    transition-timing-function: ease
+    svg
+        width: 100%
+        height: 100%
+        fill: none
+        stroke: black
+    // &:hover
+        // transform: scale(1.1)
+    &.is-active
+        transform: scale(1)
+        svg
+            fill: black
+
+.card__image
+    overflow: hidden
+    position: relative
+    height: $card-height
+    background-color: $bg-brand-light
+    display: flex
+
+.card__image.is-item
+    justify-content: center
+    align-items: center
+    picture
+        display: flex
+        position: static
+    img
+        mix-blend-mode: multiply
+        width: 100%
+        height: 100%
+        object-fit: cover
+        margin: auto
+        position: static
+        @media (max-width: $tab)
+            height: 180px
+            max-width: 80%
+            object-fit: contain
+
+.card__image.is-full
+    position: relative
+    img
+        position: absolute
+        object-fit: cover
+        object-position: center
+        top: -10%
+        left: 0
+        width: 100%
+        height: 120%
+
+.card__labels
+    position: absolute
+    right: 20px
+    top: 19px
+    display: flex
+    justify-content: flex-end
+    flex-wrap: wrap
+    max-width: calc(100% - 48px)
+    column-gap: 6px
+    @media (max-width: $mob)
+        top: 12px
+        right: 12px
+        max-width: calc(100% - 24px)
+        column-gap: 4px
+
+.card__content
+    margin-top: 15px
+    max-width: 80%
+    +overflow-line
+    @media (max-width: $tab)
+        font-size: 14px
+        max-width: 100%
+
+    @media (max-width: $mob)
+        padding: 0 8px
+        margin-top: 8px
+
+.card__title
+    font-weight: 300
+    +overflow-line
+
+.card--line, .card--favourites
+    .card__title
+        white-space: normal
+
+.card__price
+    font-weight: 600
+    display: flex
+    grid-gap: 10px
+    @media (max-width: $mob)
+        justify-content: space-between
+    span
+        font-weight: 400
+
+.card__price_old, .card__price_new
+    display: flex
+    grid-gap: 3px
+    +raleway(m)
+
+.card__price_old
+    font-size: 90%
+    color: rgba(0,0,0,.5)
+    text-decoration: line-through
+
+.card__currency
+    font-weight: 400
+
+.card__icon
+    position: absolute
+    top: calc(65vh/2 - 24px)
+    right: -24px
+    margin: auto
+    width: 48px
+    height: 48px
+    border-radius: 100%
+    background-color: white
+    display: flex
+    justify-content: center
+    z-index: 1
+    align-items: center
+    font-weight: 300
+    color: rgba(0,0,0,.7)
+    line-height: 1
+    transition-duration: .5s
+    opacity: 0
+    transform: scale(.5)
+    @media (max-width: $desktop)
+        top: calc(56vh/2 - 24px)
+    @media (max-width: $tab)
+        width: 30px
+        height: 30px
+        top: 120px
+        right: -18px
+    svg
+        width: 24px
+        height: 24px
+        position: absolute
+        +absolute-center
+        fill: black
+        @media (max-width: $tab)
+            width: 16px
+            height: 16px
+
+.card__filters
+    display: flex
+    justify-content: space-between
+    position: absolute
+    top: calc(var(--product-height) - 50px)
+    width: calc(100% - 40px)
+    left: 0
+    padding: 0 20px
+    @media (max-width: $desktop)
+        top: calc(var(--product-height) - 50px)
+    @media (max-width: $tab)
+        top: calc(var(--product-height) - 40px)
+        padding: 0 15px
+        width: calc(100% - 20px)
+    .select
+        font-size: 16px
+        @media (max-width: $tab)
+            font-size: 14px
+        .ss-content
+            width: auto
+            @media (max-width: $tab)
+                left: initial

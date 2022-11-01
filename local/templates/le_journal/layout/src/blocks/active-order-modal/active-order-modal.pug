@@ -1,0 +1,120 @@
++modal('active-order', 'aside')
+  .order-modal
+    button.order-modal__close-m.mobile-close
+    .order-modal__content
+      p.order-modal__title Заказ №193884-402-70
+      .order-modal__list
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Дата
+            p.order-modal__text 27 января 2021, 13:38
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Условия доставки
+            p.order-modal__text Курьером по Москве / 400₽
+            p.order-modal__text Срок доставки в течении 1-3 дней
+            p.order-modal__text Москва, ул. Декабристов, д. 26, к. 2, кв. 63
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Способ оплаты
+            p.order-modal__text Apple Pay
+            p.order-modal__text Подарочный сертификат № 4320 4892 41
+          button.button-brand Оплатить
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Электронный чек
+            a.order-modal__voucher(href="javascript:void(0)") Чек №124991-4991-435-32
+      p.order-modal__title Заказ №193884-402-70
+      .order-modal__list
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Дата
+            p.order-modal__text 27 января 2021, 13:38
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Условия доставки
+            p.order-modal__text Курьером по Москве / 400₽
+            p.order-modal__text Срок доставки в течении 1-3 дней
+            p.order-modal__text Москва, ул. Декабристов, д. 26, к. 2, кв. 63
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Способ оплаты
+            p.order-modal__text Apple Pay
+            p.order-modal__text Подарочный сертификат № 4320 4892 41
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Электронный чек
+            a.order-modal__voucher(href="javascript:void(0)") Чек №124991-4991-435-32
+            p.order-modal__title Заказ №193884-402-70
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Дата
+            p.order-modal__text 27 января 2021, 13:38
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Условия доставки
+            p.order-modal__text Курьером по Москве / 400₽
+            p.order-modal__text Срок доставки в течении 1-3 дней
+            p.order-modal__text Москва, ул. Декабристов, д. 26, к. 2, кв. 63
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Способ оплаты
+            p.order-modal__text Apple Pay
+            p.order-modal__text Подарочный сертификат № 4320 4892 41
+          button.button-brand Оплатить
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Электронный чек
+            a.order-modal__voucher(href="javascript:void(0)") Чек №124991-4991-435-32
+            p.order-modal__title Заказ №193884-402-70
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Дата
+            p.order-modal__text 27 января 2021, 13:38
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Условия доставки
+            p.order-modal__text Курьером по Москве / 400₽
+            p.order-modal__text Срок доставки в течении 1-3 дней
+            p.order-modal__text Москва, ул. Декабристов, д. 26, к. 2, кв. 63
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Способ оплаты
+            p.order-modal__text Apple Pay
+            p.order-modal__text Подарочный сертификат № 4320 4892 41
+          button.button-brand Оплатить
+        .order-modal__item
+          .order-modal__item_content
+            p.order-modal__subtitle Электронный чек
+            a.order-modal__voucher(href="javascript:void(0)") Чек №124991-4991-435-32
+      .basket__content
+        .basket__head
+          .basket__quantity 2 товара
+        .basket__content_inner
+          ul.basket__list.js-toggle-free
+            li.basket__list_item
+              +basket-item({
+                title: "Бюстгальтер Viki",
+                image: "assets/img/card/png/card-2.png",
+                link: "/product.html",
+                price: 2400,
+                colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                selectsView: "down",
+                orderView: true
+              })
+            li.basket__list_item
+              +basket-item({
+                title: "Боди Le Journal Intime Jadi",
+                image: "assets/img/card/png/card-3.png",
+                link: "/product.html",
+                price: 5700,
+                colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                selectsView: "down",
+                orderView: true
+              })
+
+    .order-modal__footer
+      a.order-modal__submit-button(href="javascript:void(0)" data-text="Отменить заказ" data-mobile-text="Отменить")
+      .order-modal__total
+        p.order-modal__total-title Итого
+        p.order-modal__total-text 26 700₽

@@ -1,0 +1,47 @@
+mixin basket-item(data)
+    .basket-item&attributes(attributes)
+        a(href=data.link).basket-item__picture
+            .basket-item__picture_overlay
+                button.basket-item__favourite.js-toggle-item
+                    +svg("bookmark")
+            img(src=data.image)
+        .basket-item__content
+            .basket-item__content_row
+                .basket-item__props
+                    a(href=data.link).basket-item__title !{data.title}
+                    .basket-item__color !{data.color}
+                .basket-item__price
+                    span.basket-item__price_main(data-item-price=data.price) !{data.price.toLocaleString('ru-RU')}₽
+                    span.basket-item__price_summ(data-item-summ=data.price)
+            .basket-item__content_row
+                if data.type == "favorite"
+                    +sizes({
+                        list: [
+                            { title: "XS" },
+                            { title: "S", disabled: true},
+                            { title: "M" },
+                            { title: "L", active: true },
+                            { title: "XL" }
+                        ],
+                        type: "inline"
+                    })
+                else
+                    .basket-item__sizes
+                        +select({
+                            list: [
+                                { text: "Размер XS", value: "1" },
+                                { text: "Размер S", value: "2" },
+                                { text: "Размер M", value: "3" },
+                                { text: "Размер L", value: "4" },
+                                { text: "Размер XL", value: "5" },
+                            ],
+                            show: data.selectsView
+                        })
+                    .basket-item__counter-wrapper
+                      button.basket-item__button.basket-item__button--minus
+                      span.basket-item__counter 2
+                      button.basket-item__button.basket-item__button--plus
+                    if !data.orderView
+                        button.basket-item__button.basket-item__button--restore
+                            +svg("repeat")
+                        button.basket-item__button.basket-item__button--remove

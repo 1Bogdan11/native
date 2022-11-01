@@ -1,0 +1,13 @@
+.shops
+    display: grid
+    width: 100%
+    margin-top: 40px
+    +yo('grid-gap', (375px: 30px, 1440px: 70px))
+    @media (max-width: $tab)
+        margin-top: 20px
+        overflow: hidden
+
+.shops__title
+    width: 100%
+    .t-h4
+        font-weight: 400

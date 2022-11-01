@@ -1,0 +1,27 @@
++modal('buy-in-click', 'right')
+    form.buy-in-click.js-form
+        h2.buy-in-click__title Купить в один клик
+        .buy-in-click__part
+            +input({
+                type: "text",
+                required: true,
+                label: "Имя"
+            })
+            +unique-phone({
+                select: [{
+                text: 'ru',
+                innerHTML: `+7`
+                },
+                {
+                    text: 'kz',
+                    innerHTML: `+7`
+                },
+                {
+                    text: 'by',
+                    innerHTML: `+375`,
+                    selected: 1
+                },]
+            })
+            +btn({ text: 'Оформить' })
+
+            

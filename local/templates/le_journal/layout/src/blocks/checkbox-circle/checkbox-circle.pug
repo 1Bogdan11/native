@@ -1,0 +1,7 @@
+mixin checkbox-circle(data)
+  label.checkbox-circle(for=data.id)
+    input.checkbox-circle__input(type='checkbox' id=data.id data-checkbox=data.id)
+    span.checkbox-circle__block
+      span.checkbox-circle__switch
+    .checkbox-circle__text #{data.text}
+    

@@ -1,0 +1,56 @@
+.color-circles
+    display: flex
+    flex-wrap: wrap
+    grid-gap: 4px
+
+.color-circles__item
+    display: flex
+    position: relative
+    grid-gap: 9px
+    align-items: center
+    padding: 6px 9px
+    height: 30px
+    label
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        cursor: pointer
+        position: absolute
+        transition-duration: .4s
+        border: 1px solid rgba(0,0,0,.1)
+        border-radius: 4px
+    input
+        position: absolute
+        opacity: 0
+        width: 100%
+        height: 100%
+        top: 0
+        cursor: pointer
+        left: 0
+        &:checked + label
+            border: 1px solid rgba(0,0,0,1)
+        &.disabled ~ .color-circles__radio_text, &.disabled ~ .color-circles__radio
+            opacity: .5
+
+.color-circles__radio_text
+    line-height: 1
+    color: black
+    font-size: 14px
+    font-weight: 400
+    display: flex
+    display: flex
+    grid-gap: 3px
+    transition-duration: .4s
+    .quantity
+        color: rgba(0,0,0,.5)
+
+.color-circles__radio
+    width: 15px
+    height: 15px
+    border-radius: 100%
+    position: relative
+    cursor: pointer
+    pointer-events: none
+    border: 1px solid rgba(0,0,0,.1)
+    transition-duration: .4s

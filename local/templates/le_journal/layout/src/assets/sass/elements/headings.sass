@@ -1,0 +1,43 @@
+/* Заголовки */
+=heading-size-1
+  +yo('font-size', (375px: 96px, 1440px: 96px))
+
+=heading-size-2
+  +yo('font-size', (375px: 24px, 1440px: 64px))
+
+=heading-size-3
+  +yo('font-size', (375px: 18px, 1440px: 48px))
+
+=heading-size-4
+  +yo('font-size', (375px: 20px, 1440px: 36px))
+
+=heading-size-5
+  +yo('font-size', (375px: 18px, 1440px: 26px))
+
+=heading-size-6
+  +yo('font-size', (375px: 18px, 1440px: 18px))
+
+h1
+  +heading-size-1
+  font-weight: 200
+h2
+  +heading-size-2
+  font-weight: 300
+h3
+  +heading-size-3
+  font-weight: 300
+h4
+  +heading-size-4
+  font-weight: 300
+h5
+  +heading-size-5
+  font-weight: 300
+h6
+  +heading-size-6
+  font-weight: 400
+
+h4.in-flow
+  +flow-margin
+  +yo('margin-top', (375px: 50px, 1600px: 124px))
+  margin-bottom: 34px
+

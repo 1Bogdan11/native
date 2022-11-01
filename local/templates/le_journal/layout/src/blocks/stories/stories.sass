@@ -1,0 +1,136 @@
+.stories
+    width: calc(100% + 220px)
+    margin-left: -110px
+    margin-right: -110px
+    display: flex
+    align-items: center
+    & > .swiper-wrapper > .swiper-slide
+        width: auto
+        display: flex
+        align-items: center
+        transition-duration: .6s
+        transition-timing-function: ease
+        transition-property: initial
+        opacity: 0
+        transform: translateX(3vw)
+        &.swiper-slide-active
+            .stories__slide
+                transform: scale(1)
+                opacity: 1
+                pointer-events: all
+            .stories__prev, .stories__next
+                opacity: 1
+                transform: translateX(0)
+                pointer-events: all
+            .stories__slide_content
+                span
+                    opacity: 1
+                    transform: translateY(0)
+                    &:nth-child(1)
+                        transition-delay: .2s
+                    &:nth-child(2)
+                        transition-delay: .3s
+                    &:nth-child(3)
+                        transition-delay: .4s
+                    &:nth-child(4)
+                        transition-delay: .5s
+                    &:nth-child(5)
+                        transition-delay: .6s
+                    &:nth-child(6)
+                        transition-delay: .7s
+                    &:nth-child(7)
+                        transition-delay: .8s
+                    &:nth-child(8)
+                        transition-delay: .9s
+                    &:nth-child(9)
+                        transition-delay: 1s
+    &.is-inited
+        & > .swiper-wrapper > .swiper-slide
+            opacity: 1
+            transform: translateX(0)
+            &:nth-child(1)
+                transition-delay: .1s
+            &:nth-child(2)
+                transition-delay: .2s
+            &:nth-child(3)
+                transition-delay: .3s
+    &.is-single
+        .stories__prev, .stories__next
+            display: none
+
+.stories__inner
+    height: 100%
+
+.stories__slide
+    height: 100%
+    width: 100%
+    position: relative
+    transition-duration: inherit
+    transition-timing-function: inherit
+    background-color: $base-bg
+    transform: scale(0.9)
+    position: relative
+    pointer-events: none
+    display: flex
+    align-items: flex-end
+    opacity: .4
+    @media (min-width: $mob + 1)
+        width: mix(2.8)
+        min-width: 320px
+
+.stories__prev, .stories__next
+    position: absolute
+    +absolute-center
+    width: 15px
+    height: 15px
+    z-index: 1
+    transition-duration: .4s
+    transition-timing-function: ease
+    opacity: 0
+    pointer-events: none
+    svg
+        width: 100%
+        height: 100%
+
+.stories__prev
+    right: initial
+    left: -35px
+    transform: translateX(-10px)
+    svg
+        transform: rotate(180deg)
+
+.stories__next
+    left: initial
+    right: -35px
+    transform: translateX(10px)
+
+.stories__slide_picture
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.stories__slide_content
+    z-index: 1
+    display: flex
+    flex-wrap: wrap
+    grid-gap: 4px
+    position: absolute
+    +yo('bottom', (1100px: 15px, 1440px: 24px))
+    +yo('left', (1100px: 15px, 1440px: 24px))
+    span
+        color: white
+        background-color: rgba(0,0,0,.34)
+        padding: 8px 10px
+        border-radius: 8px
+        display: block
+        white-space: nowrap
+        transition-duration: .5s
+        transition-timing-function: ease
+        opacity: 0
+        line-height: 1.2
+        transform: translateY(10px) translateX(5px)
+        transition-delay: 0s
+        +yo('font-size', (1100px: 14px, 1440px: 15px))

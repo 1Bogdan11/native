@@ -1,0 +1,9 @@
+mixin back(data)
+    if data.link
+        a(href=data.link.url).back-link&attributes(attributes)
+            .back
+                +svg("arrow-left")
+            span #{data.link.title}
+    else 
+        button.back&attributes(attributes)
+            +svg("arrow-left")

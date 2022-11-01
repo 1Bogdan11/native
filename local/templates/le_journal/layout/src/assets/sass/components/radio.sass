@@ -1,0 +1,37 @@
+.radio
+  .radio__input
+    display: none
+  .radio__label
+    position: relative
+    display: block
+    padding-left: 28px
+    font-size: 16px
+    line-height: 20px
+    cursor: pointer
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      width: 20px
+      height: 20px
+      border: 1px solid #E5E5E5
+      border-radius: 100%
+      transition: $trs
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      top: 6px
+      left: 6px
+      width: 8px
+      height: 8px
+      background-color: $black
+      border-radius: 100%
+      transform: scale(0)
+      transition: $trs
+  .radio__input:checked + .radio__label
+    &::after
+      transform: scale(1)
+      

@@ -1,0 +1,41 @@
+.adm-submenu-item-link-icon.its_maxma_icon_main {
+    background: url(logo.png) no-repeat center 3px;
+    background-size: 18px;
+}
+
+.its-maxma-pre-spoiler {
+    display: block;
+    min-width: 600px;
+    height: auto;
+
+}
+.its-maxma-pre-spoiler pre {
+    width: 100%;
+    height: 0;
+    overflow: scroll;
+    background-color: white;
+}
+
+.its-maxma-pre-spoiler.open pre {
+    height: 500px;
+}
+
+.its-maxma-pre-spoiler button {
+
+}
+
+.its-maxma-pre-spoiler button.open {
+    display: inline-block;
+}
+
+.its-maxma-pre-spoiler button.close {
+    display: none;
+}
+
+.its-maxma-pre-spoiler.open button.open {
+    display: none;
+}
+
+.its-maxma-pre-spoiler.open button.close {
+    display: inline-block;
+}

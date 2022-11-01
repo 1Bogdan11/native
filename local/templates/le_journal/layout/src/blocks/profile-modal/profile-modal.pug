@@ -1,0 +1,83 @@
+mixin profile-modal(data)
+    .profile-modal.js-profile-modal
+        if data.title
+            .profile-modal__title Профиль
+        .profile-modal__part
+            .profile-modal__inner
+                // Авторизация
+                form.profile-modal__form.js-form
+                    .profile-modal__head
+                        .profile-modal__head_title
+                            span Войти или <br> зарегистрироваться
+                        .profile-modal__head_description Мы отправим на номер SMS-сообщение с кодом подтверждения
+                        .profile-modal__form_part
+                            +unique-phone({
+                                select: [{
+                                text: 'ru',
+                                innerHTML: `+7`
+                                },
+                                {
+                                    text: 'kz',
+                                    innerHTML: `+7`
+                                },
+                                {
+                                    text: 'by',
+                                    innerHTML: `+375`,
+                                    selected: 1
+                                },
+                                ]
+                            })
+                    .profile-modal__bottom
+                        +btn({ text: 'Получить код' })
+                        
+
+                // Подтвердить номер
+                form.profile-modal__form.js-form(style="display: none;")
+                    .profile-modal__head
+                        button.profile-modal__head_back
+                            +svg("arrow")
+                        .profile-modal__head_title Подтвердите номер
+                        .profile-modal__head_description +7 ( 123 ) 456 - 78 - 90
+                        .profile-modal__form_part
+                            +input({
+                                type: "sms"
+                            })
+                    .profile-modal__bottom
+                        +btn({ text: 'Подтвердить номер' })
+
+                // Регистрация
+                form.profile-modal__form.profile-modal__form--registration.js-form(style="display: none;")
+                    .profile-modal__head
+                        button.profile-modal__head_back
+                            +svg("arrow")
+                        .profile-modal__head_title Осталось немного
+                        .profile-modal__form_part
+                            +input({
+                                type: "text",
+                                required: true,
+                                label: "Фамилия"
+                            })
+                            +input({
+                                type: "text",
+                                required: true,
+                                label: "Имя"
+                            })
+                            +input({
+                                type: "text",
+                                required: true,
+                                label: "Email"
+                            })
+                    .profile-modal__bottom
+                        +btn({ text: 'Зарегистрироваться' })
+                        .form__confidentiality Отправляя данную форму я даю согласие на обработку персональных данных в соответствии с <a href="#">Политикой конфиденциальности</a>
+
+                // Спасибо за регистрацию
+                form.profile-modal__form.profile-modal__form--final.js-form(style="display: none;")
+                    .profile-modal__head
+                        button.profile-modal__head_back
+                            +svg("arrow")
+                        .profile-modal__head_title Спасибо за регистрацию
+                        .profile-modal__form_part
+                            +btn({ text: 'Вернуться' }).btn--lines
+                            +btn({ text: 'В личный кабинет' })
+                        

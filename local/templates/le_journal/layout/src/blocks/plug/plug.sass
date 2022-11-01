@@ -1,0 +1,42 @@
+.plug
+    width: calc(100% + #{$unit} * 2)
+    height: 100vh
+    overflow: hidden
+    position: relative
+    margin: 0 calc(var(--unit) * -1)
+    padding: 0 $unit
+
+.plug__image
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    img
+        width: 100%
+        height: 100%
+        object-position: center
+        object-fit: cover
+
+.plug__content
+    z-index: 1
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    grid-gap: 20px
+    margin-top: 25vh
+    align-items: center
+    .star-title
+        font-weight: 300
+    .link__underline
+        color: black
+        transform: translateY(15px)
+        transition-delay: .9s
+        font-weight: 500
+
+.plug__description
+    font-weight: 500
+    font-size: 18px
+    transform: translateY(15px)
+    transition-delay: .7s

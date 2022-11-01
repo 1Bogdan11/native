@@ -1,0 +1,15 @@
+mixin footer-form
+    .footer-form.container
+        form.js-form
+            +input({
+                type: "text",
+                required: true,
+                label: "Email"
+            })
+            +input({
+                type: "text",
+                required: true,
+                label: "Comments"
+            })
+            button.button-brand Send
+        .footer-form__copyright © Le Journal Intime

@@ -1,0 +1,61 @@
+.product-modal__main
+    display: grid
+    grid-template-rows: 1fr auto
+    grid-gap: 20px
+    padding-right: 15px
+    @media (max-width: $tab)
+        grid-gap: 50px
+        padding-right: 0
+        padding-bottom: 80px
+
+.product-modal__body
+    position: relative
+
+.product-modal__body, .product-modal__tab_content
+    display: grid
+    grid-template-rows: auto 1fr
+    grid-gap: 30px
+    @media (max-width: $tab)
+        grid-gap: 10px
+
+.product-modal__tab_content
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 0
+    transition-duration: .4s
+    pointer-events: none
+    transition-timing-function: ease
+    transform: translateY(10px)
+    transition-delay: 0s
+    &.is-active
+        opacity: 1
+        transition-delay: .4s
+        pointer-events: all
+        transform: translateY(0px)
+
+.product-modal__title
+    font-weight: 400
+    +yo('font-size', (375px: 24px, 1440px: 30px))
+
+.product-modal__footer
+    .t-link
+        font-weight: 500
+
+.product-modal__tabs
+    display: flex
+    grid-gap: 10px 7px
+    flex-wrap: wrap
+
+.product-modal__tab
+    color: black
+    transition-duration: .4s
+    font-weight: 400
+    white-space: nowrap
+    padding: 5px 10px
+    border-radius: 40px
+    border: 1px solid rgba(0,0,0,.3)
+    &.is-active
+        border: 1px solid rgba(0,0,0,1)

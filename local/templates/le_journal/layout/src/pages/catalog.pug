@@ -1,0 +1,12 @@
+extends ../templates/template.pug
+
+block modals
+  include ../blocks/categories-modal/categories-modal.pug
+  include ../blocks/filters-modal/filters-modal.pug
+  
+block content
+  .container.section__wrapper
+    +breadcrumbs("Каталог", "Бюстгальтеры").breadcrumbs--full
+  .container.section__wrapper
+    +catalog-section({ type: "catalog", title: "Бюстгальтеры, топы" })
+    +recently-section({ scroll: true })

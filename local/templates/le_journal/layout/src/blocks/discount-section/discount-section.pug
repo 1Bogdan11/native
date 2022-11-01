@@ -1,0 +1,25 @@
+mixin discount-section(data)
+    section.discount-section    
+        .discount-section__part(data-scroll data-scroll-speed="1")
+            a(href="#").discount-section__card 
+                img(src="assets/img/discount-section/discount-section-2.jpg")
+                .discount-section__card-title.t-h6 Мы помогаем
+        .discount-section__part(data-scroll data-scroll-speed="2")
+            a(href="#").discount-section__card 
+                img(src="assets/img/discount-section/discount-section-1.jpg" )
+                .discount-section__card-title.t-h6 Подарочный сертификат
+        .discount-section__part(data-scroll data-scroll-speed="3")
+            form.discount-section__form
+                .discount-section__icon z
+                .discount-section__title
+                    i Получите скидку 10%
+                    span на свой первый заказ и море эксклюзивных новостей из мира бренда
+                .discount-section__footer
+                    +input({
+                        type: "email",
+                        required: true,
+                        label: "Ваш email"
+                    })
+                    button.form__button
+                        +svg("arrow-thin")
+                    .form__confidentiality Отправляя данную форму я даю согласие на обработку персональных данных в соответствии с <a href="#">Политикой конфиденциальности</a>

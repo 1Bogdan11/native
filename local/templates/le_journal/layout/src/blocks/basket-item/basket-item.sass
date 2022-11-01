@@ -1,0 +1,244 @@
+.basket-item
+    display: grid
+    grid-template-columns: 96px 1fr
+    grid-gap: 24px
+    height: 145px
+    width: 100%
+    position: relative
+    @media (max-width: $tab)
+        grid-template-columns: 80px 1fr
+        grid-gap: 16px
+        height: 120px
+
+    & *:not(.ss-content)
+        transition-duration: .5s
+    &:not(.is-removed):hover
+        .basket-item__picture_overlay
+            opacity: 1
+            .basket-item__favourite
+                transform: translateY(0)
+                opacity: 1
+    &.is-removed
+        .basket-item__picture, .basket-item__props, .basket-item__price, .basket-item__sizes
+            opacity: .4
+            pointer-events: none
+        .basket-item__button--restore
+            display: block
+        .basket-item__button--remove
+            display: none
+
+.basket-item__picture
+    position: relative
+    background-color: $beige-l
+    height: 100%
+    img
+        position: absolute
+        +absolute-center
+        height: 100%
+        width: 100%
+        mix-blend-mode: multiply
+        object-fit: cover
+    &.is-full
+        img
+            width: 100%
+            height: 100%
+
+.basket-item__picture_overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+    background-color: rgba(0,0,0,.4)
+    opacity: 0
+
+.basket-item__favourite
+    width: 23px
+    height: 30px
+    z-index: 2
+    position: absolute
+    transition-timing-function: cubic-bezier(.645,.045,.355,1)
+    +absolute-center
+    opacity: 0
+    transform: translateY(7px)
+    svg
+        fill: rgba(black, .8)
+        stroke: rgba(black, .6)
+        width: 100%
+        height: 100%
+        pointer-events: none
+    &:hover
+        transform: scale(1.3)
+    &:not(.is-active)
+        transform: scale(1)
+        svg
+            fill: none
+
+.basket-item__content
+    height: 100%
+    display: flex
+    flex-direction: column
+    grid-gap: 20px
+    justify-content: flex-end
+    padding-right: 24px
+    @media (max-width: $tab)
+        padding-right: 0
+        grid-gap: 16px
+
+.basket-item__content_row
+    display: flex
+    width: 100%
+    justify-content: space-between
+    align-items: flex-start
+    grid-gap: 20px
+
+.basket-item__price
+    font-weight: 500
+    position: relative
+    white-space: nowrap
+
+.basket-item__colors
+    display: flex
+    flex-wrap: wrap
+    grid-gap: 0px 6px
+
+.basket-item__color
+    line-height: 1.3
+    white-space: nowrap
+    color: rgba(0,0,0,.7)
+    text-transform: lowercase
+    &:first-child
+        text-transform: capitalize
+    &:not(:last-child)
+        &:after
+            content: ","
+
+.basket-item__price_main
+    white-space: nowrap
+
+.basket-item__price_summ
+    position: absolute
+    font-size: 12px
+    font-weight: 400
+    right: 0
+    color: rgba(0,0,0,.4)
+    bottom: -14px
+    white-space: nowrap
+
+.basket-item__price_main
+    position: relative
+    &:before
+        content: attr(data-item-rendered-price)
+
+.basket-item__title
+    font-weight: 500
+    line-height: 100%
+
+.basket-item__button
+    width: 16px
+    height: 16px
+    position: relative
+    @media (max-width: $tab)
+        width: 12px
+        height: 12px
+    svg
+        width: 100%
+        height: 100%
+        fill: none
+
+.basket-item__button--remove,
+.basket-item__button--minus,
+.basket-item__button--plus
+    opacity: .4
+    &:hover
+        opacity: 1
+    &:before, &:after
+        content: ''
+        position: absolute
+        +absolute-center
+        width: 100%
+        height: 1px
+        background-color: $black
+
+.basket-item__button--minus
+    &:before
+        content: none
+    &:after
+        width: 10px
+
+.basket-item__button--plus
+    &:before, &:after
+        width: 10px
+    &:after
+        transform: rotate(90deg)
+
+.basket-item__button--remove
+    &:before
+        transform: rotate(45deg)
+    &:after
+        transform: rotate(-45deg)
+
+.basket-item__button--restore
+    display: none
+
+.basket-item__sizes
+    display: flex
+    z-index: 1
+    grid-gap: 20px
+    align-items: flex-end
+    .select
+        font-size: 16px
+        @media (max-width: $tab)
+            font-size: 14px
+        .ss-option
+            padding: 8px
+        .ss-single-selected
+            height: initial
+            transition: initial
+            opacity: .5
+            &:hover, &.ss-open-below
+                opacity: 1
+            .ss-arrow span
+                padding: 2px
+        .ss-content
+            margin: 10px 0 0 !important
+            width: auto
+            @media (max-width: $tab)
+                left: 0
+
+.basket__list_item:last-child
+    .basket-item__sizes
+        .select
+            .ss-open
+                margin: 0 0 10px !important
+                bottom: 100%
+
+.basket-item__counter-wrapper
+    display: flex
+    align-items: center
+
+.basket-item__counter
+    display: block
+    min-width: 20px
+    text-align: center
+    font-size: 16px
+    line-height: 1
+
+.basket-item__price_old
+    position: absolute
+    white-space: nowrap
+    top: -13px
+    right: 0
+    font-size: 70%
+    color: rgba(0,0,0,.5)
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 100%
+        height: 1px
+        background: rgba(0,0,0,.3)
+        left: 0

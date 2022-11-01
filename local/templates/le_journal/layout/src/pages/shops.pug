@@ -1,0 +1,12 @@
+extends ../templates/template-scroll.pug
+
+block content
+  .section__wrapper.container
+    +breadcrumbs("Магазины").breadcrumbs--full
+  .section__wrapper
+    section.shops 
+      .shops__title.container(data-scroll data-observe="fade")
+        h1.t-h4 Магазины
+      .shops__content
+        +showrooms 
+        

@@ -1,0 +1,244 @@
+$btn-w: var(--btn-w)
+$btn-h: var(--btn-h)
+
+button
+  cursor: pointer
+
+.btn
+  --btn-bg: #{$black}
+
+  --btn-w: 240px
+  --btn-h: 56px
+
+  @media (max-width: $mob)
+    --btn-w: 224px
+
+.button-iconic
+    display: flex
+    align-items: center
+    grid-gap: 10px
+    svg
+        width: 13px
+        height: 13px
+        fill: none
+    span
+        font-weight: 400
+        color: black
+        font-size: 14px
+
+.button-bordered
+    border-radius: 4px
+    border: 1px solid black
+    width: 100%
+    display: block
+    text-align: center
+    padding: 12px
+    transition-duration: .4s
+    will-change: transform
+    font-size: 14px
+    font-weight: 400
+    color: $black
+    transition-delay: 0s
+    @media (max-width: $tab)
+      padding: 10px
+    span
+        font-size: 14px
+        font-weight: 500
+        transition-duration: inherit
+    &:hover
+      color: white
+      background: $brand
+      border-color: $brand
+
+.button-grey
+    width: fit-content
+    text-align: left
+    font-weight: 400
+    font-size: 14px
+    border-bottom: 1px solid lighten($black, 60%)
+    color: lighten($black, 60%)
+    line-height: 120%
+    transition-duration: .3s
+    &:hover
+        border-bottom: 1px solid $black
+        color: $black
+
+.button-route
+  display: flex
+  align-items: center
+  grid-gap: 7px
+  font-weight: 400
+  position: relative
+  &:before
+    content: ''
+    width: 6px
+    height: 6px
+    background-color: $fiolet-l
+    border-radius: 100%
+
+.btn
+  +link(#fff)
+  font-weight: 400
+  font-size: 14px
+  letter-spacing: 0.04em
+  padding: 24px
+  overflow: hidden
+  display: flex
+  color: black
+  align-items: center
+  justify-content: center
+  line-height: $btn-h
+  width: $btn-w
+  height: $btn-h
+  position: relative
+
+.btn__text
+  z-index: 1
+  transition: color .9s $cubic-io
+
+.btn:hover
+  &:not(.btn--lines):not(.btn--outlined):not(.btn--hint):not(.btn--underline)
+    .btn__bg
+      transform: translateX(-101%)
+      transition: transform 0.4s $cubic-io
+    .btn__text
+      color: black
+
+// BG
+.btn__bg
+  transition: transform 0.4s $cubic-io 0.3s
+
+.btn:not(.btn--lines)::before
+  content: ''
+  transform: translateX(100%)
+  transition: transform 0.6s $cubic-io
+
+.btn__bg,
+.btn:not(.btn--lines)::before
+  position: absolute
+  top: 0
+  left: 0
+
+  width: 100%
+  height: 100%
+
+  background: $brand
+
+.btn--lines
+  +link($black)
+  font-weight: 500
+  font-size: 15px
+  .btn__bg
+    background: 0
+    border-top: 1px solid rgba($black, 0.1)
+    border-bottom: 1px solid rgba($black, 0.1)
+
+  &:hover .btn__bg
+    &,
+    &::before,
+    &::after
+      transform: scaleX(1)
+
+  .btn__bg
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+
+      width: 100%
+      height: 1px
+      background: $black
+
+      transition: transform 0.6s $cubic-io
+      transform: scaleX(0) translate(0, 0)
+      transform-origin: center center
+
+    &::before
+      top: -1px
+
+    &::after
+      bottom: -1px
+
+.btn--underline
+  +link($black)
+  font-weight: 500
+  font-size: 15px
+  background: 0
+  border-bottom: 1px solid rgba($black, 1)
+  transition: .3s opacity
+
+  &:hover
+    opacity: .5
+  &::before
+    display: none
+
+.button-brand
+  color: white
+  background-color: $brand
+  font-weight: 500
+  font-size: 14px
+  text-align: center
+  border-radius: 4px
+  padding: 12px 25px
+  white-space: nowrap
+  height: fit-content
+  border: 1px solid $brand
+  transition-duration: .4s
+  &:hover
+    color: $brand
+    background-color: transparent
+  &:visited
+    color: white
+
+.button-brand--icon
+  display: flex
+  align-items: center
+  width: fit-content
+  justify-content: center
+  &:hover
+    background-color: $brand
+    color: white
+  img
+    margin-right: 10px
+  @media (max-width: $tab)
+    padding: 7px 10px
+    width: 100%
+    font-size: 12px
+
+[data-favorite-item]
+  span
+    &:after
+      content: attr(data-default)
+  &.is-active
+    span
+      &:after
+        content: attr(data-active)
+    svg
+      fill: black
+
+.button
+  display: inline-flex
+
+.button--outline
+    border-radius: 4px
+    padding: 12px 20px
+    border: 1px solid $major
+    width: 100%
+    display: block
+    text-align: center
+    transition-duration: .4s
+    will-change: transform
+    font-size: 14px
+    font-weight: 400
+    color: $major
+    transition-delay: 0s
+    @media (max-width: $tab)
+      padding: 10px
+    span
+        font-size: 14px
+        font-weight: 500
+        transition-duration: inherit
+    &:hover
+      color: white
+      background: $black

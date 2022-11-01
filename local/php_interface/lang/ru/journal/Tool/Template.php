@@ -1,0 +1,3 @@
+<?php
+
+$MESS['JOURNAL_TEMPLATE_LABELS_NOT_AVAILABLE'] = 'Нет в наличии';

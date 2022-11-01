@@ -1,0 +1,12 @@
+doctype html
+html(lang='ru')
+  include ../templates/mixins.pug
+  include ../templates/head.pug
+
+  body(style="visibility: hidden;")
+    .modals.js-modals
+    include ../templates/blocks.pug
+    block modals
+    main#js-scroll.no-padding.is-plug(data-direction="vertical")
+      include ../blocks/header/header-plug.pug
+      block content

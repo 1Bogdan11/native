@@ -1,0 +1,26 @@
+.search-empty
+    @media (max-width: $tab)
+        padding-top: 50px
+    .recently-section
+        @media (max-width: $tab)
+            margin-top: $offset-mobile
+
+.search-empty__head
+    margin: 0 auto
+
+.search-empty__suggestions
+    display: flex
+    grid-gap: 10px 20px
+    margin: 0 auto
+    justify-content: center
+    margin-top: 30px
+    flex-wrap: wrap
+
+.search-empty__suggestions-item
+    a
+        transition-duration: .4s
+        +yo('font-size', (375px: 16px, 1440px: 20px))
+        font-weight: 400
+        color: rgba(0,0,0,.4)
+        &:hover
+            color: rgba(0,0,0,1)

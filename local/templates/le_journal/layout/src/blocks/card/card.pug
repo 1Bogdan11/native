@@ -1,0 +1,33 @@
+mixin card(data)
+    .card(class=`card--${data.type}`)
+        if data.icon
+            .card__icon
+                +svg(data.icon)
+        a(href="/product.html" class=`is-${data.image.type}`).card__image.js-card-image
+            if data.label
+                .card__labels
+                    +label(data.label).card__label
+            if data.type == "favourites"
+                button.card__favorite.media-max--tab.js-toggle-item
+                    +svg("favourite")
+            //- if data.colorCircles
+            //-     +card-colors
+            picture
+                if data.image.type == "full"
+                    img(src=data.image.src data-scroll data-scroll-speed="-0.8")
+                else
+                    img(src=data.image.src)
+
+
+        if data.fashionCalculator
+            .card__filters
+                +select({ list: data.sizes, show: "up" })
+                +select({ list: data.colors, show: "up" })
+        .card__content
+            a(href="#").card__title !{data.title}
+            .card__price
+                //- if data.oldPrice
+                //-     .card__price_old !{data.oldPrice} ₽
+                .card__price_new
+                    | !{data.price}
+                    .card__currency ₽

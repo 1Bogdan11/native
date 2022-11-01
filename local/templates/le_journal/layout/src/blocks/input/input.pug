@@ -1,0 +1,63 @@
+mixin input(data)
+    .input&attributes(attributes)
+        if data.type == "phone"
+            .input__phone.js-input-phone.is-disabled
+                +unique-phone({
+                    select: [{
+                    text: 'ru',
+                    innerHTML: `+7`
+                    },
+                    {
+                        text: 'kz',
+                        innerHTML: `+7`
+                    },
+                    {
+                        text: 'by',
+                        innerHTML: `+375`,
+                        selected: 1
+                    },
+                    ]
+                }
+            )
+                button.button-brand.js-input-phone_change.is-active Изменить
+                button.button-brand.js-input-phone_accept Подтвердить
+
+        else if data.type == "date"
+            .input__date
+                .input__date-label !{data.label}
+                input(type="text" name="date").js-input-date
+        else if data.type == "gender"
+            .input__gender
+                .input__gender-label !{data.label}
+                .input__gender-options
+                    .radio
+                        input(type="radio" id="female" value="female" name="gender").radio__input
+                        label.radio__label(for="female") Ж
+                    .radio
+                        input(type="radio" id="male" value="male" name="gender").radio__input
+                        label.radio__label(for="male") М
+        else if data.type == "textarea"
+            .input__textarea
+                label.input__label !{data.label}
+                textarea
+        else if data.type == "sms"
+            .input__sms
+                .input__phone
+                    .unique-phone
+                        input(type="text")
+                        label.input__label Код из смс
+                        .input__bar
+                .input__timer Код отправлен, запросить повторный можно через <span>10</span> секунд
+
+        else
+            input(type=data.type required=data.required value=data.value class=data.className)
+            label.input__label !{data.label}
+            .input__bar
+            if data.hint
+                .input__hint !{data.hint}
+
+
+        if data.suggestions
+            .input__suggestions
+                ul.input__suggestions-inner
+            .input__suggestions-error

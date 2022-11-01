@@ -1,0 +1,4 @@
+<?php
+
+$MESS['IBLOCK_CATALOG_PROPERTY_VALUE_INPUT_NAME'] = 'Its: Catalog property value';
+$MESS['IBLOCK_CATALOG_PROPERTY_VALUE_INPUT_NO_SELECT'] = '(no select)';

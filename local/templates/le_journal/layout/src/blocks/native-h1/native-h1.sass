@@ -1,0 +1,31 @@
+.native-h1
+    +yo('margin-bottom', (375px: 36px, 1440px: 60px))
+    display: block
+    width: fit-content
+    margin-left: auto
+    margin-right: auto
+    position: relative
+    text-align: center
+    font-size: 32px
+    line-height: 1
+    font-weight: 300
+    @media (max-width: $tab)
+        font-size: 24px
+    &::before,
+    &::after
+        border-radius: 100%
+        left: 50%
+        transform: translateX(-50%)
+        pointer-events: none
+    &::before
+        +pseudo-block(8px)
+        bottom: calc(100% + 39px)
+        background-color: #B0DEF1
+        @media (max-width: $tab)
+            bottom: calc(100% + 26px)
+    &::after
+        +pseudo-block(12px)
+        bottom: calc(100% + 20px)
+        background-color: $brand
+        @media (max-width: $tab)
+            bottom: calc(100% + 8px)

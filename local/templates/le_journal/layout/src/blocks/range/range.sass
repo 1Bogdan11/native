@@ -1,0 +1,37 @@
+.range
+    width: 100%
+    padding-bottom: 10px
+    position: relative
+
+.range__fields
+    display: flex
+    width: 100%
+    justify-content: space-between
+
+.range__field
+    font-weight: 500
+    span
+        font-weight: 400
+
+.range__slider
+    height: 1px
+    margin-top: 25px
+    border: none
+    .noUi-base
+        background: rgba(0,0,0,.3)
+    .noUi-connect
+        background: $black
+    .noUi-handle
+        width: 10px
+        height: 10px
+        border-radius: 100%
+        box-shadow: none
+        border: none
+        right: -5px
+        background: $black
+        top: -4px
+        cursor: pointer
+        *, &:before, &:after
+            display: none
+        &.noUi-active
+            cursor: pointer

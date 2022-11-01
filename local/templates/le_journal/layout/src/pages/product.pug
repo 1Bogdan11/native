@@ -1,0 +1,337 @@
+extends ../templates/template-product.pug
+
+block modals
+  include ../blocks/buy-in-click/buy-in-click.pug
+
+block content
+  .container
+    .product.js-product
+      +breadcrumbs("Каталог", "Бюстгалтеры", "Native Бюст со вшитой стяжкой 0131Р")
+
+      .product__hero#product-hero
+
+        .product__view.js-gallery-view(data-scroll)
+          .product__view_labels.media-min--tab
+            +label({
+              type: 'sale',
+              text: 'sale'
+            }).product__label
+            +label({
+              type: 'new',
+              text: 'new'
+            }).product__label
+          +product-gallery([
+
+            {
+              image: {
+                fullscreen: "assets/img/hero/hero-image-1.jpg",
+                desktop: "assets/img/hero/hero-image-1.jpg",
+                mobile: "assets/img/catalog/subcategory-photo-5.jpg"
+              },
+            },
+            {
+              image: {
+                fullscreen: "assets/img/card-slider/card-fullscreen-1.jpg",
+                desktop: "assets/img/article/article-2.jpg",
+                mobile: "assets/img/card-slider/card-mobile-2.jpg"
+              },
+              pins: [
+                {
+                  location: [89, 31],
+                  title: "Сетчатый трикотаж",
+                  description: "Обеспечивает профессиональную компрессию, используется в после- операционном медицинском белье. Le Journal Intime одной из первых марок перенесла эту ткань в повседневность."
+                },
+                {
+                  location: [40, 73],
+                  title: "Сетчатый трикотаж",
+                  description: "Обеспечивает профессиональную компрессию, используется в после- операционном медицинском белье. Le Journal Intime одной из первых марок перенесла эту ткань в повседневность."
+                }
+              ]
+            },
+            {
+              image: {
+                fullscreen: "assets/img/card-slider/card-fullscreen-1.jpg",
+                desktop: "assets/img/article/article-2.jpg",
+                mobile: "assets/img/card-slider/card-mobile-2.jpg"
+              },
+              pins: [
+                {
+                  location: [49, 31],
+                  title: "Сетчатый трикотаж",
+                  description: "Обеспечивает профессиональную компрессию, используется в после- операционном медицинском белье. Le Journal Intime одной из первых марок перенесла эту ткань в повседневность."
+                },
+                {
+                  location: [40, 73],
+                  title: "Сетчатый трикотаж",
+                  description: "Обеспечивает профессиональную компрессию, используется в после- операционном медицинском белье. Le Journal Intime одной из первых марок перенесла эту ткань в повседневность."
+                }
+              ]
+            },
+            {
+              image: {
+                fullscreen: "assets/img/card-slider/card-fullscreen-1.jpg",
+                desktop: "assets/img/article/article-2.jpg",
+                mobile: "assets/img/card-slider/card-mobile-2.jpg"
+              },
+              pins: [
+                {
+                  location: [49, 31],
+                  title: "Сетчатый трикотаж",
+                  description: "Обеспечивает профессиональную компрессию, используется в после- операционном медицинском белье. Le Journal Intime одной из первых марок перенесла эту ткань в повседневность."
+                },
+                {
+                  location: [40, 73],
+                  title: "Сетчатый трикотаж",
+                  description: "Обеспечивает профессиональную компрессию, используется в после- операционном медицинском белье. Le Journal Intime одной из первых марок перенесла эту ткань в повседневность."
+                }
+              ]
+            },
+          ])
+
+        .product__right(data-scroll data-scroll-sticky data-scroll-target="#product-hero")
+          form.product__form.js-form
+            .product__head
+              .product__head_inner
+                .product__head_left
+                  h1.product__title.t-h5 Native Бюст со вшитой стяжкой 0131Р
+
+                .product__price
+                  .product__price_new 5 800 ₽
+                  .product__price_old 9 500 ₽
+                  .product__status.media-max--tab В наличии
+                  button.product__reviews_button.media-max--tab(data-scrollto="#reviews")
+                    +svg("reviews")
+                    span.link-underline Отзывы
+                .product__status.media-min--tab В наличии
+              button.button-bordered.media-min--tab(data-modal-open="sizes") Выбрать размер
+
+            .product__color
+              .product__color_title Цвет
+              +colors({
+                list: [
+                  { image: "assets/img/card/png/card-3.png", title: "Black", checked: true },
+                  { image: "assets/img/card-slider/card-mobile-2.jpg", title: "Red" },
+                  { image: "assets/img/card/png/card-4.png", title: "Beige" }
+                ]
+              })
+              
+            +sizes({
+              head: ['Размер', 'Обхват под грудью'],
+              list: [
+                { title: 'XS', html: '<div>XS</div><div>60-65</div>', checked: true},
+                { title: 'S', html: '<div>S</div><div>65-70</div>'},
+                { title: 'M', html: '<div>M</div><div>70-75</div>'},
+                { title: 'L', html: '<div>L</div><div>80-85</div>'},
+                { title: 'XL', html: '<div>XL</div><div>85-90</div>', disabled: true},
+              ],
+              type: "product"
+            })
+
+            button.product__size_button(data-modal-url="/modals/product-modal.html" data-modal-tab="sizes") Таблица размеров
+
+            .product__form_footer
+              .product__form_buttons
+                button.button-brand(data-modal-url="/modals/basket-modal.html" data-modal-tab="basket") В корзину
+                button.button-bordered(data-modal-open="buy-in-click") Купить в 1 клик
+              button.button-iconic(data-modal-url="/modals/basket-modal.html" data-modal-tab="favorites")
+                +svg("flag")
+                span Список желаний
+
+      .product__body
+        .product__body-main
+
+          .tabs.js-tabs
+            .tabs__buttons
+              span.tabs__line
+              button.tabs__item.js-tabs__btn.is-active Описание
+              button.tabs__item.js-tabs__btn Доставка и оплата
+              button.tabs__item.js-tabs__btn Отзывы
+            .tabs__area
+              .tabs__content.js-tabs__content.is-active
+
+                .product-description.js-toggle.is-active
+                  .product-description__content
+                    p Модель компрессионного бюстгальтера Native 0131 с лентой-стабилизатором прекрасно подходит для восстановления в послеоперационный период (аугментация, реконструкция и др.).
+
+                    p Компрессионный бюстгальтер поддерживает швы, позволяет имплантату быть в более тесном контакте с тканью молочной железы. Это уменьшает вероятность отеков и гематом, упрощает образование капсулы вокруг имплантата. Процесс заживления и восстановления происходит быстрее и менее болезненно.
+
+                    p В модели Native 0131 по три ряда крючков на бретелях, стабилизаторе и спереди дают максимальные возможности адаптации бюcтгальтера по индивидуальным размерам.
+
+                    p Все швы выполнены из мягкой трикотажной пряжи, что придает белью свойства бесшовного. Топ оснащен широкой, эластичной, поддерживающей тесьмой под грудью.
+
+                    p В модели 0131 – спинка и нижняя часть переда выполнена из сетчатого трикотажа PowerNet, который, обладая высочайшими компрессионными свойствами, придает изделию лёгкость и повышает характеристики влагообмена – кожа остаётся на 60% открытой, доступна для воздуха, в результате кожа всегда остается сухой и прохладной.
+
+                    p Эффективность и комфорт бюстгальтеров Native подтверждены многолетним успешным опытом использования данных моделей в послеоперационном периоде, большим количеством положительных отзывов от докторов и пациентов.
+
+              .tabs__content.js-tabs__content
+
+                .product-description.js-toggle
+                  .product-description__content
+
+                    h2 Варианты доставки
+                    h3 Самовывоз — бесплатно
+                    p Забрать заказ можно из шоурума (Москва, ул. Авангардная, д. 3, офис 1107)
+                    h3 Курьером по Москве — от 400 ₽
+                    p по Подмосковью (до 30 км от МКАД) — 400 ₽ + 100 ₽ за каждые 10 км.
+                    p Для примерки можно заказать не более 4 комплектов. Время примерки не более 15 минут.
+                    h3 Boxberry
+                    p до пунктов выдачи рассчитывается автоматически (по России, Белоруссии, Казахстану, Армении, Киргизии)
+                    p Бесплатная доставка действует только на оплаченные заказы на сайте от 15 000 ₽ курьером по Москве (внутри МКАД) и до пунктов выдачи Boxberry по всей России.
+                    p
+                      a(href="#") Условия возврата
+                    h2 Способы оплаты
+                    +payment-list({
+                      items: ['visa', 'master-card', 'apple-pay', 'google-pay']
+                    })
+                    h3 При получении
+                    p Наличными или банковской картой курьеру в Москве
+                    h3 Банковской картой онлайн
+                    p Все операции по пластиковым картам осуществляются с помощью электронного платежного шлюза ChronoPay
+                    h3 Apple Pay и Google Pay
+                    p Быстрая оплата с мобильного телефона. Достаточно выбрать карту и подтвердить оплату
+                    h3 Квитанцией в банке
+                    p Подойдет любое удобное отделение вашего банка
+
+              .tabs__content.js-tabs__content
+                section.product-reviews#reviews
+                  .product-reviews__content
+                    .product-reviews__left
+                      ul.product-reviews__list
+                        li.product-reviews__item
+                          .product-reviews__item_inner
+                            .product-reviews__item_part
+                              .product-reviews__item_name Мария Степановна
+                              .product-reviews__item_date 18.02.2022
+                            .product-reviews__item_content Деликатность тончайшего, но плотного трикотажа бралетта Delica открывает новый взгляд на сочетание нежности и функциональности.
+                        li.product-reviews__item
+                          .product-reviews__item_inner
+                            .product-reviews__item_part
+                              .product-reviews__item_name Степан
+                              .product-reviews__item_date 18.02.2022
+                            .product-reviews__item_content Очень прям хорошо сел. Деликатность тончайшего, но плотного трикотажа бралетта открывает новый взгляд на сочетание.
+                          .product-reviews__item_answer
+                            .product-reviews__item_name Le Journal Intime
+                            .product-reviews__item_content Добрый день! Мы очень рады, что продукт пришелся по вкусу. Желаем вам и дальнейших приятных покупок.
+                            .product-reviews__item_date 19.02.2022
+                        li.product-reviews__item
+                          .product-reviews__item_inner
+                            .product-reviews__item_part
+                              .product-reviews__item_name Кирилл
+                              .product-reviews__item_date 18.02.2022
+                            .product-reviews__item_content Очень прям хорошо сел. Деликатность тончайшего, но плотного трикотажа бралетта открывает новый взгляд на сочетание.
+                      +pagination({
+                        type: 'catalog',
+                        pages: ['1', '2', '...', '12'],
+                      })
+                    .product-reviews__right
+                      form.product-reviews__form
+                        +input({
+                          type: "textarea",
+                          label: "Поделитесь вашим впечатлением"
+                        })
+                        .product-reviews__form_part
+                          +input({
+                            type: "text",
+                            label: "Имя"
+                          })
+                          +input({
+                            type: "email",
+                            label: "Email"
+                          })
+                          button.button-brand Отправить
+                        .product-reviews__message
+                          b Спасибо за ваш отзыв!
+                          p Мы опубликуем его после проверки.
+
+        .product__body-aside
+
+          h3.t-sm.fw-300.mb-md Характеристики
+              
+          table.product-props
+            tr
+              td 
+                div Состав
+              td 82% нейлон, 18% спандекс
+            tr
+              td 
+                div Бренд
+              td Native
+            tr
+              td 
+                div Страна производства:
+              td Россия
+            tr
+              td 
+                div Вид бретелей:
+              td Нерегулируемые
+            tr
+              td 
+                div Ширина бретелей:
+              td 3 см.
+            tr
+              td 
+                div Ширина пояса:
+              td 3 см.
+            tr
+              td 
+                div Вид застежки:
+              td Пластиковая застежка
+            tr
+              td 
+                div Вид чашки:
+              td Открытая
+            tr
+              td 
+                div Тип бюстгалтера:
+              td Бралетт
+            tr
+              td 
+                div Плотность чашки:
+              td 1 слой
+            tr
+              td 
+                div Кол-во рядов крючков спереди:
+              td 3 шт.
+            tr
+              td 
+                div Кол-во рядов крючков на плечах:
+              td 4 шт.
+            tr
+              td 
+                div Наличие стабилизатора:
+              td 4 шт.
+
+      +recently-section({
+        items: [
+          {
+            title: "Крем с силиконом для кожи от рубцов 10мл Scar Esthetique в коробочке",
+            price: "5 600",
+            type: "favourites",
+            image: {
+              src: "assets/img/card/png/card-5.png",
+              type: "item"
+            },
+            colorCircles: true,
+          },
+          {
+            title: "10808 WinnerPlast пластина для ухода за рубцами (прозрачный) форма \"Круг\"",
+            price: "9 500",
+            type: "favourites",
+            image: {
+              src: "assets/img/card/png/card-5.png",
+              type: "item"
+            },
+            colorCircles: true,
+          },
+          {
+            title: "20430 WinnerPlast пластина для   ухода за рубцами (бежевый) 4х30см",
+            price: "9 500",
+            type: "favourites",
+            image: {
+              src: "assets/img/card/png/card-5.png",
+              type: "item"
+            },
+            colorCircles: true,
+          },
+        ]
+      })

@@ -1,0 +1,8 @@
+mixin menu(list)
+    ul.menu
+        each item, index in list
+            li.menu__item(class=index === 0 ? 'is-current' : '')
+                if item.tab
+                    a(href=item.href data-nav-url="/modals/aside-modal.html" data-nav-tab=item.tab).menu__link.t-link #{item.title}
+                else
+                    a(href=item.href).menu__link.t-link #{item.title}

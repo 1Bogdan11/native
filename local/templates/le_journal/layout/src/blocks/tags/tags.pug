@@ -1,0 +1,6 @@
+mixin tags(data)
+    ul.tags.js-tags
+        each item in data
+            li.tags__item.js-tag !{item}
+        li.tags__item.tags__item--more
+            button.js-tags-more ...

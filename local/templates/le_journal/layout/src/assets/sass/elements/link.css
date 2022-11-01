@@ -1,0 +1,50 @@
+.link__underline {
+  position: relative;
+  will-change: transform;
+  white-space: nowrap;
+}
+
+.link__underline:before, .link__underline:after {
+  content: "";
+  background: black;
+  height: 1px;
+  width: 100%;
+  will-change: transform;
+  left: 0;
+  bottom: 0px;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(1) translateZ(0);
+          transform: scaleX(1) translateZ(0);
+  position: absolute;
+  -webkit-transition-duration: .6s;
+          transition-duration: .6s;
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.link__underline:after {
+  -webkit-transform: scaleX(0) translateZ(0);
+          transform: scaleX(0) translateZ(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.link__underline:hover:before {
+  -webkit-transform: scaleX(0) translateZ(0);
+          transform: scaleX(0) translateZ(0);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.link__underline:hover:after {
+  -webkit-transform: scaleX(1) translateZ(0);
+          transform: scaleX(1) translateZ(0);
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+/*# sourceMappingURL=link.css.map */

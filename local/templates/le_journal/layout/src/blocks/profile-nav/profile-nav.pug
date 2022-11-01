@@ -1,0 +1,7 @@
+mixin profile-nav(list)
+  .profile__main-left
+    nav.profile__nav
+      each item in list
+        a(href=item.href data-active = item.active).profile__nav-link #{item.title}
+    .profile__exit
+      a(href="/" data-scroll, data-scroll-sticky, data-scroll-target=".profile__main-left").profile__exit-button.link__underline Выйти

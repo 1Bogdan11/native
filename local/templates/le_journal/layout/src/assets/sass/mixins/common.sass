@@ -1,0 +1,64 @@
+// vh
+=vh($perc: 100)
+  height: #{$perc}vh
+  height: calc(var(--vh, 1vh) * #{$perc})
+
+// Цвет ссылок
+=link($color: $base-text-color)
+  &,
+  &:focus,
+  &:visited,
+  &:active
+    color: $color
+
+// Адаптивный фон
+=bg($size: cover, $repeat: no-repeat, $position: center center)
+  background-size: $size
+  background-repeat: $repeat
+  background-position: $position
+
+// Прокрутка с кастомным скроллбаром
+=scrollbar($size: 4px, $bg: $black)
+  -webkit-overflow-scrolling: touch
+  overflow-x: hidden
+  overflow-y: auto
+
+  &::-webkit-scrollbar
+    width: $size
+    height: $size
+  &::-webkit-scrollbar-thumb
+    background-color: $bg
+
+=pseudo-block($width: auto, $height: $width)
+	width: $width
+	height: $height
+	content: ''
+	display: block
+	position: absolute
+
+=flow-margin($margin: 0px, $marginLast: $margin)
+	&:first-child
+		margin-top: $margin
+
+	&:last-child
+		margin-bottom: $marginLast
+
+@mixin list-reset($removeMargins: false)
+	padding-left: 0
+	list-style-type: none
+
+	@if $removeMargins == true
+		margin-top: 0
+		margin-bottom: 0
+
+	> :where(li)
+		margin-bottom: 0
+		padding-left: 0
+		margin-left: 0
+		position: static
+
+		+ :where(li)
+			margin-top: 0
+
+		&:before
+			display: none

@@ -1,0 +1,22 @@
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 10px;
+  font-size: 18px;
+}
+
+.pagination__item a {
+  color: rgba(0, 0, 0, 0.6);
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.pagination__item:hover a, .pagination__item.is-active a {
+  color: black;
+}
+
+.pagination__item--separator {
+  pointer-events: none;
+}
+/*# sourceMappingURL=pagination.css.map */

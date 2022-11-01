@@ -1,0 +1,104 @@
+.hero-banners
+    height: calc(100vh - var(--header))
+
+.hero-banners__slider
+    position: relative
+    height: 100%
+
+.hero-banners__slide
+    position: relative
+    height: 100%
+    width: 100vw
+
+// .hero-banners__img
+//     position: absolute
+//     top: 0
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     object-fit: cover
+    
+.hero-banners__img
+    position: relative
+    width: 100%
+    height: 100%
+    img
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        botoom: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+.hero-banners__content
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    row-gap: 18px
+    position: absolute
+    z-index: 1
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+.hero-banners__title
+    +beausans(r)
+    +yo('font-size', (375px: 32px, 1440px: 64px, 1920px: 80px))
+    line-height: 110%
+    text-align: center
+    color: #fff
+    letter-spacing: 0.02em
+
+.hero-banners__desc
+    +beausans(t)
+    +yo('font-size', (375px: 20px, 1440px: 36px))
+    line-height: 120%
+    text-align: center
+    opacity: .8
+    color: #fff
+    letter-spacing: 0.02em
+
+.hero-banners__pagination
+    position: absolute
+    z-index: 1
+    top: 15px
+    left: $unit
+    right: $unit
+    display: flex
+    column-gap: 20px
+    pointer-events: none
+    @media (max-width: $tab)
+        column-gap: 8px
+
+.hero-banners__bullet
+    position: relative
+    flex-grow: 1
+    height: 2px
+    background-color: rgba(242, 242, 242, 0.35)
+    border-radius: 10px
+    cursor: pointer
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 10px
+        background-color: $azure
+        transform: scaleX(0)
+        transform-origin: left
+
+.hero-banners__bullet--active
+    &::before
+        animation: scaleXBullet 5s linear forwards
+
+@keyframes scaleXBullet
+    from
+        transform: scaleX(0)
+    to
+        transform: scaleX(1)

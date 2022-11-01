@@ -1,0 +1,43 @@
+mixin product-gallery(data)
+  .product-gallery.js-gallery
+    // Управление галереей
+    .product-gallery__pagination.swiper-pagination
+    button.product-gallery__close.js-gallery-close
+      +svg("close")
+    button.product-gallery__prev.js-gallery-prev
+      +svg("arrow")
+    button.product-gallery__next.js-gallery-next
+      +svg("arrow")
+    .product-gallery__mobile-popup.media-min--tab.js-gallery__mobile-popup
+      .product-gallery__mobile-popup_title(data-title)
+      .product-gallery__mobile-popup_description(data-description)
+
+    // Слайдер
+    .product-gallery__slider.swiper-container.js-gallery__slider
+      .swiper-wrapper
+        each item, index in data
+          .product-gallery__slider_item.swiper-slide
+            .product-gallery__slider_item-outer.js-scrollbooster-wrapper
+              .product-gallery__slider_item-inner.js-scrollbooster-content
+                picture
+                  source(media="(max-width: 1100px)" srcset=item.image.mobile)
+                  img(src=item.image.desktop alt=`product-image-${index + 1}` data-fullscreen=item.image.fullscreen data-preview=item.image.desktop)
+                if item.pins
+                  .product-gallery__pins
+                    each pin in item.pins
+                      .product-gallery__pin.js-pin(style=`left: ${pin.location[0]}%; top: ${pin.location[1]}%`)
+                        .product-gallery__pin_button.js-pin__button
+                        .product-gallery__pin_popup.js-pin__popup
+                          .product-gallery__pin_title(data-title) !{pin.title}
+                          if(pin.description)
+                            .product-gallery__pin_description(data-description) !{pin.description}
+    // Табы
+    .product-gallery__thumbs.js-gallery__thumbs.js-toggle-list.media-max--tab
+      each item in data
+        .product-gallery__thumbs_item.js-toggle-item
+          img(src=item.image.desktop)
+    .product-gallery__intersect
+      .product-gallery__intersect_part(data-intersect="left")
+      .product-gallery__intersect_part(data-intersect="right")
+      .product-gallery__intersect_part(data-intersect="top")
+      .product-gallery__intersect_part(data-intersect="bottom")

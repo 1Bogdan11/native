@@ -1,0 +1,49 @@
+.preloader 
+  position: absolute
+  z-index: 101
+  display: flex
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  justify-content: center
+  align-items: center
+  background: rgba(white, .6)
+  backdrop-filter: blur(4px)
+  transition-duration: .7s
+  transition-timing-function: ease
+  opacity: 0
+  pointer-events: none
+  &:after
+    position: absolute
+    top: 0
+    bottom: 4%
+    right: 0
+    left: 0
+    content: " "
+    display: block
+    margin: auto
+    height: 48px
+    width: 48px
+    box-sizing: border-box
+    border: solid
+    border-width: 4px
+    border-radius: 50%
+    border-top-color: rgba(255, 255, 255, .8)
+    border-bottom-color: rgba(255, 255, 255, 0.3)
+    border-right-color: rgba(255, 255, 255, 0.3)
+    border-left-color: rgba(255, 255, 255, 0.3)
+    animation: spin 0.9s linear infinite
+
+.is-preloading
+  pointer-events: none
+  * 
+    pointer-events: none !important
+
+  .preloader
+    opacity: 1
+    pointer-events: auto
+
+body.is-preloading
+  .preloader
+    position: fixed

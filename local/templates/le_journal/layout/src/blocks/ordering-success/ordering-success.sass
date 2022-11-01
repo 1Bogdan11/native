@@ -1,0 +1,85 @@
+.modal--ordering-success
+    .modal__container
+        overflow: hidden
+
+    .modal__mobile-close
+        display: none
+
+    .modal__container, .modal__content
+        height: 100%
+
+    .ordering-success__head, .star-title, .ordering-success__description, .card-billet
+        opacity: 0
+        transform: translateY(-20px)
+        transition-duration: .7s
+        transition-delay: 0s
+        @media (max-width: $tab)
+            transform: translateY(10px)
+    &.modal--active
+        .ordering-success__head, .star-title, .ordering-success__description, .card-billet
+            opacity: 1
+            transform: translateY(0px)
+        .ordering-success__head
+            transition-delay: .2s
+        .star-title
+            transition-delay: .3s
+        .ordering-success__description
+            transition-delay: .4s
+        .card-billet
+            transition-delay: .5s
+        .modal__mobile-close
+            transition-delay: .6s
+.ordering-success
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    grid-gap: 20px
+    @media (max-width: $tab)
+        padding: 20px $unit 60px
+    .card-billet
+        background-color: $beige-d
+        color: white
+        width: 400px
+        @media (max-width: $tab-sm)
+            width: 100%
+        &:before
+            content: ''
+            position: absolute
+            top: 0
+            bottom: 0
+            margin: auto
+            right: 25px
+            width: 8px
+            height: 8px
+            border-top: 2px solid white
+            border-right: 2px solid white
+            transform: rotate(45deg)
+
+.ordering-success__head
+    display: flex
+    justify-content: center
+
+.ordering-success__content
+    display: flex
+    flex-direction: column
+    align-items: center
+    grid-gap: 40px
+    .star-title
+        +yo('font-size', (375px: 30px, 1440px: 48px))
+
+.ordering-success__description
+    max-width: 650px
+    font-weight: 400
+    text-align: center
+
+.ordering-success__footer
+    display: flex
+    flex-direction: column
+    align-items: center
+    grid-gap: 60px
+    .modal__mobile-close
+        pointer-events: inherit
+        position: relative
+        display: flex
+        bottom: initial

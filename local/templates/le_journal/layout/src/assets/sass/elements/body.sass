@@ -1,0 +1,28 @@
+body
+  +scrollbar
+  background-color: $base-bg
+
+body.no-scroll
+  overflow: hidden
+  width: 100%
+  height: 100vh
+  position: fixed
+
+html, body
+  height: 100%
+
+main
+  //overflow-x: hidden
+  @media (min-width: $tab + 1)
+    padding-top: $header-height
+  &.is-horizontal
+    padding-top: 0
+    @media (min-width: $tab + 1)
+      width: fit-content
+    .footer
+      display: none
+  &.is-product
+    @media (max-width: $tab)
+      margin-top: calc(var(--header) * -1)
+  &.no-padding
+    padding-top: 0

@@ -1,0 +1,27 @@
+mixin sizes(data)
+    .sizes(class=`sizes--${data.type}`)
+        if data.head 
+            .sizes__head 
+                each headEl in data.head 
+                    div !{headEl}
+        each item in data.list
+            if item.disabled 
+                .sizes__item
+                    input(type="radio" id=`id-${item.title}-${data.type}` name='sizes' checked=item.checked disabled="true").jsFilterItem
+                    if item.html
+                        label(for=`id-${item.title}-${data.type}`) !{item.html}
+                    else
+                        label(for=`id-${item.title}-${data.type}`)
+                            span !{item.title}
+                            if item.quantity
+                                .quantity !{`(${item.quantity})`} 
+            else
+                .sizes__item
+                    input(type="radio" id=`id-${item.title}-${data.type}` name='sizes' checked=item.checked).jsFilterItem
+                    if item.html
+                        label(for=`id-${item.title}-${data.type}`) !{item.html}
+                    else
+                        label(for=`id-${item.title}-${data.type}`)
+                            span !{item.title}
+                            if item.quantity
+                                .quantity !{`(${item.quantity})`} 

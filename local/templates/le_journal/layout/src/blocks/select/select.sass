@@ -1,0 +1,115 @@
+.select
+    color: black
+    font-size: 18px
+    font-weight: 400
+    width: auto
+    transition-duration: .4s
+    opacity: 0
+    transform: translateY(-10px)
+    @media (max-width: $tab)
+        position: static
+    &.is-inited
+        opacity: 1
+        transform: translateY(0px)
+    &.select--filled
+        position: relative
+        .ss-content
+            left: 0
+            width: 100%
+        .ss-single-selected
+            height: auto
+            padding: 24px
+            font-size: 16px
+            line-height: 100%
+            background: #E8E4DF
+            border-radius: unset
+    .ss-single-selected
+        background-color: transparent
+        padding: 0
+        height: 40px
+        border: none
+        border-radius: none
+        .ss-arrow span
+            border: solid black
+            border-width: 0 1px 1px 0
+            padding: 3px
+    .ss-arrow span.arrow-down
+        margin: -2px 0px 0 5px!important
+    .ss-arrow span.arrow-up
+        margin: 2px 0px 0 5px!important
+    .ss-list .ss-option
+        text-align: center
+        font-size: 14px
+        padding: 15px
+        color: rgba(0,0,0,.7)
+        position: relative
+        white-space: nowrap
+        &:hover
+            background: $beige-l
+            color: black
+        &:not(:last-child), &:not(:firt-child)
+            &:before
+                content: ''
+                width: 90%
+                left: 5%
+                background-color: rgba(0,0,0,.1)
+                bottom: 0
+                height: 1px
+                position: absolute
+    .ss-list
+        +scrollbar
+    .ss-content
+        border: 1px solid rgba(0,0,0,.1)
+        background-color: $base-bg
+        @media (max-width: $tab)
+            width: calc(100vw - #{$unit} * 2)
+            left: $unit
+
+.select--overlay
+    font-size: 16px
+    letter-spacing: 0.04em
+    font-weight: 500
+    @media (max-width: $tab)
+        font-size: 14px
+    .ss-single-selected .placeholder
+        z-index: 100
+        .ss-disabled
+            color: $black
+
+    .ss-arrow
+        z-index: 100
+
+    .ss-content
+        width: initial
+        border: none
+        background-color: white
+        border-radius: 8px
+        padding: 12px 22px
+        .ss-list
+            max-height: initial
+            overflow: initial
+            .ss-option
+                text-align: left
+                color: rgba(0,0,0, .5)
+                padding: 7px 0px 5px
+                transition-duration: .4s
+                &:hover
+                    color: rgba(0,0,0, 1)
+                    background: none
+    .ss-single-selected
+        &:before
+            content: ""
+            position: fixed
+            top: -50vh
+            left: calc(var(--unit) * -1)
+            transition: .4s cubic-bezier(.785,.135,.15,.86)
+            pointer-events: none
+            width: calc(100vw + #{$unit})
+            height: 300vh
+            opacity: 0
+            backdrop-filter: blur(5px)
+            background: $overlay
+            z-index: 100
+        &.ss-open-below
+            &:before
+                opacity: 1

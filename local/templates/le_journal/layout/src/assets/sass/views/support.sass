@@ -1,0 +1,394 @@
+.support
+  position: relative
+  overflow: hidden
+  display: grid
+  grid-template-rows: auto 1fr
+  min-height: 100vh
+  margin-top: calc(var(--header) * -1)
+
+.support.is-active
+  background: rgba(237, 231, 224, 0.8)
+
+  .support__modify-area
+    opacity: 0
+    pointer-events: none
+  .support__m-menu
+    &-selected
+      background: #FCF9F6
+      border-bottom: 1px solid rgba(0, 0, 0, .06)
+    &-arrow
+      transform: rotate(225deg)
+      margin-top: 5px
+    &-content
+    &-option
+      position: relative
+      opacity: 1
+      pointer-events: all
+
+.support__main
+  display: grid
+  grid-template-columns: 620px 1fr
+  padding: 80px 0 0 0
+
+  @media (max-width: 1850px)
+    grid-template-columns: 30% 1fr
+  @media (max-width: $tab)
+    grid-template-columns: 100%
+    padding: 32px 0 80px 0
+
+  .goods-list
+    margin-left: calc(var(--unit) * -1)
+    margin-right: calc(var(--unit) * -1)
+
+.support__modify-area
+  position: relative
+
+  display: flex
+  flex-direction: column
+  transition: .15s opacity
+  .payment-list
+    margin-bottom: 30px
+  table
+    margin: 39px 0 20px 0
+    border-top: 1px solid rgba(#000000, .1)
+    @media (max-width: $tab)
+      margin: 20px 0
+      width: 100%
+      border: 1px solid rgba(#000000, .1)
+
+    &.support__table-a
+      th, td
+        border-right: 1px solid rgba(#000000, .1)
+        &:nth-last-child(1)
+          border-right: unset
+
+    tr th, tr td
+      font-weight: 400
+      +yo('font-size', (375px: 14px, 1440px: 16px))
+      line-height: 154%
+      color: #1F2020
+      font-weight: normal
+      text-align: center
+    tr th
+      line-height: 110%
+    tr
+      &:nth-last-child(1)
+        td
+          padding-bottom: 37px
+      th, td
+        padding: 19px 16px
+        &:nth-child(1)
+          border-right: 1px solid rgba(#000000, .1)
+    table
+      width: 100%
+      margin: 0
+
+      border: unset
+
+      tr
+        &:nth-last-child(1)
+          td
+            padding-bottom: 0
+        th, td
+          height: max-content
+          padding: 0
+
+          border: unset
+          &:nth-child(n)
+            border-right: unset
+
+    tr
+      th, td
+        @media (max-width: $tab)
+          padding: 10px
+          font-size: 12px
+
+    thead
+      border-bottom: 1px solid rgba(#000000, .1)
+  h6
+    margin: 0 0 9px 0
+
+    font-weight: 500
+    +yo('font-size', (375px: 14px, 1440px: 16px))
+    line-height: 120%
+    color: #1F2020
+
+    &:nth-child(1)
+      margin-top: 0
+
+    @media (max-width: $tab)
+      margin: 12px 0 4px 0
+  p
+    margin: 4px 0 12px 0
+
+    font-weight: 400
+    +yo('font-size', (375px: 14px, 1440px: 16px))
+    line-height: 140%
+    color: #1F2020
+
+    @media (max-width: $tab)
+      margin: 4px 0 12px 0
+
+    &:nth-last-child(1)
+      margin-bottom: 0
+
+    span
+      font-style: italic
+  hr
+    width: 130%
+    height: 1px
+    margin: 36px 0 48px 0
+
+    background: rgba(#000000, .1)
+    border: unset
+
+    @media (max-width: $tab)
+      width: 100%
+      margin: 32px 0
+  ul
+    margin: 4px 0 28px 0
+
+    li
+      display: flex
+
+      &::before
+        content: ''
+
+        position: relative
+
+        display: flex
+        flex-shrink: 0
+        width: 4px
+        height: 4px
+        margin: 12px 12px 0 0
+
+        border-radius: 50%
+        background: #1F2020
+  button
+    font-weight: 500
+    +yo('font-size', (375px: 14px, 1440px: 16px))
+    line-height: 120%
+    color: #1F2020
+  & > ol
+    display: flex
+    flex-direction: column
+    margin-bottom: 16px !important
+
+    & > li > p
+      margin: 0 0 17px 0
+
+      font-weight: 500
+
+      span
+        font-style: normal
+    ol
+      display: flex
+      flex-direction: column
+
+      li
+        margin: 10px 0 0 0
+
+        p
+          display: flex
+
+          span
+            margin-right: 24px
+
+            font-style: normal
+
+.support__main-left
+  display: flex
+  flex-direction: column
+  height: calc(100vh - 335px - 80px - 65px)
+
+  @media (max-width: $tab)
+    display: none
+
+.support__exit-button
+  margin-top: auto
+.support__m-menu
+  position: relative
+
+  display: none
+  flex-direction: column
+  width: 100vw
+  margin-left: calc(var(--unit) * -1)
+  margin-right: calc(var(--unit) * -1)
+
+  color: black
+  font-size: 18px
+  font-weight: 400
+
+  @media (max-width: $tab)
+    position: relative
+
+    display: flex
+
+  &-indicator
+    margin: -9px 0 0 3px
+
+    font-weight: 500
+    font-size: 8px
+    line-height: 9px
+    color: #000000
+  &-arrow
+    position: absolute
+    z-index: 3
+    top: 22px
+    right: var(--unit)
+
+    display: flex
+    margin-left: auto
+
+    border: solid rgba(#000000, .2)
+    border-width: 0 1px 1px 0
+    padding: 3px
+
+    transform: rotate(45deg)
+    transition: .15s transform
+  &-content
+    margin: 0
+
+    border: unset
+    transform: unset
+    transition: .15s opacity
+
+    @media (max-width: $tab)
+      width: 100%
+  &-list
+    overflow: unset
+    display: flex
+    flex-direction: column
+    max-height: unset
+  &-option
+    position: absolute
+
+    order: 1
+    display: flex
+    align-items: center
+    height: 56px
+    padding: 0 var(--unit)
+
+    font-weight: 400
+    font-size: 14px
+    line-height: 100%
+    color: #000000
+
+    background-color: $base-bg
+    pointer-events: none
+    border-bottom: 1px solid rgba(0, 0, 0, .06)
+    opacity: 0
+    pointer-events: none
+
+    transition: .15s opacity
+
+    &:last-child
+      border-bottom: unset
+
+    &.is-active
+      position: relative
+      z-index: 2
+
+      order: 0
+      align-items: center
+      width: 100%
+      height: 56px
+      padding-left: var(--unit)
+      padding-right: var(--unit)
+
+      background: #efeae4
+      border-radius: unset
+
+      font-weight: 400
+      font-size: 14px
+      line-height: 100%
+      color: #000000
+
+      opacity: 1
+      border: none
+      border-bottom: 1px solid transparent
+      border-radius: unset
+.support__list
+  display: flex
+  flex-direction: column
+  width: 500px
+  max-width: 100%
+
+  @media (max-width: $tab)
+    width: 100%
+
+  h6
+    margin: 32px 0 4px 0
+
+    &:nth-child(1)
+      margin: 0 0 4px 0
+  p
+    margin: 4px 0 0 0
+
+  &-flex-column &-flex-between
+    margin: 16px 0 0 0
+
+    &:nth-child(1)
+      margin: 32px 0 0 0
+
+  &-flex-between
+    display: flex
+    justify-content: space-between
+    width: 100%
+
+    p:nth-last-child(1)
+      flex-shrink: 0
+      margin: 4px 12px 0 0
+    h6:nth-child(n)
+      margin: 4px 0 0 0
+.support__list-a
+  display: flex
+  flex-direction: column
+  max-width: 100%
+  margin: 0 0 16px 0
+
+  @media (max-width: $tab)
+    width: 100%
+
+  h6
+    margin: 24px 0 8px 0
+
+    &:nth-child(1)
+      margin: 24px 0 8px 0
+  p
+    margin: 4px 0 0 0
+.support__list-with-numbers
+  margin: 16px 0 0 0
+  counter-reset: myCounter
+
+  li
+    display: flex
+
+    font-weight: 400
+    +yo('font-size', (375px: 14px, 1440px: 16px))
+    line-height: 160%
+    color: #000000
+
+    list-style: none
+
+    @media (max-width: $tab)
+      margin: 0 0 12px 0
+
+    &::before
+      margin: 0 16px 0 0
+
+      counter-increment: myCounter
+      content: counter(myCounter) '.'
+.support__roll-up
+  &-button
+    &::before
+      content: 'Развернуть'
+  &-text
+    overflow: hidden
+    height: 42px
+
+    transition: .2s all
+  &.is-active
+    .support__roll-up-button::before
+      content: 'Свернуть'
+

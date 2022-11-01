@@ -1,0 +1,94 @@
+.cities-select
+    position: relative
+    z-index: 1
+    &.is-active
+        .cities-select__dropdown
+            pointer-events: initial
+            opacity: 1
+            transform: translate(0)
+    &.is-loaded
+        .cities-select__preloader
+            opacity: 0
+    &:not(.is-active)
+        .cities-select__list, .cities-select__empty
+            pointer-events: none
+            
+.cities-select__dropdown
+    position: absolute
+    transition-duration: .4s
+    transition-timing-function: ease
+    width: 100%
+    left: 0
+    min-height: 60px
+    background: white
+    transform: translateY(20px)
+    opacity: 0
+    pointer-events: none
+    top: 50px
+    padding: 15px
+    box-shadow: 0px 2px 8px rgba(0,0,0,.1)
+    max-height: 300px
+    overflow-y: auto
+    +scrollbar
+    &::-webkit-scrollbar-thumb
+        background-color: $beige-l
+
+.cities-select__preloader
+    opacity: 1
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+    pointer-events: none
+    height: 100%
+    display: flex
+    transition-duration: .4s
+    align-items: center
+    justify-content: center
+    img
+        width: 20px
+        animation: spin 2s linear infinite
+        height: 20px
+
+.cities-select__list, .cities-select__empty
+    opacity: 0
+    transition-duration: .4s
+    transform: translateY(10px)
+    transition-delay: 0s
+    transition-timing-function: ease
+    pointer-events: none
+    &.is-active
+        opacity: 1
+        transform: translateY(0px)
+        transition-delay: .4s
+        pointer-events: initial
+
+.cities-select__empty
+    position: absolute
+    top: 0
+    left: 0
+    padding: 20px
+    width: 100%
+    height: 100%
+    line-height: 1.2
+    font-weight: 500
+
+.cities-select__list
+    display: grid
+    grid-gap: 10px
+    height: fit-content
+
+.cities-select__item 
+    font-weight: 400
+    font-size: 14px
+    cursor: pointer
+    transition-duration: .3s
+    width: fit-content
+    transition-delay: ease
+    will-change: transform
+    transform: translateX(0px)
+    span
+        font-weight: 500
+        pointer-events: none
+    &:hover
+        transform: translateX(4px)

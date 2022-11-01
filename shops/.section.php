@@ -1,0 +1,4 @@
+<?php
+
+$sSectionName = 'Магазины';
+$arDirProperties = [];

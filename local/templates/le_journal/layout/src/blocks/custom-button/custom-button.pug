@@ -1,0 +1,9 @@
+mixin button(options)
+  if options.hasIcon
+    button.custom-button-a
+      +svg(options.icon)
+      p.custom-button-a__text #{options.title}
+  else
+    button.custom-button-a
+      p.custom-button-a__text #{options.title}
+

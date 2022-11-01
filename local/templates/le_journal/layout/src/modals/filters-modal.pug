@@ -1,0 +1,101 @@
+extends ../templates/template-modal.pug
+block content
+    +modal('filters', 'right')
+        form.filters
+            .filters-body
+                .filters-body__inner
+                    .accordion.js-toggle
+                        .accordion__head.js-toggle__btn
+                            .accordion__title Категории
+                        .accordion__content
+                            +filters-list({
+                                list: [
+                                    { title: "Бюстгальтеры", id: "c1", checked: true },
+                                    { title: "Боди", id: "c2" },
+                                    { title: "Платья", id: "c3" },
+                                    { title: "Трусы", id: "c4" },
+                                    { title: "Юбки", id: "c5" },
+                                    { title: "Шорты", id: "c6" },
+                                    { title: "Футболки", id: "c7" },
+                                    { title: "Купальники", id: "c8" },
+                                    { title: "Аксессуары", id: "c9" }
+                                ],
+                                name: "categories"
+                            }
+                            )
+                    .accordion.js-toggle.is-active
+                        .accordion__head.js-toggle__btn
+                            .accordion__title Цвет
+                        .accordion__content
+                            +color-circles([
+                                { color: "#fff", title: "Белый", class: "color-circles__item--white" },
+                                { color: "#C53E34", title: "Бардовый" },
+                                { color: "#B89167", title: "Коричневый" },
+                                { color: "#000000", title: "Черный" },
+                                { color: "#A89EB7", title: "Фиолетовый" },
+                                { color: "#E0E0E0", title: "Серый" },
+                                { color: "#EECE8E", title: "Желтый" },
+                                { color: "#CC0000", title: "Красный" },
+                                { color: "#008857", title: "Зеленый" },
+                            ])
+                    .accordion.js-toggle
+                        .accordion__head.js-toggle__btn
+                            .accordion__title Размер
+                        .accordion__content
+                            +sizes({
+                                list: [
+                                    { title: "XS", disabled: true },
+                                    { title: "S" },
+                                    { title: "M" },
+                                    { title: "L", disabled: true },
+                                    { title: "XL" },
+                                    { title: "XXL" }
+                                ],
+                                type: "bordered"
+                            })
+                            +sizes({
+                                list: [
+                                    { title: "70B" },
+                                    { title: "70C" },
+                                    { title: "70D" },
+                                    { title: "75B" },
+                                    { title: "75C" },
+                                    { title: "75D", disabled: true },
+                                    { title: "80B" },
+                                    { title: "80C" },
+                                    { title: "80D" },
+                                    { title: "85B" },
+                                    { title: "85C" },
+                                    { title: "85D" }
+                                ],
+                                type: "bordered"
+                            })
+                            button.button-grey Таблица размеров
+                    .accordion.js-toggle
+                        .accordion__head.js-toggle__btn
+                            .accordion__title Цена
+                        .accordion__content
+                            +range({
+                                min: 5600,
+                                max: 170000,
+                                from: 27200,
+                                to: 150000
+                            })
+                    .accordion.js-toggle
+                        .accordion__head.js-toggle__btn
+                            .accordion__title Сортировка
+                        .accordion__content
+                            +filters-list({
+                                list: [
+                                    { title: "По умолчанию", checked: true, id: "s1" },
+                                    { title: "По цене (от самой низкой)", id: "s2" },
+                                    { title: "По цене (от самой высокой)", id: "s3" },
+                                    { title: "По алфавиту", id: "s4" },
+                                    { title: "По популярности", id: "s5" }
+                                ],
+                                name: "sort"
+                            })
+
+                .filter-body__footer
+                    button.t-ttu Сбросить
+                    button.t-ttu Применить

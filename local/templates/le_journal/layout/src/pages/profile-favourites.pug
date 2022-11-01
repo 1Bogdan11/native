@@ -1,0 +1,15 @@
+extends ../templates/template-scroll.pug
+
+block content
+  .container.profile.js-toggle
+    +profile-header({ title: 'Избранное', indicator: '8' })
+    .profile__main
+      +profile-nav([
+        { title: "Мои заказы", href: "/profile-orders.html" },
+        { title: "Избранное", href: "/profile-favourites.html", active: true },
+        { title: "Профиль", href: "/profile-personal.html" },
+        { title: "Адреса", href: "/profile-address.html" },
+        { title: "Рассылка", href: "/profile-subscribe.html" }
+      ])
+      .profile__content.js-toggle-free
+        +goods-list("favourites").is-inview

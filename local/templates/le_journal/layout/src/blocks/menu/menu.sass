@@ -1,0 +1,38 @@
+.menu
+    display: flex
+    align-items: center
+    grid-gap: 40px
+    margin-left: -17px
+
+.menu__item > *
+    color: $black
+
+.menu__item
+    position: relative
+
+    &:after
+        +pseudo-block(6px)
+        left: 0
+        top: calc(50% - 4px)
+        border-radius: 6px
+        background-color: $brand
+        opacity: 0
+        transform: translateX(5px)
+        transition: $duration-md $ease-in-out
+        pointer-events: none
+    .menu__link
+        display: block
+
+.menu__item .menu__link
+    padding-left: 17px
+    transition: $duration-md $ease-in-out
+
+.menu:has(.menu__link:hover) .menu__link
+    color: $minor
+
+.menu__item:hover .menu__link
+    color: $major !important
+
+.menu__item:hover:after
+    opacity: 1
+    transform: translateX(0px)

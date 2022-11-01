@@ -1,0 +1,11 @@
+extends ../templates/template-scroll.pug
+
+block modals
+  include ../blocks/filters-modal/filters-modal.pug
+  
+block content
+  .container.section__wrapper
+    +breadcrumbs("Каталог", "Бюстгалтеры").breadcrumbs--full
+  .container.section__wrapper
+    +catalog-section({ type: "search" })
+    +recently-section({ scroll: true })

@@ -1,0 +1,31 @@
+.card-billet
+    display: flex
+    height: 80px
+    border-radius: 8px
+    background: rgba(255,255,255,.8)
+    padding: 3px
+    align-items: center
+    will-change: transform
+
+.card-billet__content
+    padding: 0 20px
+
+.card-billet__image
+    background: rgba(255,255,255,.8)
+    height: 72px
+    width: 72px
+    border-radius: 6px
+    position: relative
+    img
+        position: absolute
+        +absolute-center
+        width: 50%
+        height: 50%
+
+.card-billet__title
+    line-height: 120%
+    font-weight: 400
+
+.card-billet__price
+    line-height: 120%
+    font-weight: 500

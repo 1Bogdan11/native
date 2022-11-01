@@ -1,0 +1,222 @@
+.unique-phone
+  position: relative
+  display: flex
+  align-items: center
+  width: 400px
+  height: 50px
+  border-bottom: 1px solid #000000
+  &-text
+    flex-shrink: 0
+
+    font-style: normal
+    font-weight: normal
+    font-size: 15px
+    line-height: 18px
+    color: #000000
+  @media (max-width: $tab)
+    width: 100%
+
+.unique-phone__title
+  position: absolute
+  top: -6px
+  font-family: Raleway
+  font-style: normal
+  font-weight: 400
+  font-size: 12px
+  display: flex
+  align-items: center
+  letter-spacing: 0.02em
+  color: #1F2020
+  line-height: 100%
+  pointer-events: none
+
+input.unique-phone__input
+  width: 100%
+  height: 100%
+  margin: 0 0 0 10px
+  padding: 0
+  font-family: Raleway
+  font-style: normal
+  font-weight: 500
+  font-size: 16px
+  line-height: 100%
+  color: #1F2020
+
+.unique-phone__select
+  display: flex
+  align-items: center
+  width: max-content
+  height: 100%
+
+  cursor: pointer
+
+  transition: 0.1s border
+
+  .ss-main
+    position: static
+    width: 100%
+    height: 100%
+
+    .ss-hide
+      display: none
+
+    .img-styled
+      overflow: hidden
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 24px
+      height: 24px
+      margin: 0 4px 0 0
+
+      img
+        display: flex
+        min-width: 100%
+        margin: 0
+        object-fit: contain
+
+    span:nth-last-child(1)
+      margin-left: auto
+
+  .ss-single-selected
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    height: 100%
+    padding: 0
+
+    font-family: TTRamillas-Regular, Arial, "Helvetica Neue", Helvetica, sans-serif
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 35px
+    text-align: right
+    color: #1F1F1F
+
+    border: unset
+    appearance: none
+    outline: none
+    background-color: transparent
+    .ss-arrow
+      overflow: visible
+      display: flex
+      justify-content: center
+      align-items: center
+      margin: 0 0 0 5px
+      width: 8.5px
+      height: 8.5px
+
+      span
+        border: unset
+
+        transition: 0.15s transform
+
+        &.arrow-up, &.arrow-down
+          display: flex
+          align-items: center
+          justify-content: center
+          margin: 0
+          padding: 0
+
+        &.arrow-down
+          margin: 4.5px 0 0 0
+          transform: rotate(0deg)
+
+        &.arrow-up
+          margin: -4.5px 0 0 0
+          transform: rotate(-180deg)
+
+        &::before
+          content: ''
+
+          border:
+          display: flex
+          align-items: center
+          border: 4.5px solid transparent
+          border-top: 4.5px solid #1F2020
+
+    span
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
+    &-color
+      width: 24px
+      min-width: 24px
+      height: 24px
+      margin-right: 8px
+
+      border-radius: 50%
+
+
+    &-left
+      display: flex
+      align-items: center
+
+
+    .placeholder
+      span:nth-child(2), span:nth-child(3)
+        display: none
+
+  .ss-content
+    position: absolute
+    top: calc(100% + 10px)
+    left: unset
+    right: unset
+    z-index: 3
+
+    overflow: scroll
+    width: 100%
+    min-width: 100%
+    max-height: 300px
+    margin: 0 auto
+
+    background: #fcfaf7
+    border: 1px solid #cfcdca
+    border-radius: 5px
+
+    display: none
+    @media(max-width: $desktop)
+      max-height: 180px
+
+    &::-webkit-scrollbar
+      width: 3.5px
+      height: 0
+
+    .ss-option
+      display: flex
+      align-items: center
+      height: 40px
+      padding: 12px
+
+      font-family: Raleway
+      font-style: normal
+      font-weight: normal
+      font-size: 16px
+      line-height: 100%
+      color: #1F2020
+
+      &:nth-last-child(1)
+        margin-bottom: 0
+
+      &.ss-option-selected
+        color: #AC1B4E
+        background: #F2F2F2
+
+    &.ss-disabled
+      display: none
+
+
+    &.ss-open
+      display: flex
+
+      &::-webkit-scrollbar
+        width: 0px
+  .ss-list
+    width: 100%
+    max-height: 100%
+    .img-styled
+      margin: 0 9px 0 0
+  .ss-list::-webkit-scrollbar
+    width: 0

@@ -1,0 +1,110 @@
+.discount-section
+    height: 80vh
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 4px
+    position: relative
+    margin: 0 calc(var(--unit) * -1)
+    will-change: transform
+    @media (max-width: $tab)
+        grid-template-columns: repeat(2, 1fr )
+        height: initial
+        grid-gap: 2px
+        margin-top: 2px
+
+.discount-section__part
+    position: relative
+    height: 100%
+    will-change: transform
+    @media (max-width: $tab)
+        height: 35vh
+    &:last-child
+        @media (max-width: $tab)
+            height: auto
+            grid-column-start: 1
+            grid-column-end: 3
+
+.discount-section__form
+    background-color: $grey-1
+    color: $beige
+    .input
+        width: 100%
+        text-align: center
+        color: $beige
+        input
+            border-bottom: 1px solid $beige
+        .input__label
+            right: 0
+        .input__bar
+            background-color: $beige-l
+
+.discount-section__form, .discount-section__card
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    will-change: transform
+    overflow: hidden
+    @media (max-width: $tab)
+        position: static
+
+.discount-section__icon
+    font-size: 48px
+    position: relative
+    +garamond(i)
+    @media (max-width: $tab)
+        font-size: 36px
+        line-height: 1
+
+.discount-section__form
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    text-align: center
+    padding: 55px 50px
+    @media (max-width: $tab)
+        padding: 50px $unit
+
+.discount-section__title
+    display: grid
+    text-align: center
+    grid-gap: 6px
+    line-height: 110%
+    width: 80%
+    +yo('font-size', (375px: 16px, 1440px: 30px))
+    @media (max-width: $tab)
+        margin: 70px auto
+    span
+        font-weight: 400
+    i
+        +garamond(i)
+        font-size: 130%
+
+.discount-section__card
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    padding: 70px 50px
+    img
+        height: 120%
+        width: 100%
+        display: block
+        left: 0
+        position: absolute
+        top: -10%
+        object-fit: cover
+        will-change: transform
+
+.discount-section__card-title
+    z-index: 1
+    color: black
+    @media (max-width: $tab)
+        display: none
+
+.discount-section__footer
+    width: 100%
+    position: relative
+    .form__confidentiality
+        font-weight: 400

@@ -1,0 +1,72 @@
+extends ../templates/template-scroll.pug
+
+block content
+  .container.profile.js-toggle
+    +profile-header({ title: 'Профиль' })
+    .profile__main
+      +profile-nav([
+        { title: "Мои заказы", href: "/profile-orders.html" },
+        { title: "Избранное", href: "/profile-favourites.html" },
+        { title: "Профиль", href: "/profile-personal.html", active: true },
+        { title: "Адреса", href: "/profile-address.html" },
+        { title: "Рассылка", href: "/profile-subscribe.html" }
+      ])
+      .profile__content
+        form.profile__form
+          +input({
+            type: "text",
+            required: true,
+            label: "Имя"
+          })
+          +input({
+            type: "text",
+            required: true,
+            label: "Фамилия"
+          })
+          +input({
+            type: "text",
+            required: true,
+            label: "Email"
+          })
+          +input({
+            type: "text",
+            required: true,
+            label: "Email"
+          })
+          .profile__form-row
+            +input({
+              type: "date",
+              label: "Дата рождения"
+            })
+            +input({
+              type: "gender",
+              label: "Пол"
+            })
+          +input({
+            type: "phone",
+            changeButton: true
+          })
+          button.button-brand.profile__form_submit Сохранить
+
+        .profile__loyalty
+          .profile__loyalty-head
+            h2.profile__loyalty-title Программа лояльности
+            a(href="#").profile__loyalty-link.link__underline Узнать подробности
+          table.profile__loyalty-content
+            tbody
+              tr
+                td Статус
+                td.profile__loyalty-active.is-active Активна
+                //- td.profile__loyalty-active Неактивна
+              tr
+                td Уровень
+                td 1
+              tr
+                td Доступно бонусов
+                td 100
+              tr
+                td Ожидается поступление бонусов
+                td 100
+              tr
+                td Сгорят (более чем 50 дней) бонусов
+                td 100

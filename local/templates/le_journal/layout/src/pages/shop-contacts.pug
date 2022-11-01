@@ -1,0 +1,26 @@
+extends ../templates/template-shop-contacts.pug
+
+block content
+  .contacts.contacts--shop.js-contacts
+    .contacts__map_close.js-contacts-modal-close
+    .contacts__aside
+      .aside-tabs.aside-tabs--partial
+        .aside-tabs__area
+          .aside-tabs__content
+            .contacts__head 
+              h1.contacts__head_title Места продаж
+              +select({
+                list: [
+                  { text: "Москва", href: '#', value: "1" },
+                  { text: "Санкт-Петербург", href: '#', value: "2", selected: true },
+                  { text: "Мурманск", href: '#', value: "3" },  
+                ]
+              }).js-contacts-region
+            .contacts__content
+              +sale-points
+    .contacts__map.media-max--tab
+      +map(data-map-platform="desktop")
+      a(href="#").contacts__email
+        +svg("mail")
+      .contacts__map_content.js-contacts-modal-content
+    

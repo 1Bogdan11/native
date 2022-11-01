@@ -1,0 +1,19 @@
++modal('address-modal', 'right').modal--bordered
+    form.ordering-secondary
+        .ordering-secondary__part
+            .ordering-secondary__title Укажите адрес
+            .ordering-secondary__fields
+                .ordering-secondary__form_part 
+                    +input({
+                        type: "text",
+                        required: true,
+                        label: "Москва"
+                    })
+                .ordering-secondary__form_part 
+                    +input({
+                        type: "text",
+                        required: true,
+                        label: "Адрес в свободной форме"
+                    })
+        button.button-bordered
+            span Привезти

@@ -1,0 +1,50 @@
+.showroom-section
+    min-height: 85vh
+    position: relative
+    overflow: hidden
+    margin-left: calc(var(--unit) * -1)
+    margin-right: calc(var(--unit) * -1)
+    padding: 80px $unit
+    color: white
+    @media (max-width: $tab)
+        padding: 35px $unit
+        height: 100vh
+
+.showroom-section__background
+    background-size: cover
+    background-position: center
+    position: absolute
+    top: -5%
+    left: -5%
+    filter: brightness(70%)
+    width: 110%
+    height: 110%
+    z-index: -1
+    @media (max-width: $tab)
+        filter: brightness(60%)
+
+.showroom-section__content
+    text-align: center
+    grid-gap: 15px
+    text-transform: uppercase
+    .t-h2
+        font-weight: 200
+        @media (max-width: $tab)
+            letter-spacing: 1px
+    .t-ttu
+        @media (max-width: $tab)
+            font-size: 10px
+
+.showroom-section__link
+    color: white
+    font-weight: 400
+    font-size: 14px
+    text-align: center
+    padding: 12px 45px
+    @media (max-width: $tab)
+        width: 100%
+
+    &:visited
+        color: white
+    &:before, &:after
+        background-color: rgba(255,255,255,.4)

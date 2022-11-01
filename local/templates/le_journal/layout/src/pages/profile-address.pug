@@ -1,0 +1,32 @@
+extends ../templates/template-scroll.pug
+
+block content
+  .container.profile.js-toggle
+    +profile-header({ title: 'Адреса' })
+    .profile__main
+      +profile-nav([
+        { title: "Мои заказы", href: "/profile-orders.html" },
+        { title: "Избранное", href: "/profile-favourites.html" },
+        { title: "Профиль", href: "/profile-personal.html" },
+        { title: "Адреса", href: "/profile-address.html", active: true },
+        { title: "Рассылка", href: "/profile-subscribe.html" }
+      ])
+      .profile__content
+        form.profile__form
+          +input({
+            type: "text",
+            required: true,
+            label: "Город доставки"
+          })
+          +input({
+            type: "text",
+            required: true,
+            label: "Адрес доставки"
+          })
+          +input({
+            type: "text",
+            required: true,
+            label: "Комментарий"
+          })
+          button.button-brand.profile__form_submit Сохранить
+

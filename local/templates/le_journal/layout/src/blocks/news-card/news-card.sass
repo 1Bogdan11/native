@@ -1,0 +1,54 @@
+.news-card
+    display: grid
+    row-gap: 30px
+    @media (max-width: $tab)
+        row-gap: 18px
+    &:hover
+        .news-card__img img
+            transform: scale(1.1)
+
+.news-card__img
+    position: relative
+    width: 100%
+    height: 0
+    padding-bottom: 53%
+    overflow: hidden
+    img
+        position: absolute
+        left: 0
+        bottom: 0
+        width:  100%
+        height: 100%
+        will-change: transform
+        transition-timing-function: ease
+        transition-duration: .8s
+        object-fit: cover
+
+.news-card__content
+    display: flex
+    flex-direction: column
+    row-gap: 14px
+    @media (max-width: $tab)
+        row-gap: 10px
+
+.news-card__date
+    font-size: 16px
+    line-height: 130%
+    color: rgba(#000, .4)
+    @media (max-width: $tab)
+        font-size: 14px
+
+.news-card__title
+    font-size: 24px
+    line-height: 130%
+    letter-spacing: 0.02em
+    @media (max-width: $tab)
+        font-size: 20px
+
+.news-card__desc
+    font-size: 18px
+    line-height: 140%
+    letter-spacing: 0.04em
+    color: rgba(#000, .9)
+    @media (max-width: $tab)
+        font-size: 16px

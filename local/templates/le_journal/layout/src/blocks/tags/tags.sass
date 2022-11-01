@@ -1,0 +1,38 @@
+.tags
+    display: flex
+    grid-gap: 8px
+    @media (max-width: $tab)
+        grid-gap: 6px 4px
+        flex-wrap: wrap
+
+.tags__item
+    color: black
+    font-weight: 400
+    border: 1px solid rgba(0,0,0,.1)
+    border-radius: 15px
+    padding: 5px 12px
+    white-space: nowrap
+    line-height: 1
+    display: flex
+    align-items: center
+
+    &.is-active
+        background-color: #000000
+        color: #FFFFFF
+
+        a
+            color: #FFFFFF
+
+
+.tags__item--more
+    position: relative
+    display: flex
+    justify-content: center
+    &:not(.is-active)
+        @media (min-width: $tab + 1)
+            display: none
+    button
+        font-size: 24px
+        width: 15px
+        line-height: 0
+        margin-top: -12px

@@ -1,0 +1,183 @@
+extends ../templates/template-modal.pug
+block content
+    +modal('product-modal', 'right')(data-tabs-modal)
+        button.modal__close(data-modal-close="product-modal" data-modal-state-remove="is-fullscreen")
+        .aside-tabs
+            .aside-tabs__links.js-modal__tabs
+                button(data-modal-tab="sizes" data-modal-state-remove="is-fullscreen").aside-tabs__link Таблица размеров
+                button(data-modal-tab="stories" data-modal-state-add="is-fullscreen").aside-tabs__link Размеры на моделях
+            .aside-tabs__area.js-modal__contents
+                .aside-tabs__content(data-modal-content="sizes")
+                    .product-modal__main.js-tabs(data-switch-delay="400" data-animation-end="400")
+                        .product-modal__body
+                            .product-modal__tab_content.is-active.js-tabs__content
+                                .product-modal__title Бралетты с чашкой
+                                .product-modal__content
+                                    table.table 
+                                        tr
+                                            th Размер
+                                            th Обхват под грудью
+                                            th Обхват груди
+                                        tr
+                                            td -
+                                            td -
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        th B
+                                                        th C
+                                                        th D
+                                        tr
+                                            td 70
+                                            td 68-72
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        td 84-86
+                                                        td 86-88
+                                                        td 88-90
+                                        tr
+                                            td 75
+                                            td 73-77
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        td 89-91
+                                                        td 91-93
+                                                        td 93-95
+                                        tr
+                                            td 80
+                                            td 78-82
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        td 94-96
+                                                        td 96-98
+                                                        td 98-100
+                            .product-modal__tab_content.js-tabs__content(style="height: 0")
+                                .product-modal__title Бралетты
+                                .product-modal__content
+                                    table.table 
+                                        tr
+                                            th Размер
+                                            th Обхват под грудью
+                                            th Обхват груди
+                                        tr
+                                            td -
+                                            td -
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        th B
+                                                        th C
+                                                        th D
+                                        tr
+                                            td 70
+                                            td 68-72
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        td 34-86
+                                                        td 86-58
+                                                        td 28-30
+                                        tr
+                                            td 75
+                                            td 73-77
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        td 39-71
+                                                        td 91-93
+                                                        td 93-95
+                                        tr
+                                            td 80
+                                            td 78-82
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        td 94-96
+                                                        td 96-98
+                                                        td 98-100
+                            .product-modal__tab_content.js-tabs__content(style="height: 0")
+                                .product-modal__title Трусы, штаны и пояса
+                                .product-modal__content
+                                    table.table 
+                                        tr
+                                            th Размер
+                                            th Обхват под грудью
+                                            th Обхват груди
+                                        tr
+                                            td -
+                                            td -
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        th B
+                                                        th C
+                                                        th D
+                                        tr
+                                            td 70
+                                            td 68-72
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        td 34-86
+                                                        td 66-58
+                                                        td 18-70
+                                        tr
+                                            td 73
+                                            td 77-79
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        td 39-71
+                                                        td 91-93
+                                                        td 103-195
+                                        tr
+                                            td 80
+                                            td 78-82
+                                            td
+                                                table.table__inner
+                                                    tr 
+                                                        td 94-96
+                                                        td 96-98
+                                                        td 98-100
+                        .product-modal__footer
+                            .product-modal__tabs
+                                button.product-modal__tab.is-active.js-tabs__btn Бралетты с чашкой
+                                button.product-modal__tab.js-tabs__btn Браллеты
+                                button.product-modal__tab.js-tabs__btn Трусы, штаны и пояса
+
+                .aside-tabs__content(data-modal-content="stories")
+                    +stories([
+                        {
+                            image: "assets/img/stories/stories-2.jpg",
+                            size: "XS",
+                            parameters: "86-58-88"
+                        },
+                        {
+                            image: "assets/img/stories/stories-1.jpg",
+                            size: "S",
+                            parameters: "90-58-98"
+                        },
+                        {
+                            image: "assets/img/stories/stories-3.jpg",
+                            size: "XXL",
+                            parameters: "126-138-198"
+                        },
+                        {
+                            image: "assets/img/stories/stories-2.jpg",
+                            size: "XS",
+                            parameters: "86-58-88"
+                        },
+                        {
+                            image: "assets/img/stories/stories-1.jpg",
+                            size: "S",
+                            parameters: "90-58-98"
+                        },
+                        {
+                            image: "assets/img/stories/stories-3.jpg",
+                            size: "XXL",
+                            parameters: "126-138-198"
+                        },
+                    ])

@@ -1,0 +1,68 @@
+.preloader {
+  position: absolute;
+  z-index: 101;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  -webkit-transition-duration: .7s;
+          transition-duration: .7s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader:after {
+  position: absolute;
+  top: 0;
+  bottom: 4%;
+  right: 0;
+  left: 0;
+  content: " ";
+  display: block;
+  margin: auto;
+  height: 48px;
+  width: 48px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid;
+  border-width: 4px;
+  border-radius: 50%;
+  border-top-color: rgba(255, 255, 255, 0.8);
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+  border-right-color: rgba(255, 255, 255, 0.3);
+  border-left-color: rgba(255, 255, 255, 0.3);
+  -webkit-animation: spin 0.9s linear infinite;
+          animation: spin 0.9s linear infinite;
+}
+
+.is-preloading {
+  pointer-events: none;
+}
+
+.is-preloading * {
+  pointer-events: none !important;
+}
+
+.is-preloading .preloader {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.is-preloading .preloader {
+  position: fixed;
+}
+/*# sourceMappingURL=preloader.css.map */

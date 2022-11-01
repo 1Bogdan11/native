@@ -1,0 +1,18 @@
+extends ../templates/template-scroll.pug
+  
+block content
+  .container.section__wrapper
+    +breadcrumbs("Каталог", "Бюстгалтеры").breadcrumbs--full
+  .container.section__wrapper.search-empty
+    .search-empty__head
+      +search-form({ empty: true })
+      ul.search-empty__suggestions
+        li.search-empty__suggestions-item 
+          a(href="/catalog.html") Бюстгалтеры
+        li.search-empty__suggestions-item
+          a(href="/catalog.html") Черное белье
+        li.search-empty__suggestions-item
+          a(href="/catalog.html") Josephine
+
+    +hero({ title: false })
+    +recently-section({ scroll: true })

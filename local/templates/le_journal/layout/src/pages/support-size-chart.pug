@@ -1,0 +1,132 @@
+extends ../templates/template.pug
+block content
+  .container.support.js-toggle
+    +support-header({ title: 'Таблица размеров' })
+    .support__main
+      +support-nav([
+        { title: "Оплата", href: "/support-payment.html" },
+        { title: "Доставка", href: "/support-delivery.html" },
+        { title: "Гарантия и возврат", href: "/support-warrant.html" },
+        { title: "Таблица размеров", href: "/support-size-chart.html", active: true },
+        { title: "Пользовательское соглашение", href: "/support-privacy-policy.html" },
+        {title: "Оптовые заказы", href: "/support-personal.html"},
+        {title: "Белье на заказ", href: "/support-personal.html"}
+      ])
+      .support__content.support__modify-area
+        h6 Бралетты с чашкой
+        table.support__table-a(width = 500)
+          thead
+            tr
+              th Размер
+              th Обхват под грудью
+              th(width=286) Обхват груди
+          tbody
+            tr
+              td -
+              td -
+              td(style="border-bottom: 1px solid rgba(0,0,0, .1)")
+                table
+                  tr
+                    td B
+                    td C
+                    td D
+            tr
+              td 70
+              td 68-72
+              td
+                table
+                  tr
+                    td 84-86
+                    td 86-88
+                    td 88-90
+            tr
+              td 75
+              td 73-77
+              td
+                table
+                  tr
+                    td 89-91
+                    td 91-93
+                    td 93-95
+            tr
+              td 80
+              td 78-82
+              td
+                table
+                  tr
+                    td 94-96
+                    td 96-98
+                    td 98-100
+        hr
+        h6 Бралетты
+        table(width = 500)
+          thead
+            tr
+              th Размер
+              th Обхват под грудью
+              th Обхват груди
+          tbody
+            tr
+              td XS
+              td 63-67
+              td 78-82
+            tr
+              td S
+              td 68-72
+              td 83-87
+            tr
+              td M
+              td 73-77
+              td 88-92
+            tr
+              td L
+              td 78-82
+              td 93-97
+            tr
+              td XL
+              td 83-87
+              td 92-102
+            tr
+              td XXL
+              td 88-92
+              td 102-106
+        hr
+        h6 Трусы, штаны, пояса
+        table(width = 600)
+          thead
+            tr
+              th Размер
+              th Размер
+              th Обхват талии
+              th Обхват бедер
+          tbody
+            tr
+              td XS
+              td 63-67
+              td 78-82
+              td 78-82
+            tr
+              td S
+              td 68-72
+              td 83-87
+              td 78-82
+            tr
+              td M
+              td 73-77
+              td 88-92
+              td 88-92
+            tr
+              td XS
+              td 63-67
+              td 78-82
+              td 78-82
+            tr
+              td S
+              td 68-72
+              td 83-87
+              td 78-82
+            tr
+              td M
+              td 73-77
+              td 88-92
+              td 88-92

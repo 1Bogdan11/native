@@ -1,0 +1,19 @@
+.recently-section
+    margin-left: calc(var(--unit) * -1)
+    margin-right: calc(var(--unit) * -1)
+    position: relative
+    overflow: hidden
+    @media (max-width: $tab)
+        padding-bottom: 50px
+
+.recently-section__title
+    padding-left: $unit
+    padding-right: $unit
+    margin-bottom: 40px
+    +yo('font-size', (375px: 22px, 1440px: 26px))
+    @media (max-width: $tab)
+        font-size: 18px
+        text-align: center
+        font-weight: 400
+        margin-bottom: 20px
+        padding-right: calc(var(--unit) * 2)

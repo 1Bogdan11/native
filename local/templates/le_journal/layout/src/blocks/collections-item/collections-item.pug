@@ -1,0 +1,6 @@
+mixin collections-item(data)
+    a(href="#").collections-item
+        .collections-item__image
+            picture
+                img(src=data.image data-scroll data-scroll-speed="-0.8")
+        .collections-item__title #{data.title}

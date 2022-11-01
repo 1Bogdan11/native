@@ -1,0 +1,302 @@
+.ordering
+    display: grid
+    grid-gap: 6vh
+    height: 100%
+    grid-template-rows: auto 1fr
+    opacity: 0
+    transform: translateY(15px)
+    pointer-events: none
+    transition-duration: .4s
+    transition-delay: 0s
+    @media (max-width: $desktop)
+        grud-gap: 20px
+    &.is-active
+        opacity: 1
+        pointer-events: all
+        transform: translateY(0px)
+    &.is-reload
+        .ordering__form_part.is-reloadable
+            opacity: 0
+            pointer-events: none
+    @media (max-width: $tab)
+        grid-gap: 40px
+    .select
+        font-size: 16px
+        @media (max-width: $tab)
+            font-size: 14px
+        .ss-disabled
+            font-size: 16px
+            color: $black!important
+            @media (max-width: $tab)
+                font-size: 14px
+        .ss-option
+            @media (max-width: $tab)
+                white-space: normal
+        .ss-arrow
+            margin: 0 3px
+            span
+                padding: 2px
+        .ss-content
+            @media (min-width: $tab + 1)
+                background-color: white
+            @media (max-width: $tab)
+                width: 100%
+                left: 0
+        .ss-single-selected
+            @media (max-width: $tab)
+                height: 55px
+            .placeholder
+                @media (max-width: $tab)
+                    white-space: initial
+                    line-height: 150%
+
+.ordering-back
+    width: 40px
+    height: 40px
+    cursor: pointer
+    position: relativ
+    transition-duration: .5s
+    transition-timing-function: ease
+    svg
+        width: 100%
+        height: 100%
+        fill: none
+    &:not(.is-active)
+        opacity: 0
+        pointer-events: none
+        transform: translateX(10px)
+
+.ordering__main
+    position: relative
+    display: grid
+    grid-gap: 5px
+    grid-template-rows: auto 1fr
+    @media (max-width: $tab)
+        grid-gap: 10px
+
+.ordering__main_part
+    height: 100%
+    position: relative
+    @media (max-width: $tab)
+        padding-top: 5px
+        border-top: 1px solid rgba(0,0,0,.1)
+
+.ordering__main_counter
+    transition-duration: .4s
+    transition-delay: 0s
+    transform: translateY(10px)
+    opacity: 0
+    padding-left: 5px
+    &.is-active
+        opacity: 1
+        transition-delay: .3s
+        pointer-events: all
+        transform: translateY(0px)
+
+.ordering-final__counter, .ordering__main_counter
+    font-weight: 400
+    line-height: 1
+    color: rgba(0,0,0,.4)
+    +yo('font-size', (375px: 14px, 1440px: 17px))
+
+.ordering__content
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    display: grid
+    grid-template-rows: auto 1fr
+    grid-gap: 50px
+    padding-right: 12px
+    +scrollbar
+    @media (max-width: $tab)
+        padding-bottom: 70px
+    &::-webkit-scrollbar
+        @media (max-width: $tab)
+            width: 0px
+    &::-webkit-scrollbar-thumb
+        background-color: $beige-l
+
+.ordering__content_title
+    font-weight: 300
+    line-height: 1.3
+    +yo('font-size', (375px: 20px, 1440px: 30px))
+    @media (max-width: $tab)
+        font-weight: 400
+        margin-top: 5px
+
+.ordering__head
+    width: calc(100% + #{$unit} * 2)
+    margin-left: calc(var(--unit) * -1)
+    margin-right: calc(var(--unit) * -1)
+    background-color: $beige-l
+    padding: 5px $unit
+    display: flex
+    grid-gap: 20px
+    align-items: center
+
+
+.ordering__price
+    font-weight: 500
+
+.ordering__form
+    max-width: 850px
+    display: grid
+    padding-left: 5px
+    height: fit-content
+    grid-gap: 30px
+    position: relative
+    grid-template-columns: repeat(2, 1fr)
+    padding-bottom: 100px
+    @media (max-width: $tab)
+        grid-template-columns: initial
+        grid-gap: 30px
+        padding-bottom: 0px
+
+.ordering__form_part
+    position: relative
+    width: 100%
+    .select
+        border-bottom: 1px solid rgba(0,0,0,.1)
+        width: 100%
+    &.is-reloadable
+        opacity: 1
+        transition-duration: .4s
+
+.ordering__form_part--first
+    z-index: 1
+
+.ordering__form_part_button
+    position: absolute
+    right: 0
+    color: rgba(0,0,0,.5)
+    transition-duration: .5s
+    bottom: 10px
+    font-weight: 400
+
+.ordering__form_part--full
+    @media (min-width: $tab + 1)
+        grid-column-start: 1
+        grid-column-end: 3
+
+.ordering__form_part--fixed
+    .button-brand
+        width: 100%
+        display: block
+    @media (min-width: $tab + 1)
+        position: fixed
+        left: 0
+        bottom: 0
+        background: white
+        padding-top: 15px
+        box-shadow: 0px -2px 7px rgba(223, 211, 196, .6)
+        margin: 0 calc(var(--unit) * -1)
+        padding: 15px $unit
+        width: calc(100% + #{$unit} * 2)
+
+.ordering__form_boxberry
+    width: fit-content
+    margin-top: 10px
+    font-size: 14px
+    background: #f2f2f2
+    padding: 5px 10px
+    font-weight: 500
+    cursor: pointer
+    border-radius: 4px
+
+[data-delivery-content]
+    &:not(.is-active)
+        display: none
+
+.ordering-final
+    display: grid
+    grid-gap: 35px
+    max-width: 600px
+    @media (min-width: $tab + 1)
+        padding-bottom: 50px
+    @media (max-width: $tab)
+        margin-top: 10px
+
+.ordering-final__back
+    font-weight: 400
+    @media (max-width: $tab)
+        font-size: 12px
+
+.ordering-final__part
+    display: grid
+    grid-gap: 20px
+
+.ordering-final__head
+    display: grid
+
+.ordering-final__head_part
+    display: flex
+    justify-content: space-between
+    grid-gap: 15px
+
+.ordering-final__content
+    display: grid
+    color: black
+    grid-gap: 10px
+    p
+        font-weight: 400
+    b
+        font-weight: 500
+
+.ordering-final__payment
+    display: flex
+    grid-gap: 10px
+    span
+        font-weight: 500
+
+.ordering-secondary
+    display: flex
+    flex-direction: column
+    justify-content: center
+    grid-gap: 50px
+    height: 100%
+    @media (max-width: $tab)
+        justify-content: space-between
+        height: calc(100% - 120px)
+
+.ordering-secondary__part
+    display: grid
+    grid-gap: 30px
+
+.ordering-secondary__title
+    +yo('font-size', (375px: 20px, 1440px: 30px))
+    font-weight: 400
+
+.ordering-secondary__fields
+    display: grid
+    grid-gap: 20px
+
+.ordering-secondary__description
+    font-weight: 400
+
+.ordering__loyalty
+    width: 100%
+    max-width: 480px
+
+.ordering__loyalty-title
+    font-weight: 400
+    line-height: 1.3
+    +yo('font-size', (375px: 18px, 1440px: 24px))
+
+.ordering__loyalty-content
+    +yo('margin-top', (375px: 16px, 1440px: 20))
+    +yo('margin-bottom', (375px: 18px, 1440px: 28))
+    width: 100%
+    td
+        padding: 3px 4px 3px 0
+        line-height: 140%
+        @media (max-width: $mob)
+            line-height: 120%
+        &:last-child
+            text-align: right
+            font-weight: 500
+            padding-right: 16px
+            padding-left: 4px
+            @media (max-width: $tab)
+                padding-right: 0

@@ -1,0 +1,47 @@
+mixin sale-points(data)
+  .sale-points.js-sale-points
+    ul.sale-points__list.js-sale-point(data-region-id="1")
+      li.sale-points__item 
+        +point-info({
+            title: "Магазин на Большой Никитской",
+            type: "contacts",
+            id: "2"
+        })
+      li.sale-points__item 
+        +point-info({
+            title: "Шоурум на Авангардной",
+            type: "contacts",
+            id: "3"
+        })
+      li.sale-points__item 
+        +point-info({
+            title: "Concept Store LEFORM на Поварской",
+            type: "contacts",
+            id: "4"
+        })
+    ul.sale-points__list.js-sale-point(data-region-id="2")
+      li.sale-points__item.is-active
+        +point-info({
+            title: "Шоурум на Лиговском",
+            type: "contacts",
+            id: "5"
+        })
+      li.sale-points__item 
+        +point-info({
+            title: "Шоурум на Беговой",
+            type: "contacts",
+            id: "6"
+        })
+    ul.sale-points__list.js-sale-point(data-region-id="3")
+      li.sale-points__item 
+        +point-info({
+            title: "Магазин на Карла Маркса",
+            type: "contacts",
+            id: "7"
+        })
+      li.sale-points__item 
+        +point-info({
+            title: "Магазин на проспекте Кирова",
+            type: "contacts",
+            id: "8"
+        })

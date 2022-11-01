@@ -1,0 +1,76 @@
+extends ../templates/template.pug
+
+block content
+  .container.u-center.u-flex-col
+      h1.t-h1 Header 1
+      h2.t-h2 Header 2
+      h3.t-h3 Header 3
+      h4.t-h4 Header 4
+      h5.t-h5 Header 5
+      br
+      a(href="#").t-link Ссылка
+      br
+      .currency
+          .currency__locale RU
+          .currency__symbol ₽
+      br
+      button.t-ttu Uppercase
+      br
+      a(href="#").link__underline Ссылка с подчеркиванием
+      br
+      +socials([
+        { name: "instagram", link: "#", className: "" },
+        { name: "facebook", link: "#", className: "" },
+        { name: "youtube", link: "#", className: "" },
+        { name: "telegram", link: "#", className: "" },
+        { name: "whatsapp", link: "#", className: "" },
+      ])
+      br
+      +colors({
+            list: [
+              { image: "assets/img/card/png/card-3.png", title: "Black", active: true },
+              { image: "assets/img/card/png/card-2.png", title: "Red" },
+              { image: "assets/img/card/png/card-4.png", title: "Beige" }
+            ]
+          })
+      br
+      +sizes({
+              list: [
+                { title: "XS" },
+                { title: "S", disabled: true},
+                { title: "M" },
+                { title: "L", active: true },
+                { title: "XL" }
+              ],
+              type: "default"
+            })
+      br
+      +sizes({
+              list: [
+                { title: "XS" },
+                { title: "S", active: true },
+                { title: "M" },
+                { title: "L" },
+                { title: "XL" }
+              ],
+              type: "bordered"
+            })
+      br
+      br
+      +unique-phone({
+        select: [{
+          text: 'ru',
+          innerHTML: `+7`
+        },
+          {
+            text: 'kz',
+            innerHTML: `+7`
+          },
+          {
+            text: 'by',
+            innerHTML: `+375`,
+            selected: 1
+          },
+        ]
+      }
+      )

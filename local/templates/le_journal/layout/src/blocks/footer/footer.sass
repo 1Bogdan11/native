@@ -1,0 +1,134 @@
+.footer
+  padding-top: 34px
+  padding-bottom: 20px
+  display: grid
+  grid-template-columns: repeat(6, 1fr)
+  row-gap: 60px
+  +yo('column-gap', (375px: 20px, 1440px: 60px, 1920px: 100px))
+  position: relative
+  +yo('margin-top', (375px: $offset-mobile, 1440px: $offset-desktop))
+  @media (max-width: $tab)
+    row-gap: 34px
+    font-size: 14px
+    padding-bottom: 20px
+    background-color: $base-bg
+    z-index: 1
+    margin-top: 0
+    padding-top: $offset-mobile
+  @media (max-width: $tab-sm)
+    padding-top: 30px
+    row-gap: 0
+  @media (max-width: $mob-sm)
+    font-size: 13px
+
+.footer__column
+  @media (max-width: $tab-sm)
+    margin-top: 32px
+    &:last-child
+      margin-top: 4px
+
+.footer__column--span-1
+  @media (max-width: $tab)
+    grid-column: span 2
+  @media (max-width: $tab-sm)
+    grid-column: span 3
+
+.footer__column--span-2
+  grid-column: span 2
+  @media (max-width: $desktop-m)
+    grid-column: 4 / span 3
+    grid-row: 1 / span 1
+  @media (max-width: $tab)
+    grid-column: 1 / span 6
+    grid-row: span 1
+
+.footer__column--span-3
+  grid-column: span 3
+
+.footer__column--last
+  grid-column: 5 / span 2
+  @media (max-width: $desktop-m)
+    grid-column: 4 / span 3
+
+.footer__column--bottom
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  row-gap: 24px
+  & > *
+    &:last-child
+      margin-top: auto
+  @media (max-width: $tab)
+    row-gap: 16px
+  @media (max-width: $tab-sm)
+    grid-column: 1 / span 6
+    row-gap: 32px
+
+.footer__contacts
+  position: relative
+  display: flex
+  flex-direction: column
+  gap: 30px
+  // left: -50px
+  @media (max-width: $desktop)
+    left: 0
+  @media (max-width: $desktop-m)
+    grid-column: 1 / span 6
+    grid-row: 2 / span 1
+  @media (max-width: $tab)
+    grid-row: span 1
+
+.footer__text--b
+  font-weight: 400
+  font-size: 1.05em
+  white-space: nowrap
+
+.footer__menu
+  display: grid
+  grid-gap: 7px
+  color: black
+  .link__underline--hover
+    &::after
+      bottom: -3px
+
+.footer__feedback
+  .footer__text--b
+    white-space: normal
+
+.footer__feedback-input
+  position: relative
+
+.footer__politic
+  &,
+  &:active,
+  &:focus,
+  &:visited,
+    color: #000
+  @media (max-width: $tab-sm)
+    display: none
+
+.footer__payment-list
+  margin-top: 32px
+  grid-gap: 5px
+  @media (max-width: $tab-sm)
+    order: 1
+
+.footer__company
+  font-size: 16px
+  text-align: right
+  color: $minor
+  font-weight: 400
+  gap: 12px
+  display: flex
+  align-items: baseline
+  justify-content: flex-end
+  align-self: flex-end
+
+  @media (max-width: $tab)
+    font-size: 14px
+  a
+    color: $major
+    font-size: 20px
+    font-weight: 500
+    &:active, &:focus, &:visited
+      color: $major

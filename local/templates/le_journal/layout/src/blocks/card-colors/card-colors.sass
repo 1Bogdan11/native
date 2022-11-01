@@ -1,0 +1,67 @@
+.card-colors
+    display: flex
+    flex-wrap: wrap
+    position: absolute
+    left: 30px
+    bottom: 20px
+    z-index: 1
+    @media (max-width: $tab)
+        left: 15px
+        bottom: 15px
+
+.card-colors__item
+    position: relative
+    padding: 0 3px
+    &:hover
+        .card-colors__item-popup
+            opacity: 1
+            transform: translateY(0)
+
+.card-colors__item-point
+    width: 15px
+    height: 15px
+    border: 1px solid rgba(0,0,0,.1)
+    border-radius: 100%
+    @media (max-width: $tab)
+        width: 10px
+        height: 10px
+
+.card-colors__item-popup
+    display: block
+    position: absolute
+    bottom: calc(100% + 10px)
+    left: -10px
+
+    padding: 6px 12px
+    background-color: rgba(0,0,0,.5)
+    border-radius: 4px
+
+    font-weight: 400
+    font-size: 14px
+    line-height: 1
+    color: #fff
+
+    opacity: 0
+    transform: translateY(10px)
+    pointer-events: none
+    transition: $trs-4
+    @media (max-width: $tab)
+        left: -6px
+        padding: 4px 6px
+        font-size: 12px
+
+    &::before
+        content: ''
+        width: 8px
+        height: 8px
+        background: linear-gradient(45deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,0) 51%)
+        position: absolute
+        left: 16px
+        bottom: -4px
+        transform-origin: center
+        transform: rotate(-45deg)
+        @media (max-width: $tab)
+            width: 6px
+            height: 6px
+            left: 11px
+            bottom: -3px

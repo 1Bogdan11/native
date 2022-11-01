@@ -1,0 +1,7 @@
+<?php
+
+$MESS['ITS_MAXMA_PRODUCT_INFO_LOYALTY_LINK'] = 'About the loyalty program';
+$MESS['ITS_MAXMA_PRODUCT_INFO_LOYALTY_BONUS'] = 'Give up to <span>#COUNT#</span> #DESC#';
+$MESS['ITS_MAXMA_PRODUCT_INFO_BONUS_ONE'] = 'bonuses';
+$MESS['ITS_MAXMA_PRODUCT_INFO_BONUS_TWO'] = 'bonuses';
+$MESS['ITS_MAXMA_PRODUCT_INFO_BONUS_MANY'] = 'bonuses';

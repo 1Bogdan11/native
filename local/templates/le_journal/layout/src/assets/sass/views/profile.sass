@@ -1,0 +1,314 @@
+.profile
+  position: relative
+
+  display: grid
+  grid-template-rows: auto 1fr
+  min-height: 100vh
+  margin-top: calc(var(--header) * -1)
+
+.profile.is-active
+  background: rgba(237, 231, 224, 0.8)
+
+  .profile__content
+    opacity: 0
+    pointer-events: none
+  .profile__m-menu
+    &-selected
+      background: #FCF9F6
+      border-bottom: 1px solid rgba(0, 0, 0, .06)
+    &-arrow
+      transform: rotate(225deg)
+      margin-top: 5px
+    &-content
+    &-option
+      position: relative
+      opacity: 1
+      pointer-events: all
+
+.profile__main
+  display: grid
+  grid-template-columns: 620px 1fr
+  padding: 80px 0 0 0
+
+  @media (max-width: 1850px)
+    grid-template-columns: 30% 1fr
+  @media (max-width: $tab)
+    grid-template-columns: 100%
+    padding: 32px 0 80px 0
+
+  .goods-list
+    margin-left: calc(var(--unit) * -1)
+    margin-right: calc(var(--unit) * -1)
+
+.profile__content
+  display: flex
+  flex-direction: column
+  transition: .15s opacity
+
+  &-title
+    display: flex
+    align-items: center
+    margin: 0 0 16px 0
+
+    font-weight: 400
+    +yo('font-size', (375px: 14px, 1440px: 16px))
+    line-height: 100%
+    color: #000000
+
+    @media (max-width: $tab)
+      margin: 0 0 8px 0
+
+    &-separator
+      width: 1px
+      height: 20px
+      margin: 0 16px
+
+      background: rgba(#000000, .2)
+      border: unset
+
+      @media (max-width: $tab)
+        display: none
+    &-filter
+      display: flex
+      align-items: center
+
+      @media (max-width: $tab)
+        display: none
+
+    &-year
+      display: flex
+      margin: 0 12px 0 0
+      font-weight: 400
+      font-size: 16px
+      line-height: 100%
+      transition-duration: .4s
+      color: rgba(#000000, .4)
+      &:hover, &.is-active
+        color: black
+
+    .select
+      margin: 0 0 0 auto
+
+      font-size: 14px
+
+      .ss-single-selected .ss-arrow
+        margin: 0 6px 0 2px
+      .ss-single-selected .ss-arrow span,
+      .ss-single-selected .ss-arrow span.arrow-down
+        padding: 2px
+
+  &-separator
+    width: 130%
+    height: 1px
+    margin: 36px 0 48px 0
+
+    background: rgba(#000000, .1)
+    border: unset
+
+    @media (max-width: $tab)
+      width: 100%
+      margin: 24px 0 32px 0
+  .order-preview-a
+    margin: 8px 0
+
+.profile__main-left
+  display: flex
+  flex-direction: column
+  height: 100%
+
+  @media (max-width: $tab)
+    display: none
+
+.profile__exit
+  flex-grow: 1
+  &::before
+    content: ''
+    display: block
+    height: 100%
+
+.profile__exit-button
+  position: sticky
+  bottom: 40px
+  &::before,&::after
+    background-color: rgba(#000, .1)
+
+.profile__m-menu
+  position: relative
+
+  display: none
+  flex-direction: column
+  width: 100vw
+  margin-left: calc(var(--unit) * -1)
+  margin-right: calc(var(--unit) * -1)
+
+  color: black
+  font-size: 18px
+  font-weight: 400
+
+  @media (max-width: $tab)
+    position: relative
+
+    display: flex
+
+  &-indicator
+    margin: -9px 0 0 3px
+
+    font-weight: 500
+    font-size: 8px
+    line-height: 9px
+    color: #000000
+  &-arrow
+    position: absolute
+    z-index: 3
+    top: 22px
+    right: var(--unit)
+
+    display: flex
+    margin-left: auto
+
+    border: solid rgba(#000000, .2)
+    border-width: 0 1px 1px 0
+    padding: 3px
+
+    transform: rotate(45deg)
+    transition: .15s transform
+  &-content
+    margin: 0
+    z-index: 1
+    border: unset
+    transform: unset
+    transition: .15s opacity
+
+    @media (max-width: $tab)
+      width: 100%
+
+  &-list
+    overflow: unset
+    display: flex
+    flex-direction: column
+    max-height: unset
+  &-option
+    position: absolute
+
+    order: 1
+    display: flex
+    align-items: center
+    height: 56px
+    padding: 0 var(--unit)
+
+    font-weight: 400
+    font-size: 14px
+    line-height: 100%
+    color: #000000
+
+    background-color: $base-bg
+    pointer-events: none
+    border-bottom: 1px solid rgba(0, 0, 0, .06)
+    opacity: 0
+    pointer-events: none
+
+    transition: .15s opacity
+
+    &:last-child
+      border-bottom: unset
+
+    &.is-active
+      position: relative
+      z-index: 2
+
+      order: 0
+      align-items: center
+      width: 100%
+      height: 56px
+      padding-left: var(--unit)
+      padding-right: var(--unit)
+      background: #efeae4
+      border-radius: unset
+      font-weight: 400
+      font-size: 14px
+      line-height: 100%
+      color: #000000
+      opacity: 1
+      border: none
+      border-bottom: 1px solid transparent
+      border-radius: none
+
+.profile__info-button
+  margin-top: 20px
+  width: 100%
+
+.profile__form
+  max-width: 600px
+  display: grid
+  grid-gap: 25px
+
+.profile__form-row
+  display: flex
+
+.profile__form_submit
+  margin-top: 20px
+  width: 100%
+  .btn__bg
+    border-top: 1px solid rgba(0,0,0,.2)
+    border-bottom: 1px solid rgba(0,0,0,.2)
+
+.profile__cancel
+  width: 100%
+  display: grid
+  grid-gap: 20px
+
+.profile__cancel_area
+  background-color: white
+  resize: none
+  width: 100%
+  height: 200px
+  padding: 20px
+  border: 1px solid #f6f1eb
+
+.profile__cancel_footer
+  display: flex
+  grid-gap: 20px
+
+.profile__loyalty
+  +yo('margin-top', (375px: 32px, 1100px: 56px, 1440px: 73))
+
+.profile__loyalty-head
+  display: flex
+  align-items: baseline
+  column-gap: 12px
+  @media (max-width: $tab)
+    column-gap: 10px
+  @media (max-width: $tab-sm)
+    flex-direction: column
+
+.profile__loyalty-title
+  font-weight: 300
+  +yo('font-size', (375px: 24px, 1440px: 36px))
+
+.profile__loyalty-link
+  color: rgba(#000, .6)
+  &::before, &::after
+    background-color: rgba(#000, .6)
+    bottom: 2px
+
+.profile__loyalty-content
+  +yo('margin-top', (375px: 24px, 1440px: 38))
+  width: 100%
+  max-width: 600px
+  tr
+    border-bottom: 1px solid rgba(#000, .1)
+    &:last-child
+      border-bottom: none
+  td
+    padding: 10px 4px 10px 0
+    line-height: 140%
+    &:last-child
+      text-align: right
+      font-weight: 500
+      color: #333
+      padding-right: 0
+      padding-left: 4px
+    &.profile__loyalty-active
+      color: #C53E34
+      &.is-active
+        color: #008857

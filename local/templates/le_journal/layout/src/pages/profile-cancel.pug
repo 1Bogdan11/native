@@ -1,0 +1,24 @@
+extends ../templates/template-scroll.pug
+
+block modals
+  include ../blocks/active-order-modal/active-order-modal.pug
+
+block content
+  .container.profile.js-toggle
+    +profile-header({ title: 'Вы уверены, что хотите отменить заказ №4?' })
+    .profile__main
+      +profile-nav([
+        { title: "Мои заказы", href: "/profile-orders.html", active: true },
+        { title: "Избранное", href: "/profile-favourites.html" },
+        { title: "Профиль", href: "/profile-personal.html" },
+        { title: "Адреса", href: "/profile-address.html" },
+        { title: "Рассылка", href: "/profile-subscribe.html" }
+      ])
+      .profile__content
+        .profile__content-title
+          p Укажите причину отмены заказа
+        form.profile__cancel
+          textarea.profile__cancel_area
+          .profile__cancel_footer
+            a(href="#").button-brand Отменить
+            a(href="#").button-brand Нет

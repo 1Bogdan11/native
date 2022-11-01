@@ -1,0 +1,22 @@
+block variables
+  -
+    const tabs = [
+        { text: "Популярные товары", value: "1" },
+        { text: "Новые поступления", value: "2" },
+        { text: "Специальные предложения", value: "3" }
+    ]
+
+mixin incomes-section
+    section.incomes-section
+        .incomes__head-mobile.media-min--tab
+            +select({ list: tabs })(data-scroll data-observe="fade-y" class="js-incomes-select")
+        .incomes__head.swiper-container.media-max--tab.js-incomes-slider(data-scroll data-observe="fade-y")
+            .incomes__tabs.swiper-wrapper
+                each item in tabs
+                    .incomes__tab.swiper-slide 
+                        span #{item.text}
+            
+        .incomes__content.js-incomes-tabs 
+            +cards-line({ preview: 2 })(data-scroll)
+            +cards-line({ preview: 2 })
+            +cards-line({ preview: 2 })

@@ -1,0 +1,4 @@
+mixin recently-section(data)
+    section.recently-section
+        .recently-section__title Вы недавно смотрели
+        +cards-line({ preview: 2, items: data.items })

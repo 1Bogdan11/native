@@ -1,0 +1,259 @@
+.contacts
+    display: grid
+    grid-template-columns: 516px 1fr
+    height: 100vh
+    overflow: hidden
+    @media (max-width: $tab)
+        height: initial
+        grid-template-columns:  initial
+    &.is-loaded
+        .contacts__map
+            &:before
+                transform: scaleX(0)
+        .aside-tabs
+            opacity: 1
+            transform: translateY(0px)
+            transition-delay: .7s
+        .contacts__email, .mapboxgl-ctrl-zoom-in, .mapboxgl-ctrl-zoom-out
+            opacity: 1
+            transform: translateY(0)
+    &.is-modal
+        @media (max-width: $tab)
+            .contacts__map
+                transform: translateY(0)
+        .contacts__map_close
+            opacity: 1
+            pointer-events: inherit
+.contacts__aside
+    background-color: white
+    padding: 0 50px
+    z-index: 2
+    @media (max-width: $tab)
+        background-color: initial
+        z-index: 0
+        padding: 0
+    .aside-tabs
+        opacity: 0
+        transition-duration: .6s
+        transform: translateY(-20px)
+    .aside-tabs__content
+        grid-template-rows: auto auto 1fr
+        grid-gap: 30px
+        padding: 130px 15px 30px 0
+        @media (max-width: $tab)
+            position: relative
+            padding: 0 $unit
+            grid-gap: 15px
+            overflow: initial
+            opacity: 1
+            transform: translateY(0)
+            &:not(.is-active)
+                display: none
+    .aside-tabs__links
+        @media (max-width: $tab)
+            background-color: $beige-l
+            grid-gap: 24px
+            padding: 15px $unit
+        .back
+            @media (max-width: $tab)
+                display: none
+    .aside-tabs__link
+        @media (max-width: $tab)
+            transition-duration: .4s
+            &:not(.is-active)
+                opacity: .5
+            &:before
+                display: none
+
+.contacts__map
+    overflow: hidden
+    position: relative
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        transform: scaleX(1)
+        height: 100%
+        z-index: 2
+        transition-duration: 1s
+        background-color: white
+        transform-origin: left
+        transition-timing-function: cubic-bezier(.645,.045,.355,1)
+        @media (max-width: $tab)
+            display: none
+    .map
+        position: relative
+        .mapboxgl-control-container
+            @media (max-width: $tab)
+                display: none
+
+.contacts__content
+    display: grid
+    grid-gap: 30px
+    height: 100%
+    grid-template-rows: 1fr auto
+    padding-bottom: 50px
+    @media (max-width: $tab)
+        padding-bottom: 0
+
+.contacts__head
+    display: grid
+    height: fit-content
+    grid-gap: 10px
+    @media (max-width: $tab)
+        grid-gap: 5px
+    .select
+        z-index: 1
+        border-bottom: 1px solid $black
+        @media (max-width: $tab)
+            font-size: 14px
+        .ss-content
+            @media (min-width: $tab + 1)
+                background-color: white
+
+.contacts__head_description
+    font-weight: 400
+
+.contacts__head_title
+    +yo('font-size', (375px: 24px, 1440px: 36px))
+    font-weight: 300
+    @media (max-width: $tab)
+        font-weight: 400
+
+.contacts__links
+    display: grid
+
+.contacts__link--phone
+    font-weight: 600
+
+.contacts__link--email
+    font-weight: 500
+    font-size: 18px
+
+.contacts__form
+    display: grid
+    grid-gap: 30px
+
+.contact__requisites_part
+    padding: 20px 0
+    display: grid
+    grid-gap: 10px
+    &:not(:last-child)
+        border-bottom: 1px solid rgba(0,0,0,.1)
+
+.contact__requisites_title
+    font-weight: 500
+
+.contact__requisites_value
+    font-weight: 400
+
+.contacts__email, .mapboxgl-ctrl-zoom-in, .mapboxgl-ctrl-zoom-out
+    width: 56px
+    height: 56px
+    border-radius: 100%
+    transition-duration: .6s
+    cursor: pointer
+    background-color: rgba(0,0,0,.6)
+    transition-timing-function: ease
+    display: block
+    opacity: 0
+    z-index: 2
+    transform: translateY(-20px)
+    @media (max-width: $tab)
+        width: 40px
+        height: 40px
+
+.mapboxgl-ctrl-zoom-in
+    transition-delay: 1.3s
+
+.mapboxgl-ctrl-zoom-out
+    transition-delay: 1.2s
+
+.contacts__email
+    transition-delay: 1.1s
+    position: absolute
+    bottom: 48px
+    right: 48px
+    @media (max-width: $tab)
+        right: 34px
+        top: 150px
+        bottom: initial
+    svg
+        width: 40%
+        height: 40%
+        position: absolute
+        +absolute-center
+        fill: none
+        stroke: white
+
+
+.contacts--shop
+    @media (max-width: $tab)
+        margin-top: 40px
+
+    .contacts__head
+        @media (max-width: $tab)
+            grid-gap: 20px
+
+    .aside-tabs__content
+        transform: translateY(0)
+        opacity: 1
+        pointer-events: inherit
+        grid-gap: 50px
+        &::-webkit-scrollbar
+            width: 0px
+        @media (max-width: $tab)
+            grid-gap: 30px
+            display: grid!important
+
+    .sale-points__item
+        .point-info__title
+            @media (max-width: $tab)
+                font-size: 14px
+                font-weight: 600
+    .contacts__content
+        grid-gap: 0
+
+    .contacts__map
+        @media (max-width: $tab)
+            .map
+                overflow: hidden
+                position: relative
+
+.contacts__map_close
+    @media (min-width: $tab + 1)
+        display: none
+    @media (max-width: $tab)
+        width: 100vw
+        height: 100vh
+        top: 0
+        left: 0
+        z-index: 2
+        background: rgba(237, 231, 224, 0.9)
+        transition: $trs-4
+        pointer-events: none
+        opacity: 0
+        position: fixed
+
+.contacts__map_content
+    display: none
+    @media (max-width: $tab)
+        display: block
+        margin-top: 10px
+    .button-route
+        margin-top: 15px
+
+.contacts__shop
+    display: grid
+    grid-template-rows: auto 1fr
+    grid-gap: 50px
+    @media (max-width: $tab)
+        grid-gap: 30px
+
+.modal--map-modal
+    &.modal--active
+        .contacts__map
+            &:before
+                transform: scaleX(0)

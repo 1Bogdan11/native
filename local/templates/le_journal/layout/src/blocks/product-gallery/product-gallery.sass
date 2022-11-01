@@ -1,0 +1,427 @@
+.product-gallery
+  top: 0
+  left: 0
+  position: sticky
+  width: 100%
+  overflow: hidden
+  &:before, &:after
+    content: ''
+    position: absolute
+    top: 0
+    width: 100%
+    left: 0
+    height: 100%
+    background-color: $beige
+    transition-duration: .6s
+    z-index: 2
+    pointer-events: none
+  &:before
+    opacity: 0
+  &:after
+    transform: translateX(-100%)
+  &.is-loading
+    &:after
+      transform: translateX(0%)
+
+.product-gallery__slider
+  height: 100%
+  &.is-scrollbooster
+    .product-gallery__slider_item.swiper-slide-active
+      pointer-events: all!important
+    .product-gallery__slider_item-inner
+      height: fit-content
+      @media (max-width: $tab)
+        width: fit-content
+    .product-gallery__slider_item-outer
+      height: 100vh
+      overflow: hidden
+      @media (max-width: $tab)
+        display: flex
+        img
+          padding: 0
+          min-height: 100vh
+          min-width: 100vw
+          max-width: 140vw
+          height: auto
+          width: auto
+  &:not(.is-scrollbooster)
+    .product-gallery__slider_item-inner
+      transform: translate(0) !important
+
+.product-gallery__slider_item
+  width: 100%!important
+  height: 100%
+  background-color: $beige-l
+  pointer-events: none!important
+  opacity: 0!important
+  @media (max-width: $tab)
+    background-color: $base-bg
+  &.swiper-slide-active
+    opacity: 1!important
+    .product-gallery__pin_button
+      opacity: 1
+      transform: scale(1)
+      transition-delay: .2s
+      pointer-events: all
+
+.product-gallery__slider_item-outer
+  height: 100%
+  width: 100%
+  background-color: inherit
+
+.product-gallery__slider_item-inner
+  position: relative
+  background-color: inherit
+  height: 100%
+  img
+    object-position: top
+    width: 100%
+    object-fit: cover
+    height: 100%
+    mix-blend-mode: darken
+    display: block
+    @media (max-width: $tab)
+      box-sizing: border-box
+      padding-top: 70px // Высота header
+      padding-bottom: 134px // Высота .product__head
+      height: 100vh
+      object-position: center
+      object-fit: contain
+
+.product-gallery__thumbs
+  position: absolute
+  bottom: 26px
+  left: 23px
+  z-index: 2
+  overflow: visible
+  display: flex
+  flex-direction: column
+  grid-gap: 8px
+
+.product-gallery__thumbs_item
+  width: 64px
+  height: 88px
+  position: relative
+  z-index: 2
+  cursor: pointer
+  overflow: hidden
+  transition-duration: 1s
+  transition-timing-function: ease
+  will-change: transform
+  transition-property: initial
+  background-color: white
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 3px
+    background-color: black
+    top: 0
+    left: 0
+    z-index: 1
+    transform: translateY(-3px)
+    transform-origin: top
+    transition-duration: .5s
+    transition-timing-function: ease
+
+  img
+    width: 100%
+    z-index: 0
+    height: 100%
+    pointer-events: none
+    object-fit: cover
+    object-position: center
+  &.is-active
+    &:before
+      transform: translateY(0px)
+
+.product-gallery__thumbs_item--png
+  padding: 10px
+  background-color: $beige-l
+  img
+    mix-blend-mode: multiply
+
+.product-gallery__pins
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.product-gallery__pin
+  position: absolute
+  &.is-active
+    .product-gallery__pin_popup
+      @media (min-width: $tab + 1)
+        opacity: 1
+        pointer-events: all
+        transform: translateY(0)
+    .product-gallery__pin_button
+      animation: none
+      transform: scale(.7)
+      transition-delay: 0s
+
+  &.is-right.is-top
+    .product-gallery__pin_popup
+      transform: translateY(10px) translateX(-100%)
+    &.is-active
+      .product-gallery__pin_popup
+        transform: translateY(0px) translateX(-100%)
+
+  &.is-right.is-bottom
+    .product-gallery__pin_popup
+      transform: translateY(calc(-100% + 10px)) translateX(-100%)
+    &.is-active
+      .product-gallery__pin_popup
+        transform: translateY(-100%) translateX(-100%)
+
+  &.is-left.is-bottom
+    .product-gallery__pin_popup
+      transform: translateY(calc(-100% + 10px)) translateX(0)
+      left: 25px
+    &.is-active
+      .product-gallery__pin_popup
+        transform: translateY(-100%) translateX(0)
+
+.product-gallery__mobile-popup
+  position: absolute
+  left: $unit
+  right: $unit
+  top: 0
+  margin: auto
+  bottom: 0
+  height: fit-content
+  border-radius: 8px
+  background-color: white
+  padding: 15px
+  font-size: 14px
+  line-height: 120%
+  opacity: 0
+  z-index: 2
+  transition-duration: .4s
+  transition-timing-function: easeInOut
+  transform: translateY(20px)
+  pointer-events: none
+  &.is-active
+    opacity: 1
+    pointer-events: all
+    transform: translateY(0px)
+
+.product-gallery__mobile-popup_title
+  font-weight: 600
+
+.product-gallery__mobile-popup_description
+  padding-top: 8px
+  font-weight: 500
+
+.product-gallery__pin_button
+  width: 12px
+  height: 12px
+  border-radius: 100%
+  cursor: pointer
+  transition-duration: .6s
+  opacity: 0
+  border: none
+  transition-timing-function: ease
+  transform: scale(.5)
+  pointer-events: none
+  position: relative
+
+  &:before
+    content: ''
+    position: absolute
+    pointer-events: none
+    width: 100%
+    border-radius: 100%
+    height: 100%
+    background-color: white
+    +absolute-center
+    animation: pulse 1s infinite
+
+  &:hover
+    animation: none
+    transform: scale(.3)
+
+.product-gallery__pin_popup
+  position: absolute
+  top: 20px
+  pointer-events: none
+  font-weight: 400
+  background-color: $base-bg
+  display: grid
+  border-radius: 8px
+  left: 0
+  padding: 15px
+  grid-gap: 5px
+  transition-duration: .4s
+  transition-timing-function: easeInOut
+  transform: translateY(10px)
+  opacity: 0
+  line-height: 120%
+
+.product-gallery__pin_title
+  font-weight: 600
+
+.product-gallery__pin_description
+  min-width: 270px
+
+.product-gallery__close, .product-gallery__next, .product-gallery__prev
+  width: 56px
+  height: 56px
+  position: absolute
+  border-radius: 100%
+  transition-duration: .5s
+  background: rgba(0,0,0,.4)
+  display: flex
+  z-index: 5
+  align-items: center
+  opacity: 0
+  justify-content: center
+  pointer-events: none
+  svg
+    width: 17px
+    height: 17px
+    fill: none
+    stroke: white
+  &:hover
+    background: rgba(0,0,0,.8)
+  @media (max-width: $tab)
+    box-sizing: content-box
+    padding: 10px
+
+.product-gallery__close
+  top: 48px
+  right: 48px
+  @media (max-width: $tab)
+    transform: translateY(10px)
+    background: none
+    transition-delay: 0s
+    top: 20px
+    right: $unit
+    width: 14px
+    height: 14px
+    margin: -10px -10px 0 0
+  svg
+    width: 14px
+    height: 14px
+    stroke: none
+    fill: rgba(255,255,255,.8)
+    @media (max-width: $tab)
+      fill: black
+
+.product-gallery__next
+  right: 48px
+  margin: auto
+  @media (max-width: $tab)
+    right: $unit
+    transform: translateX(-10px)
+    margin-right: -10px
+  &.swiper-button-disabled
+    opacity: 0!important
+    transform: translateX(-20px)
+
+.product-gallery__prev
+  left: 48px
+  margin: auto
+  svg
+    transform: rotate(180deg)
+  @media (max-width: $tab)
+    left: $unit
+    transform: translateX(10px)
+    margin-left: -10px
+  &.swiper-button-disabled
+    opacity: 0!important
+    transform: translateX(20px)
+
+.product-gallery__next, .product-gallery__prev
+  top: calc(50vh - 24px)
+  @media (max-width: $tab)
+    width: 14px
+    height: 14px
+    transition-delay: 0s
+    background: none!important
+    top: calc(50vh - 7px - 10px)
+  svg
+    @media (max-width: $tab)
+      stroke: black
+.product-gallery__pagination
+  opacity: 0
+  transition-duration: .5s
+  position: absolute
+  left: 0
+  right: 0
+  pointer-events: none
+  margin: auto
+  top: calc(100vh - 60px)
+  transition-delay: .5s
+  @media (max-width: $tab)
+    display: none
+  .swiper-pagination-bullet
+    background: white
+    width: 6px
+    height: 6px
+    transition-duration: .5s
+    transition-timing-function: ease
+    opacity: 1
+    margin: 0 10px
+    cursor: pointer
+    pointer-events: inherit
+    @media (max-width: $tab)
+      background: black
+      transform: translateY(-10px)
+      opacity: 0
+  .swiper-pagination-bullet-active
+    transform: scale(2)
+body.is-fullscreen
+  .product-gallery__close, .product-gallery__next, .product-gallery__prev, .product-gallery__pagination, .product-gallery .icon-scroll
+    opacity: 1
+    pointer-events: inherit
+    @media (max-width: $tab)
+      transform: translate(0px, 0px)
+    .product-gallery__pagination
+      transition-delay: 0s
+    .swiper-pagination-bullet
+      transform: translateY(0)
+      opacity: 1
+    .swiper-pagination-bullet-active
+      transform: scale(2) translateY(0)
+  .product-gallery__close, .product-gallery__next, .product-gallery__prev, .product-gallery__pagination
+    @media (max-width: $tab)
+      transition-delay: .45s
+
+body.is-fullscreen-leave
+  .product-gallery__pagination
+    opacity: 0
+    transition-delay: 0s
+
+.product-gallery__intersect
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  pointer-events: none
+  z-index: 2
+
+.product-gallery__intersect_part
+  position: absolute
+  &[data-intersect="left"]
+    width: calc(50% - 1px)
+    height: 100%
+    left: 0
+    top: 0
+  &[data-intersect="right"]
+    width: calc(50% - 1px)
+    height: 100%
+    right: 0
+    top: 0
+  &[data-intersect="top"]
+    width: 100%
+    height: calc(50% - 1px)
+    left: 0
+    top: 0
+  &[data-intersect="bottom"]
+    width: 100%
+    height: calc(50% - 1px)
+    left: 0
+    bottom: 0

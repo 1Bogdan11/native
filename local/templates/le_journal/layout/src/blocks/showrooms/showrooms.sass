@@ -1,0 +1,23 @@
+$showroom-unit: 48px
+$showroom-unit-mobile: 16px
+
+.showrooms
+    @media (max-width: $tab)
+        width: 100vw
+
+.showrooms__inner
+    will-change: transform
+    position: relative
+
+.showrooms__list
+    display: grid
+    +yo('grid-gap', (375px: 15px, 1440px: 60px))
+    grid-template-columns: repeat(4, minmax(200px,1fr))
+    will-change: transform
+    @media (max-width: $desktop-m)
+        grid-template-columns: repeat(3, minmax(200px,1fr))
+    @media (max-width: $tab)
+        grid-gap: 16px
+        display: flex
+        width: fit-content
+        

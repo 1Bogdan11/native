@@ -1,0 +1,36 @@
+.delivery
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    height: 160px
+    position: relative
+    @media (max-width: $tab)
+        height: initial
+        grid-template-columns: initial
+
+.delivery-item
+    label
+        height: 100%
+        transition-duration: .5s
+        border: 1px solid rgba(0,0,0,.1)
+        padding: 20px
+        display: flex
+        flex-direction: column
+        cursor: pointer
+        justify-content: space-between
+        grid-gap: 20px
+    input
+        display: none
+
+    input:checked + label
+        border: 1px solid black
+
+.delivery-item__head
+    display: grid
+    grid-gap: 8px
+    line-height: 100%
+
+.delivery-item__title, .delivery-item__price
+    font-weight: 500
+
+.delivery-item__description
+    font-weight: 400

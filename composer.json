@@ -1,0 +1,50 @@
+{
+    "name": "its/le-journal",
+    "type": "project",
+    "authors": [
+        {
+            "name": "its.agency",
+            "email": "box@its.agency"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "vendor-dir": "bitrix/vendor",
+        "allow-plugins": {
+            "composer/installers": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    },
+    "require": {
+        "ext-json": "*",
+        "ext-dom": "*",
+        "ext-mbstring": "*",
+        "andreyryabin/sprint.migration": "^3",
+        "bitrix-expert/monolog-adapter": "^1",
+        "wikimedia/composer-merge-plugin": "dev-master",
+        "google/recaptcha": "^1",
+        "symfony/dotenv": "^3",
+        "its/lib": "^0",
+        "sendpulse/rest-api": "^1.0"
+    },
+    "repositories" : [
+        {
+            "type": "vcs",
+            "url":  "ssh://git@gitlab.corp.code-pilots.ru:22222/its/lib.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Journal\\": "local/php_interface/journal/"
+        }
+    },
+    "extra": {
+        "merge-plugin": {
+            "require": [
+                "bitrix/composer-bx.json",
+                "local/modules/its.area/composer-area.json",
+                "local/modules/its.maxma/composer-maxma.json"
+            ]
+        }
+    }
+}

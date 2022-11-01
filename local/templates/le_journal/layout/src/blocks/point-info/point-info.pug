@@ -1,0 +1,45 @@
+mixin point-info(data)
+  .point-info
+    if data.type == "contacts"
+      button.point-info__title(data-map-point=data.id)
+        span #{data.title}
+    else
+      a(href="/shops.html").point-info__title #{data.title}
+      
+    if data.type == "contacts"
+      .point-info__labels
+        +label({
+          type: 'new',
+          text: 'Магазин Партнера'
+        }).point-info__label
+        +label({
+          type: 'sale',
+          text: 'Фирменный магазин'
+        }).point-info__label
+    
+    .point-info__contacts
+      if data.pointsPayment
+        .point-info__contacts_part
+          a(href="/shop-contacts.html").button-route.link__underline--hover На карте
+      else
+        .point-info__contacts_part 
+          p Москва, Большая Никитская, д.14/2, стр.6
+          p Ежедневно, 10:00 — 22:00
+        .point-info__contacts_part 
+          a(href="#").link__underline--hover +7 (495) 150-72-62
+          a(href="#")
+            +svg('whatsapp')
+            span.link__underline--hover Написать в WhatsApp
+        .point-info__contacts_part
+          a(href="#").link__underline--hover info@lejournalintime.com
+          if data.type == "page"
+            a(href="/shop-contacts.html").button-route.media-max--tab
+              span.link__underline--hover На карте
+            a(href="https://yandex.ru/maps" target="_blank").button-route.media-min--tab Построить маршрут
+          else if data.type == "contacts"
+            a(href="https://yandex.ru/maps" target="_blank").button-route
+              span.link__underline--hover Построить маршрут
+          else 
+            a(href="/shop-contacts.html").button-route
+              span.link__underline--hover На карте
+          

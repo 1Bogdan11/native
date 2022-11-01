@@ -1,0 +1,11 @@
+{
+  "require": {
+    "misixcode/bitrix-admin-page-constructor": "^0.1"
+  },
+  "repositories" : [
+    {
+      "type": "vcs",
+      "url":  "https://github.com/misixcode/bitrix-admin-page-constructor.git"
+    }
+  ]
+}

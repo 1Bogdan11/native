@@ -1,0 +1,13 @@
+mixin card-recently
+    section.card-recently.js-tabs(data-switch-delay="600" data-animation-end="1400")
+        .card-recently__tabs.js-booster-mobile-x
+            .card-recently__tabs_inner.js-booster__inner
+                .card-recently__tab.js-tabs__btn Завершите свой образ
+                .card-recently__tab.js-tabs__btn Вам может понравиться
+
+        .card-recently__content.js-tabs__content(data-scroll)
+            .card-recently__content_inner
+                +fashion-finish
+                +fashion-finish
+        //- .card-recently__content.js-tabs__content
+        //-     +cards-line({ preview: 1.4 })

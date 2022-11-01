@@ -1,0 +1,122 @@
+.sizes
+    display: flex
+    grid-gap: 15px
+    flex-wrap: wrap
+    @media (max-width: $tab)
+        grid-gap: 5px
+
+.sizes__item
+    position: relative
+    height: 30px
+    transition-duration: .4s
+    &.is-disabled
+        opacity: .4
+    label
+        display: flex
+        grid-gap: 3px
+        font-size: 14px
+        line-height: 1.2
+        text-transform: uppercase
+        font-weight: 500
+        cursor: pointer
+        transition-duration: inherit
+        border-radius: 4px
+        padding: 3px 9px 0
+        border: 1px solid transparent
+        @media (max-width: $tab)
+            font-size: 12px
+        &:hover
+            border: 1px solid rgba(0,0,0,0.7)
+        .quantity
+            color: rgba(0,0,0,.5)
+    input
+        display: none
+        &:checked + label
+            border: 1px solid rgba(0,0,0,0.7)
+        &.disabled + label
+            opacity: .5
+
+.sizes--inline
+    .sizes__item
+        border: none
+        padding: 0
+        &.is-active
+            label
+                border: 1px solid rgba(0,0,0,0.7)
+.sizes--bordered
+    grid-gap: 4px
+    .sizes__item
+        padding: 0px 13px
+        font-weight: 500
+        cursor: pointer
+        border: 1px solid black
+        @media (max-width: $tab)
+            padding: 0px 8px
+        &.is-active, &:hover
+            opacity: 1
+        &.is-disabled
+            opacity: .4!important
+        label
+            border: none
+
+.sizes--mobile
+    display: grid
+    grid-gap: 8px
+    .sizes__item
+        width: 100%
+    .sizes__head,
+    label
+        width: 100%
+        display: grid
+        align-items: center
+        grid-template-columns: 2fr 3fr
+        column-gap: 14px
+        padding: 5px 9px
+        font-size: 14px
+        div
+            text-align: center
+    input:checked + label
+        border-color: $brand
+    input:disabled + label
+        opacity: .4
+        cursor: auto
+        &:hover
+            border-color: transparent
+
+.sizes--product
+    display: block
+    width: fit-content
+    cursor: default
+    @media (max-width: $tab)
+        display: none
+    .sizes__head,
+    label
+        display: grid
+        grid-template-columns: .5fr 1fr
+        line-height: 1.2
+        font-size: 12px
+        font-weight: 400
+    .sizes__head
+        padding-bottom: 5px
+        margin-bottom: 2px
+        border-bottom: 1px solid #e5e5e5
+    .sizes__item
+        height: unset
+        margin-bottom: 3px
+        &:last-child
+            margin-bottom: 0
+        input:checked + label
+            border-color: $brand
+        input:disabled + label
+            opacity: .6
+            cursor: auto
+            &:hover
+                border-color: transparent
+        label
+            padding: 5px 10px 3px
+            border: 1px solid transparent
+            border-radius: 4px
+            cursor: pointer
+            transition: border-color $duration-sm $ease-in-out
+            &:hover
+                border-color: $muted

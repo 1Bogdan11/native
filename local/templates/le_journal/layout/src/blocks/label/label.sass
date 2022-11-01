@@ -1,0 +1,30 @@
+
+.label
+    width: fit-content
+    padding: 7px 10px 6px
+    border-radius: 4px
+    z-index: 1
+    white-space: nowrap
+    pointer-events: none
+    @media (max-width: $mob)
+        padding: 4px 6px
+
+    span
+        display: block
+        font-weight: 400
+        font-size: 12px
+        line-height: 1
+        letter-spacing: 0.04em
+        text-transform: uppercase
+        color: #fff
+        @media (max-width: $mob)
+            font-size: 10px
+
+.label--new
+    background-color: #000
+
+.label--sale
+    background-color: #B0424C
+
+.label--not-avialable
+    background-color: $grey-1

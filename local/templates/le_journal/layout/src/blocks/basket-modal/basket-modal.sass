@@ -1,0 +1,61 @@
+.modal--basket-modal
+    &.is-ordering
+        .modal__container
+            &:before
+                opacity: 1
+        .button-brand
+            transform: translateY(-10px)
+            opacity: 0
+
+    .modal__content, .aside-tabs__content
+        overflow-y: hidden
+    .aside-tabs__content
+        &:nth-child(1)
+            @media (max-width: $tab)
+                padding-bottom: 100px
+    .modal__content
+        padding: 50px $unit 70px
+        @media (max-width: $tab)
+            padding: 40px $unit 0px
+    .modal__container
+        width: 40vw
+        &:before
+            @media (min-width: $tab + 1)
+                content: ''
+                position: absolute
+                top: 0
+                right: 0
+                z-index: 1
+                background-color: rgba(0,0,0,.6)
+                transition: $trs-4
+                pointer-events: none
+                opacity: 0
+                width: 100vw
+                height: 100%
+        @media (max-width: $tab)
+            width: 100%
+.modal--basket-empty
+    .aside-tabs
+        display: none
+.basket-modal__empty
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: max-content
+    margin: auto
+
+    &-title
+        margin: 0 0 20px 0
+    &-text
+        width: 500px
+        max-width: 100%
+
+        text-align: center
+    &-button
+        margin: 35px 0 0 0

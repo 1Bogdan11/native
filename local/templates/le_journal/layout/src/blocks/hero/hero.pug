@@ -1,0 +1,15 @@
+mixin hero(data)
+    .hero
+        if data.title
+            +star-title(`Winter Refresh: The Essential Sophia Lingerie`)
+
+        .hero__area 
+            .hero__area-part 
+                a(href="#" data-observe="fade-y" data-scroll).hero__image
+                    img(src="assets/img/hero/hero-image-1.jpg" data-scroll data-scroll-speed="-2")
+            .hero__area-part
+                .hero__area-item 
+                    a(href="#" data-observe="fade-y" data-scroll).hero__image
+                        img(src="assets/img/hero/hero-image-2.jpg" data-scroll data-scroll-speed="-1")
+                    .hero__area-item_title Бюстгальтер Бралетт Delica
+                    

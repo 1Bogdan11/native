@@ -1,0 +1,36 @@
+.news-section
+    & > .news-card
+        margin-bottom: 160px
+        grid-template-columns: 2fr 1fr
+        +yo('column-gap', (375px: 24px, 1440px: 60px, 1920px: 80px))
+        @media (max-width: $tab)
+            margin-bottom: 100px
+        @media (max-width: $desktop-m)
+            grid-template-columns: repeat(2, 1fr)
+        @media (max-width: $tab)
+            grid-template-columns: 1fr
+        .news-card__img
+            padding-bottom: 52%
+        .news-card__content
+            row-gap: 20px
+            @media (max-width: $tab)
+                row-gap: 10px
+
+.news-section__content
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    +yo('--column-gap', (375px: 20px, 1100px: 32px, 1920px: 54px))
+    column-gap: var(--column-gap)
+    +yo('row-gap', (375px: 36px, 1920px: 72px))
+    @media (max-width: $tab)
+        grid-template-columns: repeat(2, 1fr)
+    @media (max-width: $tab-sm)
+        grid-template-columns: 1fr
+
+.news-section__footer
+    width: 100%
+    display: flex
+    justify-content: center
+    +yo('margin-top', (375px: 48px, 1440px: 72px, 1920px: 94px))
+    @media (max-width: $tab)
+        padding: 0 $unit

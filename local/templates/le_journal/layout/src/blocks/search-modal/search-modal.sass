@@ -1,0 +1,49 @@
+.modal--search
+  &.modal--active
+    overflow-y: scroll
+    overflow-x: hidden
+    @media (max-width: $tab)
+      overflow: hidden
+  .catalog-section
+    padding: 90px 0 50px 0
+  .modal__overlay
+    position: fixed
+  .modal__container
+    transform: translateY(100px)
+    opacity: 0
+
+    transition: all 0.3s
+    transition-delay: 0.3s
+    @media (max-width: $tab)
+      background: none
+  .modal__close
+    position: absolute
+    z-index: 1
+    right: 0
+    top: 30px
+    left: 0
+    margin: auto
+  // .catalog-section__head, .catalog-section__item
+    // transform: translateY(100px)
+    // opacity: 0
+  &.modal--active .modal__container
+    opacity: 1
+    transform: translateY(0px)
+  &.modal--active .catalog-section__head
+    opacity: 1
+    transform: translateY(0px)
+  &.modal--active .catalog-section__item
+    opacity: 1
+    transform: translateY(0px)
+  @media (max-width: 1100px)
+    .media-max--tab
+      display: flex
+    .catalog-section__btn
+      display: none
+    .catalog-section__count
+      display: none
+    .input
+      width: 100%
+    .catalog-section
+      padding: 80px 0 50px
+      margin-bottom: 0

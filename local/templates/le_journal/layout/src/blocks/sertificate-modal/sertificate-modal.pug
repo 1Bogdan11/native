@@ -1,0 +1,13 @@
++modal('sertificate', 'right').modal--bordered
+    form.ordering-secondary
+        .ordering-secondary__part
+            .ordering-secondary__title Добавить подарочный сертификат
+            .ordering-secondary__description Для оплаты можно использовать электронную или пластиковую карту нового образца
+            .ordering-secondary__fields
+                .ordering-secondary__form_part 
+                    +input({
+                        type: "text",
+                        required: true,
+                        label: "Номер карты"
+                    })
+        button.button-bordered Применить

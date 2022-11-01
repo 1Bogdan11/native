@@ -1,0 +1,11 @@
+extends ../templates/template-preloader.pug
+
+block content
+  .container.section__wrapper
+    +hero({ title: true })
+    +discount-section
+    +circles-section
+    +incomes-section
+    +showroom-section
+    +diary-section({ type: "preview" })
+    +insta-banners

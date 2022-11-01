@@ -1,0 +1,30 @@
+extends ../templates/template-scroll.pug
+
+block content
+  .container.profile.js-toggle
+    +profile-header({ title: 'Рассылка' })
+    .profile__main
+      +profile-nav([
+        { title: "Мои заказы", href: "/profile-orders.html" },
+        { title: "Избранное", href: "/profile-favourites.html" },
+        { title: "Профиль", href: "/profile-personal.html" },
+        { title: "Адреса", href: "/profile-address.html" },
+        { title: "Рассылка", href: "/profile-subscribe.html", active: true }
+      ])
+      .profile__content
+        .profile__info.is-edit
+          .profile__info-header
+            p.profile__info-title Доступные рассылки
+          .profile__info-content
+            .profile__option-wrapper
+              +checkbox-circle({ id: "ch1", text: "Заметки Le Journal Intime" })
+            p.profile__info-text Хочу узнавать новости из мира бренда, получать напоминания о новых коллекциях, закрытых показах, распродажах и скидках
+
+            .profile__info-button(data-ios="true")
+              button.button-brand.button-brand--icon
+                img(src="../assets/img/apple-wallet.svg")
+                span Добавить в Apple Wallet
+            .profile__info-button(data-ios="false")
+              button.button-brand.button-brand--icon
+                img(src="../assets/img/gpay.svg")
+                span Сохранить на телефоне

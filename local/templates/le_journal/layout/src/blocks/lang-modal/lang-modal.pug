@@ -1,0 +1,19 @@
++modal('lang-modal', 'center')(data-tabs-modal).modal--bordered
+  .lang-modal
+    p.lang-modal__title Выберите язык и валюту
+    p.lang-modal__selects
+      +select({
+        list: [
+          { text: "Канада", value: "1" },
+          { text: "Армения", value: "2" },
+          { text: "Азербайджан", value: "3" },
+        ],
+      })(data-scroll data-observe="fade-y" class="js-incomes-select").select--filled.lang-modal__select
+      +select({
+        list: [
+          { text: "Рубль (₽)", value: "1" },
+          { text: "Армения", value: "2" },
+          { text: "Азербайджан", value: "3" },        
+        ]
+      })(data - scroll data-observe="fade-y" class="js-incomes-select").select--filled.lang-modal__select
+    button.btn.btn--underline.lang-modal__button(type='button') Подтвердить

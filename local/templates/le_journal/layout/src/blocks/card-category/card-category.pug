@@ -1,0 +1,7 @@
+mixin card-category(data)
+    .card-category(class=`${data.type ? 'card-category--' + data.type : ''}`)
+        a(href="/product.html" class=`is-${data.image.type}`).card-category__image
+            picture
+                img(src=data.image.src loading="lazy")
+
+        .card-category__title !{data.title}

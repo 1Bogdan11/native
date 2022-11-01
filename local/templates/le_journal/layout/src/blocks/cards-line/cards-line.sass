@@ -1,0 +1,31 @@
+.cards-line
+    width: 100%
+    position: relative
+    transition-duration: .5s
+    @media (max-width: $tab)
+        overflow: visible
+
+.cards-line__list
+    display: grid
+    +yo('grid-gap', (375px: 15px, 1440px: 60px))
+    position: relative
+    width: 100%
+    grid-template-columns: repeat(4, 1fr)
+    @media (max-width: $tab)
+        grid-gap: 0
+
+.cards-line__item
+    height: 100%
+    @media (max-width: $tab)
+        .card__content
+            padding: 0 15px
+            @media (max-width: $tab)
+                padding-left: 0
+    &:nth-child(1)
+        .card__content
+            padding-left: 15px
+            @media (max-width: $tab)
+                padding-left: 0
+    &:nth-child(4)
+        .card__content
+            padding-right: 15px

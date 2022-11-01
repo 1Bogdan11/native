@@ -1,0 +1,13 @@
+mixin range(data)
+  .range.js-range(
+      data-min=data.min
+      data-max=data.max
+      data-from=data.from
+      data-to=data.to
+    )
+    .range__fields
+      .range__field.js-range-from 0 ₽
+      .range__field.js-range-to 0 ₽
+    .range__slider.js-range-slider
+    input(type="hidden" class="jsFilterItem js-range-from-input" data-min)
+    input(type="hidden" class="jsFilterItem js-range-to-input" data-max)

@@ -1,0 +1,10 @@
+mixin select(data)
+    select.select.js-select(data-show=data.show)&attributes(attributes)
+        if data.placeholder
+            option(data-placeholder="true") !{data.placeholder}
+        each item in data.list
+            if item.selected
+                option(value=item.value selected data-href=item.href) !{item.text}
+            else
+                option(value=item.value data-href=item.href) !{item.text}
+                

@@ -1,0 +1,119 @@
++modal('filters', 'right')
+    form.filters
+        .filters-body
+            .filters-body__inner
+                .accordion.js-toggle(data-filter="single")
+                    .accordion__head.js-toggle__btn
+                        .accordion__title
+                            span Категории
+                            .filter-status.js-filter__status
+                                .filter-status__close
+                            
+                    .accordion__content
+                        +filters-list({
+                            list: [
+                                { title: "Бюстгальтеры", id: "c1" },
+                                { title: "Боди", id: "c2", checked: true },
+                                { title: "Платья", id: "c3" },
+                                { title: "Трусы", id: "c4" },
+                                { title: "Юбки", id: "c5" },
+                                { title: "Шорты", id: "c6" },
+                                { title: "Футболки", id: "c7" },
+                                { title: "Купальники", id: "c8" },
+                                { title: "Аксессуары", id: "c9" }
+                            ],
+                            name: "categories"
+                        })
+                .accordion.js-toggle.is-active(data-filter="multiply")
+                    .accordion__head.js-toggle__btn
+                        .accordion__title
+                            span Цвет
+                            .filter-status.js-filter__status
+                                span.filter-status__counter
+                                .filter-status__close
+                    .accordion__content
+                        +color-circles([
+                            { color: "#C53E34", title: "Бардовый", active: true },
+                            { color: "#B89167", title: "Коричневый", active: true },
+                            { color: "#000000", title: "Черный" },
+                            { color: "#A89EB7", title: "Фиолетовый" },
+                            { color: "#E0E0E0", title: "Серый" },
+                            { color: "#EECE8E", title: "Желтый" },
+                            { color: "#CC0000", title: "Красный" },
+                            { color: "#008857", title: "Зеленый" },
+                        ])
+                .accordion.js-toggle(data-filter="single")
+                    .accordion__head.js-toggle__btn
+                        .accordion__title
+                            span Коллекция
+                            .filter-status.js-filter__status
+                                span.filter-status__counter
+                                .filter-status__close
+                    .accordion__content
+                        +sizes({
+                            list: [
+                                { title: "DUNKAN", quantity: 24 },
+                                { title: "DRAGON WOMAN", quantity: 13 },
+                                { title: "NEXT STEP", quantity: 7 },
+                                { title: "MUSES", quantity: 6 },
+                                { title: "SPA", quantity: 42 },
+                                { title: "INVISIBLE", quantity: 1 },
+                                { title: "DR.TAILOR", quantity: 32 }
+                            ],
+                            type: "bordered"
+                        })
+                .accordion.js-toggle(data-filter="single")
+                    .accordion__head.js-toggle__btn
+                        .accordion__title
+                            span Размер
+                            .filter-status.js-filter__status
+                                .filter-status__close
+                    .accordion__content
+                        +sizes({
+                            list: [
+                                { title: "XS", disabled: true },
+                                { title: "S" },
+                                { title: "M" },
+                                { title: "L", disabled: true },
+                                { title: "XL" },
+                                { title: "XXL" }
+                            ],
+                            type: "bordered"
+                        })
+                        +sizes({
+                            list: [
+                                { title: "70B" },
+                                { title: "70C" },
+                                { title: "70D" },
+                                { title: "75B" },
+                                { title: "75C" },
+                                { title: "75D", disabled: true },
+                                { title: "80B" },
+                                { title: "80C" },
+                                { title: "80D" },
+                                { title: "85B" },
+                                { title: "85C" },
+                                { title: "85D" }
+                            ],
+                            type: "bordered"
+                        })
+                        button.button-grey Таблица размеров
+                .accordion.js-toggle(data-filter="single")
+                    .accordion__head.js-toggle__btn
+                        .accordion__title
+                            span Цена
+                            .filter-status.js-filter__status
+                                .filter-status__close
+                    .accordion__content
+                        +range({
+                            min: 5600,
+                            max: 170000,
+                            from: 27200,
+                            to: 150000
+                        })
+            .filter-body__footer
+                .filters__count.media-max--tab.js-filters-count.is-active Найдено 13 товаров
+                button.t-ttu.js-filter-reset Сбросить
+                button.t-ttu.filter__set
+                    .filter-status.media-min--tab.js-filters-count__mobile.is-active 13
+                    span Применить

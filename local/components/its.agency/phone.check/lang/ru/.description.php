@@ -1,0 +1,4 @@
+<?
+$MESS['ITS_AGENCY_COMPONENT_PHONE_CHECK_NAME'] = 'Проверка номера телефона';
+$MESS['ITS_AGENCY_COMPONENT_PHONE_CHECK_DESCRIPTION'] = 'Проверка номера телефона';
+$MESS['ITS_AGENCY_COMPONENT_PHONE_CHECK_CATEGORY'] = 'its.agency';

@@ -1,0 +1,80 @@
+.order-preview-a
+  display: flex
+  align-items: stretch
+  padding: 16px 32px
+
+  background: #f6f1eb
+  border-radius: 8px
+
+  @media (max-width: $tab)
+    padding: 24px
+
+  &__left
+    @extend .u-flex-col
+    margin: 4px 0
+    @media (max-width: $tab)
+      margin: 4px 20px 4px 0
+  &__title
+    font-weight: 400
+    +yo('font-size', (375px: 14px, 1440px: 16px))
+    line-height: 100%
+    color: #1F2020
+  &__subtitle
+    margin: 6px 0 14px 0
+
+    font-weight: 400
+    +yo('font-size', (375px: 14px, 1440px: 16px))
+    line-height: 100%
+    color: #1F2020
+    opacity: 0.4
+
+    @media (max-width: $tab)
+      line-height: 120%
+  &__button
+    width: max-content
+    margin: auto 0 0 0
+
+    font-weight: 400
+    font-size: 16px
+    line-height: 100%
+    text-align: right
+    color: #1F2020
+  &__images
+    display: flex
+    margin: 0 0 0 auto
+
+    @media (max-width: $tab)
+      display: none
+  &__image
+    margin: 0 8px 0 0
+    picture
+      @extend .u-center
+      width: 96px
+      height: 96px
+      background: #fcf9f6
+      border-radius: 8px
+
+    &:nth-last-child(1)
+      margin: 0
+
+    img
+      max-width: calc(100% - 28px * 2)
+      max-height: calc(100% - 18px * 2)
+      mix-blend-mode: multiply
+
+  &__price
+    flex-shrink: 0
+    margin: 8px 0 auto 65px
+
+    font-weight: 600
+    font-size: 16px
+    line-height: 100%
+    text-align: right
+    color: #1F2020
+
+    @media (max-width: 1300px)
+      margin: 8px 0 auto 35px
+    @media (max-width: $tab)
+      margin: 8px 0 auto auto
+
+

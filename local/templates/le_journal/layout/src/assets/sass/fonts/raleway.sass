@@ -1,0 +1,51 @@
+// @font-face
+//   font-family: 'Raleway'
+//   src: url('../fonts/raleway/Raleway-Thin.woff') format('woff')
+//   font-style: normal
+//   font-weight: 200
+//   font-display: swap
+
+// @font-face
+//   font-family: 'Raleway'
+//   src: url('../fonts/raleway/Raleway-Light.woff') format('woff')
+//   font-style: normal
+//   font-weight: 300
+//   font-display: swap
+
+// @font-face
+//   font-family: 'Raleway'
+//   src: url('../fonts/raleway/Raleway-Regular.woff') format('woff')
+//   font-style: normal
+//   font-weight: 400
+//   font-display: swap
+
+@font-face
+  font-family: 'Raleway'
+  src: url('../fonts/raleway/Raleway-Medium.woff') format('woff')
+  font-style: normal
+  font-weight: 500
+  font-display: swap
+
+// @font-face
+//   font-family: 'Raleway'
+//   src: url('../fonts/raleway/Raleway-Bold.woff') format('woff')
+//   font-style: normal
+//   font-weight: 600
+//   font-display: swap
+
+=raleway($weight: m)
+  // @if $weight == el
+  //   font-family: 'Raleway', sans-serif
+  //   font-weight: 200
+  // @if $weight == l
+  //   font-family: 'Raleway', sans-serif
+  //   font-weight: 300
+  // @if $weight == r
+  //   font-family: 'Raleway', sans-serif
+  //   font-weight: 400
+  @if $weight == m
+    font-family: 'Raleway', sans-serif
+    font-weight: 500
+  // @if $weight == b
+  //   font-family: 'Raleway', sans-serif
+  //   font-weight: 600

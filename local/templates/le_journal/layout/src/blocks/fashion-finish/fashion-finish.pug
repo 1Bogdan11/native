@@ -1,0 +1,82 @@
+mixin fashion-finish
+    .fashion-finish.cards-line.js-slider-mobile.swiper-container(data-preview="1.4")&attributes(attributes)
+        ul.fashion-finish__inner.cards-line__list.swiper-wrapper
+            li.fashion-finish__item.cards-line__item.swiper-slide
+                +card({
+                    title: "Бюстгальтер Viki",
+                    price: "5 600",
+                    type: "line",
+                    image: {
+                        src: "assets/img/card/png/card-1.png",
+                        type: "item",
+                    },
+                    sizes: [
+                        { text: "Размер XS", value: "1" },
+                        { text: "Размер S", value: "2" },
+                        { text: "Размер M", value: "3" },
+                        { text: "Размер L", value: "4" },
+                        { text: "Размер XL", value: "5" },
+                    ],
+                    colors: [
+                        { text: "Бежевый", value: "1" },
+                        { text: "Розовый", value: "2" },
+                        { text: "Фиолетовый", value: "3" },
+                    ],
+                    icon: "plus",
+                    fashionCalculator: true
+                })
+            li.fashion-finish__item.cards-line__item.swiper-slide
+                +card({
+                    title: "Бюстгальтер Бралетт Monroe",
+                    price: "6 666",
+                    type: "line",
+                    image: {
+                        src: "assets/img/card/png/card-3.png",
+                        type: "item",
+                    },
+                    sizes: [
+                        { text: "Размер XS", value: "1" },
+                        { text: "Размер S", value: "2" },
+                        { text: "Размер M", value: "3" },
+                        { text: "Размер L", value: "4" },
+                        { text: "Размер XL", value: "5" },
+                    ],
+                    colors: [
+                        { text: "Бежевый", value: "1" },
+                        { text: "Розовый", value: "2" },
+                        { text: "Фиолетовый", value: "3" },
+                    ],
+                    icon: "equals",
+                    fashionCalculator: true
+                })
+            li.fashion-finish__item.cards-line__item.swiper-slide
+                +card({
+                    title: "Бюстгальтер Бралетт Monroe",
+                    price: "6 666",
+                    type: "line",
+                    image: {
+                        src: "assets/img/card/png/card-3.png",
+                        type: "item",
+                    },
+                    sizes: [
+                        { text: "Размер XS", value: "1" },
+                        { text: "Размер S", value: "2" },
+                        { text: "Размер M", value: "3" },
+                        { text: "Размер L", value: "4" },
+                        { text: "Размер XL", value: "5" },
+                    ],
+                    colors: [
+                        { text: "Бежевый", value: "1" },
+                        { text: "Розовый", value: "2" },
+                        { text: "Фиолетовый", value: "3" },
+                    ],
+                    icon: "equals",
+                    fashionCalculator: true
+                })
+            li.fashion-finish__item.cards-line__item.swiper-slide
+                .fashion-finish__total
+                    .fashion-finish__price
+                        span 16 960₽
+                        span.fashion-finish__oldprice 17 400₽
+                    button.button-bordered(data-modal-url="/modals/basket-modal.html" data-modal-tab="basket") Добавить в корзину
+        .progress.swiper-pagination.media-min--tab

@@ -1,0 +1,8 @@
+mixin colors(data)
+    ul.colors
+        each item in data.list
+          .colors__item
+            input(type="radio" id=item.title name='colors' checked=item.checked)
+            label(for=item.title)
+              img(src=item.image).colors__item_image
+              .colors__item_title !{item.title}

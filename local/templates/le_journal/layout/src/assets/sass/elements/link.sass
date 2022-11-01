@@ -1,0 +1,59 @@
+.link__underline--hover
+    position: relative
+    will-change: transform
+    white-space: nowrap
+    &:after
+        content: ""
+        background: black
+        height: 1px
+        width: 100%
+        will-change: transform
+        left: 0
+        bottom: 0px
+        transform-origin: right
+        transform: scaleX(1) translateZ(0)
+        position: absolute
+        transition-duration: .6s
+        transition-timing-function: cubic-bezier(.165,.84,.44,1)
+        transform: scaleX(0) translateZ(0)
+        transform-origin: left
+    &:hover
+        &:after
+            transform: scaleX(1) translateZ(0)
+
+.link__underline
+    @extend .link__underline--hover
+    &:before
+        content: ""
+        background: black
+        height: 1px
+        width: 100%
+        will-change: transform
+        left: 0
+        bottom: 0px
+        transform-origin: right
+        transform: scaleX(1) translateZ(0)
+        position: absolute
+        transition-duration: .6s
+        transition-timing-function: cubic-bezier(.165,.84,.44,1)
+        transition-delay: .3s
+    &:hover
+        &:before
+            transform: scaleX(0) translateZ(0)
+            transition-delay: 0s
+        &:after
+            transition-delay: .3s
+
+.link-circle
+    display: flex
+    align-items: center
+    grid-gap: 8px
+    font-size: 14px
+    font-weight: 400
+    &:before
+        content: ''
+        width: 7px
+        height: 7px
+        border-radius: 100%
+        background: $fiolet
+        transition-duration: .4s

@@ -1,0 +1,51 @@
+.pagination
+    display: flex
+    grid-gap: 10px
+    font-size: 18px
+
+.pagination__item
+    a
+        color: rgba(0,0,0,.6)
+        transition: $trs-4
+    a:hover,
+    &.is-active a
+        color: rgba(0,0,0,1)
+
+.pagination__item--separator
+    pointer-events: none
+
+.pagination--catalog,
+.pagination--diary
+    grid-gap: 8px
+    @media (max-width: $tab)
+        grid-gap: 6px
+
+    .pagination__item
+        a
+            width: 64px
+            height: 52px
+            @media (max-width: $tab)
+                width: 48px
+                height: 40px
+            @media (max-width: $mob)
+                width: 40px
+                height: 40px
+                padding: 0
+            .btn__bg
+                &,
+                &::before,
+                &::after
+                    transition: $trs-4
+            .btn__text
+                font-weight: 400
+                font-size: 16px
+                line-height: 1
+                transition: none
+                @media (max-width: $tab)
+                    font-size: 14px
+        &.is-active a
+            .btn__bg
+                &,
+                &::before,
+                &::after
+                    transform: scaleX(1)

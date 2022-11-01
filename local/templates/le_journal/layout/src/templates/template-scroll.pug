@@ -1,0 +1,16 @@
+doctype html
+html(lang='ru')
+  include ../templates/mixins.pug
+  include ../templates/head.pug
+
+  body(style="visibility: hidden;")
+    .modals.js-modals
+    include ../templates/blocks.pug
+    block modals
+    +profile-modal-desktop({view: "login"})
+    +mobile-menu-modal({view: "login"})
+    //- Main content
+    +header({ className: "", type: "default" })
+    main#js-scroll(data-direction="vertical")
+      block content
+      +footer

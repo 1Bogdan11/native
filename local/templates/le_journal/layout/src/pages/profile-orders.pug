@@ -1,0 +1,88 @@
+extends ../templates/template-scroll.pug
+
+block modals
+  include ../blocks/active-order-modal/active-order-modal.pug
+
+block content
+  .container.profile.js-toggle
+    +profile-header({ title: 'Мои заказы', indicator: '1' })
+    .profile__main
+      +profile-nav([
+        { title: "Мои заказы", href: "/profile-orders.html", active: true },
+        { title: "Избранное", href: "/profile-favourites.html" },
+        { title: "Профиль", href: "/profile-personal.html" },
+        { title: "Адреса", href: "/profile-address.html" },
+        { title: "Рассылка", href: "/profile-subscribe.html" }
+      ])
+      .profile__content
+        .profile__content-title
+          p Активный заказ
+        +order-preview-a({
+          title: "Заказ №193884-402-70",
+          subtitle: "Ожидает доставки 27 января 2021, 17:00-20:00",
+          button: "Подробнее",
+          link: "/",
+          title: "Заказ №193884-402-70",
+          images: [{
+            src: "assets/img/card/png/card-1.png",
+            alt: "goods"
+          },{
+            src: "assets/img/card/png/card-2.png",
+            alt: "goods"
+          },{
+            src: "assets/img/card/png/card-3.png",
+            alt: "goods"
+          },{
+            src: "assets/img/card/png/card-4.png",
+            alt: "goods"
+          }],
+          price: "26 100₽"
+        })
+        +pagination({
+            pages: ['1', '2', '3', '...', '12'],
+        })
+        hr.profile__content-separator
+        .profile__content-title
+          p История заказов
+          hr.profile__content-title-separator
+          .profile__content-title-filter
+            a(href="#").profile__content-title-year.is-active 2020
+            a(href="#").profile__content-title-year 2019
+            a(href="#").profile__content-title-year 2018
+          +select({
+            list: [
+              { text: "2020", value: "1" },
+              { text: "2019", value: "2" },
+              { text: "2018", value: "3" }, 
+            ]
+            })(data-scroll data-observe="fade-y" class="js-incomes-select")
+        +order-preview-a({
+          title: "Заказ №193884-402-70",
+          subtitle: "Ожидает доставки 27 января 2021, 17:00-20:00",
+          button: "Подробнее",
+          link: "/",
+          title: "Заказ №193884-402-70",
+          images: [{
+            src: "assets/img/card/png/card-2.png",
+            alt: "goods"
+          },{
+            src: "assets/img/card/png/card-2.png",
+            alt: "goods"
+          }],
+          price: "26 100₽"
+        })
+        +order-preview-a({
+          title: "Заказ №193884-402-70",
+          subtitle: "Ожидает доставки 27 января 2021, 17:00-20:00",
+          button: "Подробнее",
+          link: "/",
+          title: "Заказ №193884-402-70",
+          images: [{
+            src: "assets/img/card/png/card-4.png",
+            alt: "goods"
+          }],
+          price: "26 100₽"
+        })
+        +pagination({
+            pages: ['1', '2', '3', '...', '12'],
+        })

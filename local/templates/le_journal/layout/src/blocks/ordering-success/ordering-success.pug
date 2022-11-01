@@ -1,0 +1,15 @@
++modal('ordering-success', 'center').modal--beige
+    .ordering-success
+        .ordering-success__part
+            .ordering-success__head
+                +logo("dark")
+            .ordering-success__content
+                +star-title(`Время волшебства: оформление заказа прошло успешно`)
+                .ordering-success__description Как только мы соберем заказ, вы получите SMS-сообщение. Через несколько секунд бездействия мы вернем вас на главную страницу
+        .ordering-success__footer
+            +card-billet({
+              title: "Заказ №193884-402-70",
+              status: "Оформлен",
+              image: "assets/img/card/png/card-2.png",
+            })
+            button.modal__mobile-close(data-modal-close="ordering-success")

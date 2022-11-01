@@ -1,0 +1,21 @@
+.star-title
+    display: grid
+    grid-gap: 5px
+    max-width: 960px
+    +yo('padding-top', (375px: 50px, 1440px: 100px))
+    margin: 0 auto 0
+    text-align: center
+    line-height: 100%
+    justify-content: center
+    transform: translateY(15px)
+    transition-delay: .6s
+    +yo('font-size', (320px: 30px, 375px: 32px, 1440px: 72px))
+    @media (max-width: $tab)
+        grid-gap: 8px
+    svg
+        width: 18px
+        height: 18px
+        margin: auto
+        @media (max-width: $tab)
+            width: 12px
+            height: 12px

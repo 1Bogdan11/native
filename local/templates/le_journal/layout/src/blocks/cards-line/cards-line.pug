@@ -1,0 +1,30 @@
+block variables
+  -
+    var randomMinMax = function(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    };
+
+    var randomListItem = function(list) {
+      return list[Math.floor(Math.random() * list.length)];
+    }
+
+mixin cards-line(data)
+    .cards-line.swiper-container.js-slider-mobile(data-preview=data.preview)&attributes(attributes)
+        ul.cards-line__list.swiper-wrapper
+            if data.items && data.items.length 
+              each card in data.items
+                li.cards-line__item.swiper-slide
+                  +card(card)
+            else
+              - for (var x = 0; x < 4; x++)
+                  li.cards-line__item.swiper-slide
+                    +card({
+                      title: randomListItem(["Бюстгальтер Viki", "Боди Le Journal Intime Jadi", "Бюстгальтер Бралетт Monroe", "Бюстгальтер Бандо Jadi Eyes"]),
+                      price: randomListItem(["3 400", "5 600", "9 200", "1 546"]),
+                      type: "line",
+                      image: {
+                        src: `assets/img/card/png/card-${randomMinMax(1, 4)}.png`,
+                        type: "item",
+                      }
+                    })
+        .progress.swiper-pagination.media-min--tab

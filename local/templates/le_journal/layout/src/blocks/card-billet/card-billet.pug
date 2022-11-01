@@ -1,0 +1,10 @@
+mixin card-billet(data)
+    a(href="/product.html").card-billet
+        .card-billet__image
+            img(src=data.image)
+        .card-billet__content
+            .card-billet__title !{data.title}
+            if data.price
+                .card-billet__price !{data.price}
+            if data.status
+                .card-billet__status !{data.status}

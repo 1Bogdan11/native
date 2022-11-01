@@ -1,0 +1,83 @@
+.profile__info
+  padding: 48px 0
+  border-bottom: 1px solid rgba(#000000, .1)
+
+  &.is-edit
+    input
+      pointer-events: all
+    .profile__info-edit-button
+      &::before
+        content: 'Сохранить'
+
+  &:nth-child(1)
+    padding: 0 0 48px 0
+  &:nth-last-child(1)
+    border-bottom: unset
+
+  &-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-title
+    font-weight: 400
+    +yo('font-size', (375px: 14px, 1440px: 16px))
+    line-height: 100%
+    color: #000000
+  &-edit-button
+    font-weight: 400
+    +yo('font-size', (375px: 12px, 1440px: 16px))
+    line-height: 100%
+    color: #000000
+
+    @media (max-width: $tab)
+      color: rgba(#000000, .4)
+  &-content
+    display: flex
+    flex-direction: column
+    margin: 24px 0 0 0
+  &-edit-button
+    &::before
+      content: 'Редактировать'
+  input
+    pointer-events: none
+
+    font-weight: 400
+    +yo('font-size', (375px: 16px, 1440px: 22px))
+    line-height: 130%
+    color: #000000
+
+    @media (max-width: $tab)
+      line-height: 140%
+
+    &[type="password"]
+      width: 100%
+      height: 20px
+
+      font-size: 40px
+      letter-spacing: -2.5px
+  .profile__option-wrapper
+    display: flex
+    align-items: center
+    margin: 24px 0 8px 0
+
+    font-weight: 400
+    +yo('font-size', (375px: 14px, 1440px: 22px))
+    line-height: 130%
+    color: #000000
+
+    @media (max-width: $tab)
+      margin: 0 0 12px 0
+  .profile__option-text
+    display: flex
+    +yo('margin-left', (375px: 12px, 1440px: 16px))
+  &-text
+    margin-top: 8px
+
+    font-weight: 400
+    +yo('font-size', (375px: 14px, 1440px: 16px))
+    line-height: 100%
+    color: #000000
+
+    @media (max-width: $tab)
+      margin-top: 12px
+      line-height: 130%

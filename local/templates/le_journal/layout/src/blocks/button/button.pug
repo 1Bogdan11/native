@@ -1,0 +1,22 @@
+mixin btn(options)
+  if options.isLink
+    a.btn(class={ 'btn--icon': options.useIcon } href="#")&attributes(attributes)
+      span.btn__bg
+      span.btn__text(class=options.textClass)= options.text
+      
+      if options.useIcon
+        +svg(options.iconName)
+
+      if block
+        block
+
+  else
+    button.btn(class={ 'btn--icon': options.useIcon } type="button")&attributes(attributes)
+      span.btn__bg
+      span.btn__text(class=options.textClass)= options.text
+      if options.useIcon
+        +svg(options.iconName)
+
+      if block
+        block
+

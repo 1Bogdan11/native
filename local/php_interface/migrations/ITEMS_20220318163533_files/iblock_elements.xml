@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items iblockUid="content:about_benefits" exchangeVersion="2">
+   <item>
+      <field name="ACTIVE">
+         <value>Y</value>
+      </field>
+      <field name="ACTIVE_FROM">
+         <value>18.03.2022 16:00:45</value>
+      </field>
+      <field name="ACTIVE_TO" />
+      <field name="SORT">
+         <value>500</value>
+      </field>
+      <field name="NAME">
+         <value>Технологии комфорта</value>
+      </field>
+      <field name="PREVIEW_PICTURE">
+         <value name="about-12.jpg">iblock/036/5an94h2u82ucns2x5o1ciyrogs76l3jl.jpg</value>
+      </field>
+      <field name="PREVIEW_TEXT">
+         <value>Основной тканью белья Le Journal Intime является специализированный сетчатый трикотаж с уникальными свойствами поддержки и эластичности, который долгое время мы использовали, и продолжаем использовать, в производстве медицинского компрессионного белья. Мы решили перенести прекрасные функции поддержки и притягательную полупрозрачность этого материала в повседневную жизнь. Благодаря сетчатой структуре материала поверхность кожи остается открытой на 60%. Невесомость и воздушность изделий (вес одного бюстгальтера около 45 г) сочетается с прекрасными характеристиками упругости и эластичности, что дает возможность оказывать отличную и очень физиологичную поддержку груди без косточек и чувствовать себя комфортно в течение всего дня. Второй отличительной чертой, создающей повышенный комфорт, являются плоские швы из мягкой пряжи. Нежная текстура пряжи и особый тип шва делают соединение деталей неощущаемыми кожей, Благодаря этому швы не стягивают изделие и поддерживают равномерную эластичность белья, что характерно для бесшовных изделий.</value>
+      </field>
+      <field name="PREVIEW_TEXT_TYPE">
+         <value>text</value>
+      </field>
+      <field name="DETAIL_PICTURE" />
+      <field name="DETAIL_TEXT" />
+      <field name="DETAIL_TEXT_TYPE">
+         <value>text</value>
+      </field>
+      <field name="CODE" />
+      <field name="TAGS" />
+      <field name="XML_ID">
+         <value>3571</value>
+      </field>
+      <field name="IBLOCK_SECTION" />
+   </item>
+   <item>
+      <field name="ACTIVE">
+         <value>Y</value>
+      </field>
+      <field name="ACTIVE_FROM">
+         <value>18.03.2022 16:00:45</value>
+      </field>
+      <field name="ACTIVE_TO" />
+      <field name="SORT">
+         <value>500</value>
+      </field>
+      <field name="NAME">
+         <value>Технологии комфорта</value>
+      </field>
+      <field name="PREVIEW_PICTURE">
+         <value name="about-10.jpg">iblock/89a/mwdla858ankvtlp8md0hp68anqu2z1fj.jpg</value>
+      </field>
+      <field name="PREVIEW_TEXT">
+         <value>Так основной тканью каждой коллекции бренда стал PowerNet. Высокотехнологичный сетчатый трикотаж, обеспечивающий профессиональную компрессию, используется в послеоперационном медицинском белье. Le Journal Intime одной из первых марок перенесла эту ткань в повседневность. Сетчатая структура ткани позволяет коже быть открытой на 60%, но при этом создает необходимое корректирующее давление, сглаживая неровности фигуры и формируя плавный силуэт.</value>
+      </field>
+      <field name="PREVIEW_TEXT_TYPE">
+         <value>text</value>
+      </field>
+      <field name="DETAIL_PICTURE" />
+      <field name="DETAIL_TEXT" />
+      <field name="DETAIL_TEXT_TYPE">
+         <value>text</value>
+      </field>
+      <field name="CODE" />
+      <field name="TAGS" />
+      <field name="XML_ID">
+         <value>3572</value>
+      </field>
+      <field name="IBLOCK_SECTION" />
+   </item>
+</items>

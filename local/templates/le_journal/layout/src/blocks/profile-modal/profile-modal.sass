@@ -1,0 +1,200 @@
+.profile-modal
+    height: 100%
+    color: black
+    display: grid
+    grid-template-rows: auto 1fr
+    grid-gap: 100px
+    position: relative
+    &.is-forgot
+        .profile-forgot
+            opacity: 1
+            transform: translateY(0px)
+            pointer-events: inherit
+            transition-delay: .5s
+
+        .profile-login
+            pointer-events: none
+            transition-delay: 0s
+            opacity: 0
+            transform: translateY(20px)
+
+.profile-modal__part
+    position: relative
+    height: 100%
+
+.profile-modal__inner
+    height: 100%
+    transition-timing-function: ease
+    transition-duration: .5s
+    transform: translateY(0px)
+    opacity: 1
+    transition-delay: .5s
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0px
+    left: 0
+
+.profile-forgot
+    opacity: 0
+    transition-delay: 0s
+    pointer-events: none
+    transform: translateY(20px)
+    .profile-modal__form_part
+        margin-bottom: 40px
+
+.profile-modal__title
+    font-weight: 500
+
+.profile-modal__head_title
+    font-weight: 400
+    line-height: 1.2
+    +yo('font-size', (375px: 24px, 1440px: 30px))
+    @media (max-width: $tab)
+        font-weight: 300
+
+.profile-modal__head_description
+    font-weight: 400
+    margin-top: 10px
+    color: rgba(0,0,0,.8)
+
+.profile-modal__form
+    display: flex
+    flex-direction: column
+    grid-gap: 20px
+    justify-content: space-between
+    height: 100%
+
+.profile-modal__bottom
+    display: grid
+    grid-gap: 24px
+    position: relative
+    button
+        width: 100%
+        font-weight: 500
+        bottom: 0
+        left: 0
+
+.profile-modal__bottom_title
+    color: black
+    font-weight: 500
+
+.profile-modal__form_part, .profile-modal__registration
+    display: grid
+    grid-gap: 25px
+    +yo('margin-top', (375px: 20px, 1440px: 50px))
+    button, a, .unique-phone
+        font-weight: 500
+        width: 100%
+
+.profile-registration
+    @media (max-width: $tab)
+        padding-bottom: 80px
+        height: fit-content
+
+    .profile-modal__bottom
+        button
+            position: initial
+    .checkbox-circle
+        margin-top: 30px
+
+.profile-modal__form_password
+    position: relative
+
+.profile-modal__form_forgot
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    font-weight: 400
+    opacity: .5
+    transition-duration: .4s
+    margin: auto
+    &:hover
+        opacity: 1
+
+.profile-modal__registration
+    display: grid
+    @media (min-width: $tab + 1)
+        grid-template-columns: repeat(2, 1fr)
+    .input
+        &:first-child
+            @media (min-width: $tab + 1)
+                grid-column-start: 1
+                grid-column-end: 3
+
+.profile-modal__head_back
+    width: 50px
+    height: 50px
+    cursor: pointer
+    position: relative
+    border-radius: 100%
+    border: 1px solid $beige
+    transition-duration: .7s
+    transition-timing-function: ease
+    will-change: transform
+    display: block
+    margin-bottom: 25px
+    &:hover
+        border: 1px solid $beige-d
+        transform: scale(.9)
+        svg
+            animation: arrow-move .7s ease
+    svg
+        width: 15px
+        position: absolute
+        +absolute-center
+        will-change: inherit
+        transform: rotate(180deg)
+        height: 15px
+        fill: none
+        stroke: black
+        transition-duration: inherit
+        transition-timing-function: inherit
+
+.profile-modal__form--registration
+    .profile-modal__bottom
+        grid-gap: 10px
+    .form__confidentiality
+        margin-top: 0
+
+@keyframes arrow-move
+	0%
+		transform: translateX(0) rotate(180deg)
+	50%
+		transform: translateX(-3px) rotate(180deg)
+	100%
+		transform: translateX(0) rotate(180deg)
+
+.modal--profile-modal
+    @media (max-width: $tab)
+        .modal__container
+            background-color: $base-bg
+        .profile-modal__title
+            display: none
+        .modal__mobile-close
+            top: 24px
+            bottom: initial
+            z-index: 1
+            background: none
+            right: $unit
+            left: initial
+            width: 23px
+            height: 23px
+            &:before, &:after
+                width: 100%
+        .profile-modal__form
+            margin-bottom: 70px
+        .modal__content
+            overflow-y: scroll
+            padding: 80px $unit 0
+        .profile-modal__head_back
+            position: absolute
+            width: 45px
+            height: 45px
+            top: -65px
+    &.modal--active
+        .modal__mobile-close
+            opacity: 1
+            pointer-events: all
+            transform: translateY(0)

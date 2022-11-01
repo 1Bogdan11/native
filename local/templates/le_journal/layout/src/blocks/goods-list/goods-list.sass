@@ -1,0 +1,34 @@
+.goods-list
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    +yo('grid-column-gap', (375px: 15px, 1440px: 48px))
+    +yo('grid-row-gap', (375px: 15px, 1440px: 64px))
+    @media (max-width: $desktop)
+        grid-template-columns: repeat(3, 1fr)
+    @media (max-width: $tab)
+        grid-row-gap: 25px
+        grid-template-columns: repeat(2, minmax(100px, 1fr))
+
+.goods-list__item .card
+    .card__title
+        white-space: normal
+
+    .card__image
+        position: relative
+        justify-content: center
+        align-items: center
+        height: auto
+        padding: 76% 50%
+        
+        picture
+            position: absolute
+
+        &.is-item img
+            max-width: 46%
+            height: auto
+            width: max-content
+
+    .card__content
+        @media (max-width: $tab)
+            padding-left: 16px
+            padding-right: 16px

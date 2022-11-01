@@ -1,0 +1,118 @@
+.diary-section
+    max-width: 100%
+    @media (max-width: $tab)
+        padding-top: 40px
+
+.diary-section--full
+    .diary-section__head
+        @media (max-width: $tab)
+            grid-gap: 40px
+
+.diary-section__head
+    grid-template-columns: repeat(3, 1fr)
+    transition-delay: .2s
+    grid-gap: 20px
+    display: grid
+    transition-duration: .5s
+    margin-bottom: 35px
+    @media (max-width: $desktop)
+        grid-template-columns: repeat(2, 1fr)
+    @media (max-width: $tab)
+        margin-bottom: 20px
+        grid-gap: 0px
+        grid-template-columns: initial
+
+.diary-section__part
+    display: flex
+    grid-gap: 14px
+    &:nth-of-type(2)
+        display: flex
+        justify-content: center
+        @media (max-width: $desktop)
+            justify-content: flex-end
+        @media (max-width: $tab)
+            justify-content: flex-start
+
+.diary-section__date
+    color: rgba(0,0,0,.4)
+    font-weight: 300
+    padding-left: 14px
+    line-height: 120%
+    +yo('font-size', (375px: 20px, 1440px: 26px))
+    display: flex
+    padding-top: 5px
+    align-items: flex-end
+    border-left: 1px solid rgba(0,0,0,.1)
+
+.diary-section__title
+    color: black
+    font-weight: 400
+    +yo('font-size', (375px: 20px, 1440px: 36px))
+    display: flex
+    align-items: flex-end
+    line-height: 100%
+
+.diary-section__area
+    display: grid
+    grid-gap: 48px
+
+.diary-section__row
+    display: flex
+    flex-wrap: wrap
+    grid-gap: 48px
+
+.diary-card
+    width: calc(25% - 36px)
+    @media (max-width: $tab)
+        width: 100%
+    &:nth-child(3n+1)
+        .diary-card__content
+            transition-delay: .6s
+    &:nth-child(3n+2)
+        .diary-card__content
+            transition-delay: .7s
+            @media (max-width: $tab)
+                transition-delay: .6s
+    &:nth-child(3n+3)
+        .diary-card__content
+            transition-delay: .8s
+            @media (max-width: $tab)
+                transition-delay: .6s
+.diary-card--big
+    width: calc(50% - 24px)
+    @media (max-width: $tab)
+        width: 100%
+
+.diary-section__row--type-1
+    .diary-card
+        &:first-child
+            @media (min-width: $tab + 1)
+                grid-column-start: 1
+                grid-column-end: 3
+            .diary-card__image
+                @media (max-width: $tab)
+                    height: 30vh
+
+.diary-section__row--type-2
+    .diary-card
+        &:nth-of-type(2)
+            @media (min-width: $tab + 1)
+                grid-column-start: 2
+                grid-column-end: 4
+
+.diary-section__row--type-4
+    .diary-card
+        &:last-child
+            @media (min-width: $tab + 1)
+                grid-column-start: 3
+                grid-column-end: 5
+
+.diary-section__footer
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    grid-gap: 34px
+    .btn
+        width: 100%
+        max-width: 920px

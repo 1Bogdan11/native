@@ -1,0 +1,157 @@
+extends ../templates/template-modal.pug
+block content
+    +modal('basket-modal', 'right')(data-tabs-modal).modal--bordered
+        .aside-tabs
+            .aside-tabs__links.js-modal__tabs
+                button(data-modal-tab="basket").aside-tabs__link Корзина
+                button(data-modal-tab="favorites").aside-tabs__link Список желаний
+                button(data-modal-tab="maybe-like").aside-tabs__link.media-max--tab Вам может понравиться
+            .aside-tabs__area.js-modal__contents
+                .aside-tabs__content(data-modal-content="basket")
+                    .basket.js-basket
+                        .basket__content
+                            .basket__head
+                                .basket__quantity.js-basket-quantity 4 товара
+                                button.basket__clear.js-basket-clear Очистить
+                            .basket__content_inner
+                                ul.basket__list.js-toggle-free
+                                    li.basket__list_item
+                                        +basket-item({
+                                            title: "Бюстгальтер Viki",
+                                            image: "assets/img/card/png/card-2.png",
+                                            link: "/product.html",
+                                            price: 2400,
+                                            colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                            selectsView: "down"
+                                        })
+                                    li.basket__list_item
+                                        +basket-item({
+                                            title: "Боди Le Journal Intime Jadi",
+                                            image: "assets/img/card/png/card-3.png",
+                                            link: "/product.html",
+                                            price: 5700,
+                                            colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                            selectsView: "down"
+                                        })
+                                    li.basket__list_item
+                                        +basket-item({
+                                            title: "Бюстгальтер Бралетт Monroe",
+                                            image: "assets/img/card/png/card-4.png",
+                                            link: "/product.html",
+                                            price: 1300,
+                                            colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                            selectsView: "down"
+                                        })
+                                    li.basket__list_item
+                                        +basket-item({
+                                            title: "Бюстгальтер Viki",
+                                            image: "assets/img/card/png/card-1.png",
+                                            link: "/product.html",
+                                            price: 1234,
+                                            colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                            selectsView: "down"
+                                        }).is-removed
+                                    li.basket__list_item
+                                        +basket-item({
+                                            title: "Боди Le Journal Intime Jadi",
+                                            image: "assets/img/card/png/card-2.png",
+                                            link: "/product.html",
+                                            price: 4321,
+                                            colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                            selectsView: "up"
+                                        })
+
+                        .basket__footer
+                            form.basket__form.js-form
+                                +input({
+                                    type: "text",
+                                    label: "Промокод или сертификат"
+                                })
+                                button.form__button
+                                    +svg("arrow-thin")
+                                .promocode-success
+                                    .promocode-success__part
+                                        +svg("success")
+                                        span Код на скидку 1000₽ применен
+                                    button.promocode-success__close.js-promocode__close
+                                        +svg("close")
+
+                                .promocode-error
+                                    +svg("error")
+                                    span Код неактивен, либо не может быть применен в данных условиях
+
+                            .basket__footer_inner
+                                .basket__footer_part
+                                    span Итого
+                                    .basket__price.js-basket-price 9 255 ₽
+                                button.button-brand(data-modal-url="/modals/ordering-modal.html" data-modal-nested) Оформить
+
+                .aside-tabs__content(data-modal-content="favorites")
+                    .basket__content_inner.basket__content_inner--favorites
+                        ul.basket__list
+                            li.basket__list_item
+                                +basket-item({
+                                    title: "Бюстгальтер Viki",
+                                    image: "assets/img/card/png/card-2.png",
+                                    link: "/product.html",
+                                    price: 2400,
+                                    colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                    type: "favorite"
+                                })
+                            li.basket__list_item
+                                +basket-item({
+                                    title: "Боди Le Journal Intime Jadi",
+                                    image: "assets/img/card/png/card-3.png",
+                                    link: "/product.html",
+                                    price: 5700,
+                                    colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                    type: "favorite"
+                                })
+                            li.basket__list_item
+                                +basket-item({
+                                    title: "Бюстгальтер Бралетт Monroe",
+                                    image: "assets/img/card/png/card-4.png",
+                                    link: "/product.html",
+                                    price: 1300,
+                                    colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                    type: "favorite"
+                                })
+                            li.basket__list_item
+                                +basket-item({
+                                    title: "Бюстгальтер Viki",
+                                    image: "assets/img/card/png/card-1.png",
+                                    link: "/product.html",
+                                    price: 1234,
+                                    colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                    type: "favorite"
+                                })
+                .aside-tabs__content(data-modal-content="maybe-like")
+                    ul.basket__list
+                        li.basket__list_item
+                            +basket-item({
+                                title: "Боди Le Journal Intime Jadi",
+                                image: "assets/img/card/png/card-3.png",
+                                link: "/product.html",
+                                price: 5700,
+                                colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                type: "favorite"
+                            })
+                        li.basket__list_item
+                            +basket-item({
+                                title: "Бюстгальтер Бралетт Monroe",
+                                image: "assets/img/card/png/card-4.png",
+                                link: "/product.html",
+                                price: 1300,
+                                colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                type: "favorite"
+                            })
+                        li.basket__list_item
+                            +basket-item({
+                                title: "Бюстгальтер Viki",
+                                image: "assets/img/card/png/card-1.png",
+                                link: "/product.html",
+                                price: 1234,
+                                colors: ["Бежевый", "Розовый", "Фиолетовый"],
+                                type: "favorite"
+                            })
+

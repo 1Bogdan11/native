@@ -1,0 +1,156 @@
+.modal--mobile-menu
+    z-index: 3
+    .modal__container
+        background-color: $base-bg
+    &.modal--active
+        .mobile-menu__list_item
+            & > *
+                opacity: 1
+                transition-duration: .7s
+                transform: translateZ(0)
+                transition-timing-function: cubic-bezier(.165,.84,.44,1)
+                transition-delay: inherit
+            &:nth-child(1)
+                transition-delay: .2s
+            &:nth-child(2)
+                transition-delay: .25s
+            &:nth-child(3)
+                transition-delay: .3s
+            &:nth-child(4)
+                transition-delay: .35s
+            &:nth-child(5)
+                transition-delay: .4s
+            &:nth-child(6)
+                transition-delay: .45s
+            &:nth-child(7)
+                transition-delay: .5s
+        .mobile-menu__bottom
+            .t-link
+                opacity: 1
+                transition-delay: .5s
+        .mobile-menu__bottom_part:before
+            transform: scaleX(1)
+            transition-delay: .25s
+
+.mobile-menu__content
+    width: 100%
+    height: 100%
+
+.mobile-menu__list
+    grid-gap: 15px
+    display: grid
+    text-align: right
+
+.mobile-menu__list_item
+    font-size: 24px
+    line-height: 1
+    overflow: hidden
+    font-weight: 400
+    @media (min-width: $tab + 1)
+        font-size: 32px
+    .currency
+        font-weight: 500
+    & > *
+        justify-content: flex-end
+        text-align: right
+        display: flex
+        transition: opacity .4s cubic-bezier(.165,.84,.44,1), transform 0s cubic-bezier(.165,.84,.44,1) .4s, -webkit-transform 0s cubic-bezier(.165,.84,.44,1) .4s
+        transform: translateY(105%) translateZ(0)
+        opacity: 0
+
+.mobile-menu__part
+    transition-duration: .5s
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    padding: 60px $unit
+    overflow-y: auto
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    opacity: 0
+    transform: translateY(15px)
+    transition-delay: 0s
+    pointer-events: none
+    @media (min-width: $tab + 1)
+        padding: 60px 40px
+    &.is-active
+        pointer-events: all
+        opacity: 1
+        transition-delay: .5s
+        transform: translateY(0)
+    .profile-modal
+        width: 100%
+        display: block
+        padding-top: 60px
+
+    .profile-modal__form
+        height: 100%
+
+.mobile-menu__bottom
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    grid-gap: 15px
+    display: grid
+    padding: 0 $unit 60px
+    @media (min-width: $tab + 1)
+        padding: 0 40px 60px
+    .t-link
+        font-weight: 500
+        text-align: right
+        opacity: 0
+        transition-duration: .7s
+
+.mobile-menu__bottom_part
+    width: 100%
+    display: flex
+    justify-content: space-between
+    position: relative
+    padding-top: 15px
+    &:before
+        content: ''
+        position: absolute
+        transform: scaleX(0)
+        transform-origin: left
+        left: 0
+        top: 0
+        width: 100%
+        background-color: rgba(0,0,0,.1)
+        height: 1px
+        transition-duration: 1s
+
+.mobile-menu__search
+    height: 100%
+    width: 100%
+    padding-top: 80px
+    .input__label, .search-form input
+        font-size: 20px
+        text-align: left
+    .input__bar
+        transform-origin: left
+    .search-form
+        width: 100%
+
+.mobile-menu__suggestions
+    display: grid
+    grid-gap: 5px
+    margin-top: 30px
+    width: 100%
+
+.mobile-menu__suggestions_list
+    display: grid
+    grid-gap: 5px
+
+.mobile-menu__suggestions_title
+    font-size: 12px
+    font-weight: 400
+    color: rgba(0,0,0,.5)
+
+.mobile-menu__suggestions-item
+    a
+        font-size: 16px
+        font-weight: 400

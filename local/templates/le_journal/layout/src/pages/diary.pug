@@ -1,0 +1,7 @@
+extends ../templates/template-scroll.pug
+
+block content
+  .container.section__wrapper
+    +breadcrumbs("Дневник").breadcrumbs--full
+  .container.section__wrapper
+    +diary-section({ type: "full" })

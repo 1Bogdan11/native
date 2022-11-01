@@ -1,0 +1,12 @@
+mixin breadcrumbs(...data)
+    .breadcrumbs&attributes(attributes)
+        ul
+            li
+                a(href="#") Главная
+            each item, index in data
+                if index < data.length - 1
+                    li
+                        a(href="#") #{item}
+                else
+                    li
+                        span #{item}

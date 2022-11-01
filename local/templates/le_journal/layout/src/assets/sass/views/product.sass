@@ -1,0 +1,885 @@
+$product-mobile-head: 148px
+$product-right-offset-xl: 150px
+$product-right-offset-l: 120px
+$product-right-offset-m: 100px
+
+.product
+    @media (max-width: $tab)
+        margin-top: calc((100vh - 125px) + #{$header-height})
+        transition-duration: .6s
+    .card-recently
+        @media (max-width: $tab)
+            position: relative
+            background-color: $base-bg
+            z-index: 2
+    &.is-loaded
+        .product__head::before
+            @media (max-width: $tab)
+                transform: translateY(0)
+                transition-delay: .5s
+        .product__right
+            transform: translateY(0)
+    .recently-section
+        +yo('margin-top', (1100px: 0px, 1101px: $offset-mobile, 1440px: $offset-desktop))
+        @media (max-width: $tab)
+            padding-top: 48px
+            background-color: $base-bg
+
+.product__hero
+    display: flex
+    z-index: 1
+    @media (max-width: $tab)
+        display: block
+
+.product__view
+    height: 100%
+    transition-duration: 1s
+    transition-delay: .5s
+    cursor: zoom-in
+    width: 50%
+    will-change: transform
+    position: relative
+    background-color: transparent
+    @media (max-width: $tab)
+        position: fixed
+        top: 0
+        left: 0
+        width: 100vw
+        transition-delay: .4s
+        height: 100vh
+        z-index: 0
+
+.product__view--no-img
+    .product-gallery__slider_item-inner img
+        object-position: center
+        object-fit: scale-down
+
+.product__favorite-button
+    position: absolute
+    bottom: 30px
+    right: $unit
+    width: 16px
+    z-index: 2
+    height: 16px
+    svg
+        width: 100%
+        height: 100%
+        fill: none
+        stroke: white
+
+.product__right
+    position: sticky
+    top: 0
+    width: 50%
+    height: fit-content
+    padding-right: $unit
+    +yo('padding-top', (375px: 35px, 1440px: 75px))
+    +yo('padding-left', (375px: 45px, 1440px: 90px))
+    padding-bottom: 40px
+    padding-right: $product-right-offset-xl
+    @media (max-width: $desktop)
+        padding-right: $product-right-offset-l
+    @media (max-width: $desktop-m)
+        padding-right: $product-right-offset-m
+    @media (max-width: $tab)
+        margin-left: calc(var(--unit) * -1)
+        margin-right: calc(var(--unit) * -1)
+        width: calc(100% + 2 * var(--unit))
+        padding: 0 $unit 50px
+        position: relative
+        z-index: 2
+        transition-delay: .1s
+        opacity: 1
+        background-color: $base-bg
+        border-radius: 12px 12px 0px 0px
+        transition-duration: .4s
+        transition-timing-function: ease
+        transform: translateY(100px)
+    @media (max-width: $tab)
+        min-height: auto
+
+.product__head
+    position: relative
+    @media (max-width: $tab)
+        width: 100%
+        //height: $product-mobile-head
+        display: grid
+        grid-gap: 5px
+    &:before
+        @media (max-width: $tab)
+            content: ''
+            position: absolute
+            width: 48px
+            height: 3px
+            left: 0
+            right: 0
+            margin: auto
+            border-radius: 4px
+            transition-delay: 0s
+            top: -8px
+            transition-duration: .4s
+            transition-timing-function: ease
+            background-color: rgba(255, 255, 255, .8)
+            transform: translateY(10px)
+    .breadcrumbs
+        @media (max-width: $tab)
+            order: 3
+.product__head_left
+    display: flex
+    flex-direction: column
+    @media (max-width: $tab)
+        grid-gap: 9px
+        order: 1
+
+.product__head_footer
+    display: none
+    @media (max-width: $tab)
+        display: flex
+        grid-gap: 20px
+        width: 100%
+        align-items: center
+    button
+        width: 100%
+        padding: 10px 20px
+    span
+        font-weight: 500
+        border: 1px solid rgba(0,0,0,.2)
+        height: fit-content
+        padding: 10px 0
+        border-radius: 4px
+        width: 61px
+        text-align: center
+        @media (max-width: $tab)
+            border: 1px solid #000
+
+.product__head_inner
+    @media (max-width: $tab)
+        display: grid
+        grid-template-columns: 1fr auto
+        grid-gap: 7px 16px
+        width: 100%
+        margin-bottom: 10px
+        margin-top: 14px
+
+.product__head_row
+    margin-bottom: 10px
+    display: flex
+    align-items: center
+    column-gap: 10px
+    @media (max-width: $tab)
+        width: 100%
+        grid-column: span 2
+        column-gap: 6px
+
+.product__label.label
+    span
+        font-size: 12px
+        @media (max-width: $mob)
+            font-size: 10px
+
+.product__title.t-h5
+    font-weight: 300
+    line-height: 1.2
+
+.product__form
+    display: flex
+    flex-direction: column
+    max-width: 500px
+    transition-duration: .6s
+    grid-gap: 30px
+    align-items: flex-start
+    @media (max-width: $tab)
+        width: 100%
+        grid-gap: 20px
+        max-width: 100%
+    p
+        font-weight: 400
+
+.product__form_tabs
+    display: flex
+    align-items: flex-end
+    grid-gap: 20px
+    margin-bottom: 10px
+
+.product__form_tab
+    font-weight: 400
+    cursor: pointer
+    white-space: nowrap
+    &:before
+        transform: scaleX(0)
+    &.is-active
+        &:before
+            transform: scaleX(1)
+
+.product__form_part, .product__form_footer
+    width: 100%
+
+.product__form_part
+    @media (max-width: $tab)
+        order: 1
+
+.product__form_footer
+    display: flex
+    flex-direction: column
+    grid-gap: 10px
+
+.product__price
+    font-weight: 500
+    display: flex
+    margin-top: 10px
+    grid-gap: 28px
+    align-items: center
+    position: relative
+    white-space: nowrap
+
+    @media (max-width: $tab)
+        align-items: flex-end
+        flex-direction: column
+        margin-top: 0
+        align-self: flex-end
+        grid-gap: 10px
+        order: 2
+
+.product__price_old
+    color: rgba(0,0,0,.4)
+    font-size: 80%
+    text-decoration: line-through
+    @media (max-width: $tab)
+        position: absolute
+        top: -15px
+        right: 0
+
+.product__price_new
+    font-weight: 500
+    @media (max-width: $tab)
+        order: 1
+
+.product__price_old, .product__price_new
+    display: flex
+    grid-gap: 3px
+    +raleway(m)
+    span
+        font-weight: 400
+
+.product__status
+    font-weight: 500
+    font-size: 12px
+    display: flex
+    align-items: center
+    color: rgba(0,0,0,.6)
+    grid-gap: 5px
+    @media (max-width: $tab)
+        font-size: 9px
+        color: rgba(0,0,0,.6)
+        font-weight: 400
+        order: 4
+    &:before
+        content: ''
+        width: 4px
+        height: 4px
+        border-radius: 100%
+        background: $brand
+        margin-top: -3px
+        @media (max-width: $tab)
+            display: none
+
+.product__color
+    display: flex
+    flex-direction: column
+    grid-gap: 10px
+
+.product__color_title
+    color: black
+    font-weight: 400
+    @media (max-width: $tab)
+        display: none
+
+.product__size
+    display: flex
+    grid-gap: 15px 30px
+    flex-wrap: wrap
+    align-items: center
+    @media (max-width: $tab)
+        display: none
+
+.product__size_title
+    color: black
+    font-weight: 400
+    font-size: 15px
+
+.product__size_button
+    margin-top: -16px
+    font-size: 12px
+    font-weight: 300
+    color: $muted
+    white-space: nowrap
+    font-weight: 400
+    text-decoration: underline
+    text-underline-position: under
+    text-decoration-color: #e0e0e0
+
+.product-props
+    font-size: 14px
+    line-height: 1.2
+    width: fit-content
+    border-collapse: separate
+    @media (max-width: $tab)
+        font-size: 13px
+
+    td
+        padding: 7px 0
+        &:first-child
+            vertical-align: -webkit-baseline-middle
+            padding-right: 15px
+            color: rgba($major,.6)
+            font-weight: 300
+            @media (max-width: $tab)
+                padding-right: 10px
+            div
+                position: relative
+                display: flex
+                align-items: flex-end
+                gap: 15px
+                &::after
+                    display: block
+                    content: ''
+                    border-bottom: 1px dashed rgba(#9AA0A2, .5)
+                    margin-bottom: 3px
+                    flex: 1 1 0
+                    min-width: 32px
+
+        &:last-child
+            color: $major
+            font-weight: 400
+            vertical-align: bottom
+    tr:first-child
+        td
+            padding-top: 0
+    tr:last-child
+        td
+            padding-bottom: 0
+
+.product-props__item
+    display: flex
+    align-items: center
+    grid-gap: 4px
+
+.product-props__hint
+    position: relative
+    width: 18px
+    height: 18px
+    &.is-active
+        @media (max-width: $tab)
+            .product-props__hint_popup, .product-props__hint_close
+                opacity: 1
+                pointer-events: all
+                transform: translateX(0)
+            .product-props__hint_close
+                transition-delay: .1s
+    &:hover
+        @media (min-width: $tab + 1)
+            .product-props__hint_popup
+                    opacity: 1
+                    pointer-events: all
+                    transform: translateX(0)
+
+    @media (max-width: $tab)
+        width: initial
+        height: initial
+        position: static
+
+.product-props__hint_button
+    width: 100%
+    height: 100%
+    background-color: #F1EAE5
+    text-align: center
+    font-size: 11px
+    font-weight: 500
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    border-radius: 100%
+    z-index: 0
+    @media (max-width: $tab)
+        width: 18px
+        height: 18px
+
+.product-props__hint_popup
+    z-index: 1
+    position: absolute
+    pointer-events: none
+    top: 0
+    left: calc(100% + 5px)
+    opacity: 0
+    transform: translateX(10px)
+    transition-duration: .4s
+    transition-timing-function: ease
+    text-align: center
+    background: white
+    padding: 10px 20px
+    max-width: 500px
+    border-radius: 8px
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.12)
+    @media (max-width: $tab)
+        left: 0
+        top: 30px
+        font-size: 12px
+        padding: 15px
+        width: 100%!important
+        transform: translateY(10px) translateX(0px)
+
+.product-props__hint_content
+    line-height: 120%
+    font-size: 14px
+    text-align: left
+    @media (max-width: $tab)
+        font-size: 12px
+        line-height: 130%
+
+.product-props__hint_close
+    position: absolute
+    left: calc(100% + 10px)
+    top: -10px
+    width: 10px
+    height: 10px
+    opacity: 0
+    cursor: pointer
+    transform: translateX(8px)
+    transition-duration: .4s
+    transition-delay: 0s
+    transition-timing-function: ease
+    pointer-events: none
+    @media (max-width: $tab)
+        left: calc(100% - 10px)
+        top: -25px
+        transform: translateX(0px) translateY(-8px)
+    svg
+        width: 100%
+        height: 100%
+
+.product-list
+    display: grid
+    height: fit-content
+    grid-gap: 25px
+    @media (max-width: $tab)
+        grid-gap: 20px
+
+.product-list__item
+    display: grid
+    grid-gap: 5px
+
+.product-list__item--single
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.product-list__item_title
+    font-weight: 500
+
+.product-list__item_part
+    display: grid
+    line-height: 130%
+    grid-template-columns: 1fr auto
+    grid-gap: 20px
+
+.product-list__item_content, .product-list__item_description
+    font-weight: 400
+
+.product-list__item_price
+    font-weight: 400
+    @media (max-width: $tab)
+        font-weight: 500
+
+.product__vendor-code
+    +yo('font-size', (375px: 10px, 1440px: 12px))
+    line-height: 1
+    width: fit-content
+    font-weight: 400
+    color: rgba(0,0,0,.5)
+
+body.is-fullscreen
+    @media (min-width: $tab + 1)
+        .product__form
+            opacity: 0
+            transform: translateX(20px)
+            pointer-events: none
+        .product__right
+            padding-right: 0
+            width: 0%
+            transition: width .5s cubic-bezier(.645,.045,.355,1) .3s
+            margin-right: calc((#{$product-right-offset-xl} * -1) + (var(--unit) * -1))
+
+        .product__view
+            width: 100%
+            cursor: initial
+            transition: width .5s cubic-bezier(.645,.045,.355,1) .3s
+
+        .product-gallery
+            animation: 1.5s galleryChangeView
+
+        .product-gallery__thumbs_item
+            pointer-events: none
+    .product__right
+        @media (max-width: $tab)
+            transform: translateY(200px)!important
+
+body.is-fullscreen-leave
+    .product__right, .product__view
+        transition-timing-function: cubic-bezier(.645,.045,.355,1)
+        transition-delay: .2s
+        transition-duration: .7s
+    .product__form
+        opacity: 0
+    .product-gallery
+        &:before
+            opacity: 1
+
+.product-description
+    display: grid
+    grid-gap: 3px
+    align-items: flex-start
+    &.is-active
+        .product-description__content
+            -webkit-line-clamp: initial
+            height: var(--text-max-height)
+        .product-description__button
+            span:before
+                content: attr(data-active)
+            &:before
+                transform: rotate(-135deg)
+    &:not(.is-overflow)
+        .product-description__button
+            display: none
+
+.product-description__title
+    font-weight: 400
+
+.product-description__content
+    height: var(--text-min-height)
+    font-weight: 300
+    line-height: 1.4
+    letter-spacing: .04em
+    transition: $trs-4
+    br
+        content: ""
+        margin: 2em
+        display: block
+        font-size: 10%
+
+.product-description__content
+    & > *
+        +flow-margin
+        margin-top: 22px
+    h2
+        font-size: 20px
+        font-weight: 500
+    h3
+        font-size: 16px
+        font-weight: 500
+        & + p
+            margin-top: 2px
+    a
+        @extend .link__underline
+
+.product-description__button
+    justify-self: center
+    align-items: center
+    cursor: pointer
+    display: flex
+    grid-gap: 8px
+    transition-delay: 1s
+    &:before
+        content: ''
+        width: 5px
+        border-right: 1px solid rgba(0,0,0,.5)
+        border-bottom: 1px solid rgba(0,0,0,.5)
+        height: 5px
+        transform: rotate(45deg)
+        transition-duration: .4s
+    span
+        font-weight: 400
+        font-size: 14px
+        transition-duration: .4s
+        color: rgba(0,0,0,.6)
+        &:before
+            content: attr(data-default)
+    &:hover
+        span
+            color: rgba(0,0,0,1)
+        &:before
+            border-right: 1px solid rgba(0,0,0,1)
+            border-bottom: 1px solid rgba(0,0,0,1)
+
+.product__view_labels
+    @media (max-width: $tab)
+        display: flex
+        position: absolute
+        bottom: 140px
+        right: $unit
+        grid-gap: 10px
+        z-index: 2
+
+.product-bonuses
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    grid-gap: 20px
+    width: 100%
+    @media (max-width: $tab)
+        flex-direction: column
+        align-items: baseline
+        grid-gap: 10px
+
+.product-bonuses__part
+    font-size: 14px
+    font-weight: 500
+    span
+        background: black
+        color: white
+        font-size: 11px
+        padding: 3px 6px
+        border-radius: 4px
+
+.product__button
+    font-size: 12px
+    font-weight: 400
+    transition-duration: .4s
+    color: rgba(0,0,0,.6)
+    &:before, &:after
+        background: rgba(0,0,0,.2)
+        bottom: 2px
+    &:hover
+        color: rgba(0,0,0,1)
+        &:before, &:after
+            background: rgba(0,0,0,1)
+
+.product__form_buttons
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 10px
+    @media (max-width: $tab)
+        grid-template-columns: initial
+
+.product__reviews_button
+    display: flex
+    position: relative
+    grid-gap: 4px
+    align-items: center
+    transition-duration: .4s
+    svg
+        width: 12px
+        height: 12px
+        transition-duration: inherit
+        pointer-events: none
+        color: rgba(0,0,0,.3)
+    span
+        color: rgba(0,0,0,.5)
+        font-size: 12px
+        transition-duration: inherit
+        &:before, &:after
+            background: rgba(0,0,0,.2)
+            bottom: 2px
+    &:hover
+        svg
+            color: rgba(0,0,0,1)
+        span
+            color: rgba(0,0,0,1)
+            &:before, &:after
+                background: rgba(0,0,0,1)
+
+.product__form_content
+    display: none
+    &.is-active
+        display: block
+
+.product-reviews
+    display: grid
+    grid-gap: 30px
+    width: 100%
+    padding-bottom: 40px
+    max-width: calc(662px * 2 + 5vw)
+    @media (max-width: $tab)
+        padding-bottom: 20px
+        grid-gap: 20px
+        width: calc(100% + #{$unit} * 2)
+        z-index: 1
+        margin-left: calc(var(--unit) * -1)
+        margin-right: calc(var(--unit) * -1)
+        padding: 0 $unit
+
+.product-reviews__title
+    font-weight: 300
+    +yo('font-size', (1100px: 24px, 1440px: 32px))
+
+.product-reviews__list
+    display: grid
+    grid-gap: 20px
+    width: 100%
+
+.product-reviews__content
+    display: grid
+    grid-template-columns: repeat(1, 1fr)
+    grid-gap: 5vw
+    @media (max-width: $tab)
+        grid-template-columns: initial
+
+.product-reviews__item
+    display: flex
+    flex-direction: column
+    gap: 15px
+
+.product-reviews__item_inner
+    display: grid
+    grid-template-columns: minmax(100px, 150px) 1fr
+    grid-gap: 20px
+    @media (max-width: $tab)
+        grid-gap: 4px
+        grid-template-columns: initial
+
+.product-reviews__item_part
+    display: flex
+    grid-gap: 4px
+    flex-direction: column
+    @media (max-width: $tab)
+        flex-direction: row
+        grid-gap: 8px
+        align-items: center
+
+.product-reviews__item_content
+    font-size: 16px
+    font-weight: 400
+    line-height: 130%
+    @media (max-width: $tab)
+        font-size: 14px
+
+.product-reviews__item_date
+    font-weight: 300
+    font-size: 12px
+    @media (max-width: $tab)
+        font-size: 10px
+
+.product-reviews__item_name
+    font-weight: 600
+    font-size: 14px
+
+.product-reviews__form
+    width: 100%
+    height: fit-content
+    display: grid
+    grid-gap: 20px
+    .product-reviews__form_part, .input
+        transition-duration: .4s
+        transiition-delay: 0s
+        transition-delay: .4s
+    .product-reviews__form_part
+            transition-delay: .5s
+    &.is-success
+        .product-reviews__form_part, .input
+            opacity: 0
+            pointer-events: none
+            transform: translateY(20px)
+            transition-delay: 0s
+        .product-reviews__message
+            transition-delay: .4s
+            opacity: 1
+            pointer-events: all
+            transform: translateY(0px)
+            pointer-events: all
+        .input__textarea
+            opacity: 0
+            pointer-events: none
+            transform: translateY(20px)
+            transition-delay: 0s
+    textarea
+        width: 100%
+        padding: 15px
+        overflow: hidden
+        border: 1px solid rgba(0,0,0,.2)
+        height: 150px
+        border-radius: 5px
+        resize: none
+        &:focus
+            transform: scaleX(1)
+            border: 1px solid rgba(0,0,0,1)
+
+.product-reviews__message
+    display: flex
+    flex-direction: column
+    transition-duration: .4s
+    grid-gap: 5px
+    opacity: 0
+    transform: translateY(20px)
+    transiition-delay: 0s
+    top: 50px
+    position: absolute
+    left: 0
+    pointer-events: none
+    b
+        font-size: 18px
+        @media (max-width: $tab)
+            font-size: 16px
+    p
+        font-size: 16px
+        @media (max-width: $tab)
+            font-size: 14px
+
+.product-reviews__form_part
+    display: grid
+    grid-gap: 30px
+    grid-template-columns: repeat(2, 1fr)
+    @media (max-width: $tab)
+        grid-template-columns: initial
+        grid-gap: 15px
+
+.product-reviews__left
+    display: flex
+    flex-direction: column
+    gap: 30px
+    align-items: flex-start
+    .button-bordered
+        width: fit-content
+
+.product-reviews__right
+    position: relative
+
+.product-reviews__item_answer
+    max-width: 75%
+    border-left: 1px solid rgba(0,0,0,.1)
+    padding-left: 15px
+    display: flex
+    flex-direction: column
+    gap: 7px
+    @media (max-width: $mob)
+        max-width: unset
+
+@keyframes galleryChangeView
+  0%
+    opacity: 1
+
+  30%
+    opacity: 0
+
+  60%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+.product__body
+    margin-top: 48px
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    @media (max-width: $tab)
+        position: relative
+        margin: 0 calc(var(--unit) * -1)
+        width: calc(100% + 2 * var(--unit))
+        padding: 0 $unit
+        background-color: $base-bg
+        grid-template-columns: 1fr
+
+.product__body-aside
+    +yo('padding-left', (375px: 45px, 1440px: 90px))
+    @media (max-width: $tab)
+        padding-left: 0
+        padding-top: 48px

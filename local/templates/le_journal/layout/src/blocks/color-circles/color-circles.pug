@@ -1,0 +1,19 @@
+mixin color-circles(data)
+    .color-circles
+        each item in data 
+            if item.active 
+                .color-circles__item
+                    input(type="checkbox" checked="checked" id=`filter-${item.color}`).jsFilterItem
+                    label(for=`filter-${item.color}`)
+                    .color-circles__radio(style=`background-color: ${item.color}`)
+                    .color-circles__radio_text
+                        .color-circles__radio_text !{item.title}
+                        span.quantity (1)
+            else
+                .color-circles__item
+                    input(type="checkbox" id=`filter-${item.color}`).jsFilterItem
+                    label(for=`filter-${item.color}`)
+                    .color-circles__radio(style=`background-color: ${item.color}`)
+                    .color-circles__radio_text
+                        .color-circles__radio_text !{item.title}
+                        span.quantity (1)

@@ -1,0 +1,47 @@
+extends ../templates/template.pug
+block content
+  .container.support.js-toggle
+    +support-header({ title: 'Условия доставки' })
+    .support__main
+      +support-nav([
+        { title: "Оплата", href: "/support-payment.html" },
+        { title: "Доставка", href: "/support-delivery.html", active: true },
+        { title: "Гарантия и возврат", href: "/support-warrant.html" },
+        { title: "Таблица размеров", href: "/support-size-chart.html" },
+        { title: "Пользовательское соглашение", href: "/support-privacy-policy.html" },
+        {title: "Оптовые заказы", href: "/support-personal.html"},
+        {title: "Белье на заказ", href: "/support-personal.html"}
+      ])
+      .support__content.support__modify-area
+        .support__list
+          h6 Самовывоз
+          .support__list-flex-between
+            p Из шоурумов в Москве и Санкт-Петербурге
+            p Бесплатно
+          h6 Курьером по Москве
+          .support__list-flex-between
+            p Стандартная в пределах МКАД.
+            p 400 ₽
+          .support__list-flex-between
+            p При покупке на сумму от 15 000 ₽
+            p Бесплатно
+          h6 Курьером в Подмосковье
+          .support__list-flex-between
+            p В пределах 50 км от МКАД.
+            p от 700 ₽
+          p Рассчитывается по тарифам курьерских служб.
+          p Срок доставки: 1-3 дня
+          h6 Почтой России
+          .support__list-flex-between
+            p Рассчитывается по тарифам курьерских служб.
+            p от 1000 ₽
+          .support__list-flex-between
+            p При сумме покупки от 15 000 ₽
+            p Бесплатно
+          .support__list-flex-column
+            .support__list-flex-between
+              h6 Доставка в страны СНГ
+              p 1200 ₽
+            .support__list-flex-between
+              h6 Доставка по всему миру
+              p $35 (~2250 ₽)

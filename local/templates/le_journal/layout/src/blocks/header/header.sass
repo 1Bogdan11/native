@@ -1,0 +1,318 @@
+.header
+  z-index: 20
+  align-items: center
+  position: relative
+  left: 0
+  margin: auto
+  right: 0
+  height: $header-height
+  transition-duration: $duration-md
+  animation: fadein 1s
+
+  @media (min-width: $tab + 1)
+    transform: translateY(-100%)
+    opacity: 0
+    position: fixed
+    top: 0
+    width: 100vw
+  &.is-active
+    transform: translateY(0)
+    opacity: 1
+    backdrop-filter: blur(12px)
+    background-color: rgba($base-bg,.3)
+  @media (max-width: $desktop-m)
+    font-size: 14px
+  &.is-horizontal
+    width: 100vw
+    position: fixed
+    top: 0
+    transition-duration: 0
+    .t-button--search, .menu, .header__contacts > *:not(.basket-button)
+      display: none
+    .burger
+      display: flex
+  &.is-preloader-active
+    z-index: 101
+  &.is-preloader
+    .logo__inner
+      transform: translateY(calc(50vh - 45px))
+    .logo__part
+      &:first-child
+        clip-path: polygon(0px 0px, 0% 0px, 0% 100%, 0% 100%)
+        animation: preload 3s forwards
+      &:last-child
+        opacity: .3
+    .header__left, .header__contacts
+      & > *:not(.menu), .menu li, .burger
+        opacity: 0
+        pointer-events: none
+        transform: translateY(20px)
+        @media (max-width: $tab)
+          transform: translateY(20px) scale(.5)
+      .t-button--search
+        transition-delay: 1.1s
+
+  &.is-product
+    @media (max-width: $tab)
+      width: 100vw
+      position: fixed
+      top: 0
+
+  &.is-fixed
+    width: 100vw
+    position: fixed
+    top: 0
+    left: 0
+
+  &.is-contacts
+    .header__left
+      & > *
+        display: none
+    .header__center
+      @media (max-width: $desktop-m)
+        display: none
+      @media (max-width: $tab)
+        display: flex
+
+  &.is-nav-shown
+    transform: none
+    opacity: 1
+    background-color: $white
+
+.header__inner
+  display: grid
+  height: 100%
+  align-items: center
+  grid-gap: 20px
+  grid-template-columns: repeat(3, 1fr)
+  @media (max-width: $desktop-m)
+    grid-template-columns: auto 1fr auto
+
+.header__left
+  align-items: center
+  display: flex
+  grid-gap: 40px
+  justify-content: flex-start
+  .menu, .t-button--search
+    @media (max-width: $tab)
+      display: none
+
+.header__center
+  display: flex
+  justify-content: center
+  align-items: center
+
+.header__right
+  align-items: center
+  display: flex
+  justify-content: flex-end
+
+.header__contacts
+  grid-gap: 28px
+  display: flex
+  width: 100%
+  justify-content: flex-end
+  & > *:not(.basket-button)
+    @media (max-width: $tab)
+      display: none
+
+.header__left, .header__right
+  transition-duration: .5s
+
+.header
+  .currency
+    margin-left: 24px
+    @media (max-width: $tab)
+      margin-left: 0
+
+body.is-fullscreen
+  @media (max-width: $tab)
+    overflow: hidden
+  .header
+    pointer-events: none
+    @media (max-width: $tab)
+      opacity: 0
+      transition-delay: 0s
+      transform: translateY(-15px)
+  .header__left, .header__right
+    @media (min-width: $tab + 1)
+      opacity: 0
+      transform: translateY(-15px)
+      pointer-events: none
+.header__links
+  display: flex
+  align-items: center
+  grid-gap: 18px
+
+body.is-overlay
+  .header
+    opacity: 0
+    pointer-events: none
+
+main.is-plug
+  .header
+    .currency
+      background: white
+      border-radius: 100%
+      font-size: 14px
+      width: 40px
+      justify-content: center
+      align-items: center
+      height: 40px
+      font-weight: 500
+      @media (max-width: $tab)
+        display: flex
+        position: absolute
+        right: $unit
+        width: 30px
+        height: 30px
+        font-size: 12px
+        top: 20px
+    .currency__locale
+      line-height: 1
+
+.phone
+  line-height: 1.2
+
+.phone__number
+  font-weight: 400
+  font-size: 16px
+
+.phone__title
+  margin-top: 2px
+  color: $muted
+  font-size: 12px
+
+.phone--lg
+  .phone__number
+    font-size: 18px
+
+  .phone__title
+    font-weight: 400
+    font-size: 14px
+
+.nav-main
+  display: grid
+  grid-template-columns: 472px 1fr
+  background-color: $white
+  position: fixed
+  top: var(--header)
+  left: 0
+  right: 0
+  z-index: 15
+  // transition: .4s cubic-bezier(.785,.135,.15,.86)
+  line-height: 1.2
+  transform: translateY(-100px)
+  visibility: hidden
+  opacity: 0
+  transition: transform $duration-md, opacity $duration-md, visibility $duration-md step-end
+
+.nav-main.is-shown
+  opacity: 1
+  transform: translateY(0px)
+  visibility: visible
+  transition: transform $duration-md, opacity $duration-md
+
+.nav-main__header
+  padding: 62px 60px 62px var(--unit)
+  background-color: $base-bg
+
+.nav-main__header ul li
+  position: relative
+
+  &:after
+    +pseudo-block(6px)
+    left: 0
+    top: calc(50% - 4px)
+    border-radius: 6px
+    background-color: $brand
+    opacity: 0
+    transition: $duration-md $ease-in-out
+    pointer-events: none
+
+.nav-main__header ul li + li
+  margin-top: 20px
+
+.nav-main__header ul li a
+  transition: $duration-md $ease-in-out
+
+.nav-main__header ul:has(a:hover) a
+  color: $minor
+
+.nav-main__header ul li:hover a
+  padding-left: 17px
+  color: $major
+
+.nav-main__header ul li:hover:after
+  opacity: 1
+
+
+.nav-main__body
+  display: none
+  padding: 46px var(--unit) 70px 66px
+  grid-template-columns: 1fr .80fr
+  gap: 40px
+  &.is-active
+    display: grid
+
+.nav-main__submenu
+  columns: 2
+  gap: 40px
+  padding-top: 20px
+  li
+    margin-top: 32px
+    &:first-child
+      margin-top: 0
+
+.nav-main__submenu
+  a
+    color: rgba($black, .65)
+    display: flex
+    width: fit-content
+    align-items: center
+    gap: 8px
+
+.nav-main__extra-items
+  max-width: 100%
+
+.extra-item
+  width: 100%
+
+.extra-item__badge
+  display: flex
+  align-items: center
+  gap: 9px
+  margin-bottom: 16px
+
+.extra-item__badge svg
+  margin-top: -1px
+  color: $brand
+
+.extra-item__image img
+  aspect-ratio: 1.74
+  width: 100%
+  object-fit: cover
+  display: block
+
+.extra-item h4
+  margin-top: 14px
+  font-size: 18px
+  line-height: 1.1
+
+.extra-item__meta
+  margin-top: 10px
+  color: rgba($black, .3)
+
+.nav-main-overlay
+  background-color: rgba($black, .5)
+  position: fixed
+  inset: 0
+  z-index: 10
+  visibility: hidden
+  opacity: 0
+  transition: opacity $duration-md, visibility $duration-md step-end
+
+.nav-main-overlay.is-shown
+  opacity: 1
+  visibility: visible
+  transition: opacity $duration-md

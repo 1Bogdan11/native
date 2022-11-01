@@ -1,0 +1,171 @@
+mixin header(data)
+  header.header.is-active.js-header(class=data.className)
+    .container.header__inner
+      .header__left
+        if data.type == "shop-contacts"
+          +back({
+                link: {
+                title: "Магазины",
+                url: "/shops.html"
+              }
+            }).media-max--tab
+
+        else if data.type == "contacts"
+          .aside-tabs__links.media-max--tab
+            +back({link: false}).js-back
+            button.aside-tabs__link.is-active(data-tab="contacts") Контакты
+            button.aside-tabs__link(data-tab="requisites") Реквизиты
+        else
+          +burger
+          +menu([
+              { title: "Каталог", tab: "catalog", href: "/catalog.html" },
+              { title: "Блог", href: "/diary.html" },
+              { title: "О нас", href: "/about.html" },
+              { title: "Контакты", tab: "shops", href: "#" },
+            ])
+            //- { title: "Коллекции", tab: "collections" },
+            //- { title: "Дневник", href: "/diary.html" },
+            //- { title: "Магазины", tab: "shops" }
+          button.t-button.t-button--search(data-modal-open="search" data-modal-tab="search")
+            +svg("search")
+
+      .header__center
+        +logo("dark")
+      .header__right
+        .header__contacts
+
+          a(href="#").phone.t-link
+            .phone__number +7 499 322 01 88
+            .phone__title Москва
+
+          a(href="#").phone.t-link
+            .phone__number +7 925 017 14 34
+            .phone__title Санкт-Петербург
+
+          //- button.button.button--outline Обратный звонок
+
+          .currency(data-modal-open="lang-modal")
+            .currency__locale RU
+
+          button.t-link(data-modal-open="profile-modal") Профиль
+
+          button.t-button.basket-button.js-basket-status(data-modal-url="/modals/basket-modal.html" data-modal-tab="basket")
+            +svg("basket")
+            .basket-button__count.js-basket-status__count 4
+
+  .nav-main(data-tabs-modal)
+    .nav-main__header
+      ul
+        li
+          a(href="" data-modal-level-open="product-1") Тип белья
+        li
+          a(href="" data-modal-level-open="product-2") По виду операции
+        li
+          a(href="" data-modal-level-open="product-3") Аксессуары
+
+    .nav-main__body.is-active(data-modal-level="product-1")
+      ul.nav-main__submenu
+        li
+          a(href="") Бюстгальтеры, топы
+        li
+          a(href="") Next Step
+        li
+          a(href="") Боди, комбинезоны, грации
+        li
+          a(href="") Штаны, гольфы, наколенники
+        li
+          a(href="") Маски, бандажи для лица
+        li
+          a(href="") Бандажи
+        li
+          a(href="") Корректирующее белье
+        li
+          a(href="") Мужчинам
+        li
+          a(href="") Рубашки, жилеты, рукава
+        li
+          a(href="")
+            +svg("discount")
+            | Распродажа
+
+      .nav-main__extra-items
+        a(href="").extra-item
+          .extra-item__badge
+            +svg("discount")
+            span Акция месяца
+          .extra-item__image
+            img(src="assets/img/catalog/subcategory-photo-1.jpg", alt="")
+          h4 Скидки на Компрессионное белье после родов!
+          .extra-item__meta 10-31 октября
+
+    .nav-main__body(data-modal-level="product-2")
+      ul.nav-main__submenu
+        li
+          a(href="") Бюстгальтеры, топы
+        li
+          a(href="") Next Step
+        li
+          a(href="") Боди, комбинезоны, грации
+        li
+          a(href="") Корректирующее белье
+        li
+          a(href="") Мужчинам
+        li
+          a(href="")
+            +svg("discount")
+            | Распродажа
+
+      .nav-main__extra-items
+        a(href="").extra-item
+          .extra-item__badge
+            +svg("discount")
+            span Акция месяца
+          .extra-item__image
+            img(src="assets/img/catalog/subcategory-photo-1.jpg", alt="")
+          h4 Скидки на Компрессионное белье после родов!
+
+    .nav-main__body(data-modal-level="product-3")
+      ul.nav-main__submenu
+        li
+          a(href="") Бюстгальтеры, топы
+        li
+          a(href="") Next Step
+        li
+          a(href="") Боди, комбинезоны, грации
+        li
+          a(href="") Корректирующее белье
+        li
+          a(href="") Мужчинам
+        li
+          a(href="") Боди, комбинезоны, грации
+        li
+          a(href="") Корректирующее белье
+        li
+          a(href="") Мужчинам
+        li
+          a(href="") Боди, комбинезоны, грации
+        li
+          a(href="") Корректирующее белье
+        li
+          a(href="") Мужчинам
+        li
+          a(href="") Боди, комбинезоны, грации
+        li
+          a(href="") Корректирующее белье
+        li
+          a(href="") Мужчинам
+        li
+          a(href="")
+            +svg("discount")
+            | Распродажа
+
+      .nav-main__extra-items
+        a(href="").extra-item
+          .extra-item__badge
+            +svg("discount")
+            span Акция месяца
+          .extra-item__image
+            img(src="assets/img/catalog/subcategory-photo-1.jpg", alt="")
+          h4 Скидки на Компрессионное белье после родов!
+
+  .nav-main-overlay

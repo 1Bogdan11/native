@@ -1,0 +1,26 @@
+doctype html
+html(lang='ru')
+  include ../templates/mixins.pug
+  include ../templates/head.pug
+
+  body(style="visibility: hidden;")
+    +page-preloader
+    .modals.js-modals
+    include ../templates/blocks.pug
+    block modals
+    +profile-modal-desktop({view: "login"})
+    +mobile-menu-modal({view: "login"})
+    //- Main content
+    +header({ className: "is-preloader is-preloader-active js-header-preloader", type: "default" })
+    main#js-scroll(data-direction="vertical")
+      block content
+      +footer
+    script.
+      const headerPreload = document.querySelector(".js-header-preloader");
+      setTimeout(() => {
+        document.querySelector(".js-page-preloader").classList.remove("is-active")
+        headerPreload.classList.remove("is-preloader")
+      }, 3000)
+      setTimeout(() => {
+        headerPreload.classList.remove("is-preloader-active")
+      }, 4700)

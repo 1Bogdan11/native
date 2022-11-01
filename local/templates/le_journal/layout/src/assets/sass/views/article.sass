@@ -1,0 +1,126 @@
+.article__head
+    margin-bottom: 50px
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 16px
+    @media (max-width: $tab)
+        margin-bottom: 36px
+        row-gap: 12px
+    .native-h1
+        margin-bottom: 0
+        max-width: 900px
+
+.article__date
+    font-size: 16px
+    line-height: 130%
+    color: rgba(#000, .6)
+    @media (max-width: $tab)
+        font-size: 14px
+
+.article__content
+    max-width: 1194px
+    margin-left: auto
+    margin-right: auto
+    img
+        transition: all 1.5s ease
+        transition-delay: .2s
+        transform: translateY(-50px)
+        opacity: 0
+        &.visible
+            opacity: 1
+            transform: translateY(0)
+    p
+        transform: translateY(100px)
+        opacity: 0
+        transition: all 1.5s ease
+        transition-delay: .2s
+        &.visible
+            transform: translateY(0)
+            opacity: 1
+    p,h2, h3, h4, h5, h6, ul, ol
+        max-width: 916px
+
+.article
+    font-size: 18px
+    line-height: 140%
+    letter-spacing: 0.04em
+    color: rgba(#000, .9)
+    @media (max-width: $tab)
+        font-size: 14px
+
+    a
+        +link(rgba(#000, .9))
+        @extend .link__underline
+
+    h2, h3
+        line-height: 110%
+        letter-spacing: .02em
+        color: $black
+
+    h2
+        +yo('font-size', (375px: 20px, 1440px: 32px))
+
+    h3
+        +yo('font-size', (375px: 18px, 1440px: 24px))
+
+    ul, ol
+        margin-left: 30px
+        @media (max-width: $tab)
+            margin-left: 20px
+        li
+            position: relative
+            margin-top: 12px
+            padding-left: 22px
+            &:first-child
+                margin-top: 0
+            @media (max-width: $tab)
+                margin-top: 10px
+                padding-left: 14px
+            &::before
+                position: absolute
+                left: 0
+                
+    ul
+        li
+            &::before
+                content: ''
+                top: 11px
+                height: 4px
+                width: 4px
+                border-radius: 100%
+                background-color: $black
+                @media (max-width: $tab)
+                    top: 8px
+
+    ol
+        counter-reset: item
+        li
+            counter-increment: item
+            &::before
+                content: counter(item) "."
+    
+    img
+        display: block
+        max-width: 100%
+        height: auto
+
+.article--margin
+    & > *
+        margin-top: 18px
+        &:first-child
+            margin-top: 0
+        @media (max-width: $tab)
+            margin-top: 14px
+
+    h2, h3
+        margin-top: 40px
+        @media (max-width: $tab)
+            margin-top: 24px
+
+    img
+        margin-top: 30px
+        margin-bottom: 30px
+        @media (max-width: $tab)
+            margin-top: 24px
+            margin-bottom: 24px

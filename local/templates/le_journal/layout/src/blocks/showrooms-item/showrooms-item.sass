@@ -1,0 +1,57 @@
+.showrooms__item
+    overflow: hidden
+    will-change: transform
+    grid-gap: 30px
+    &:nth-child(4n+1)
+        .point-info
+            padding-left: 15px
+    &:nth-child(4n+4)
+        .point-info
+            padding-right: 15px
+    @media (max-width: $desktop-m)
+        &:nth-child(4n+1)
+            .point-info
+                padding-left: 0px
+        &:nth-child(4n+4)
+            .point-info
+                padding-right: 0px
+        &:nth-child(3n+1)
+            .point-info
+                padding-left: 15px
+        &:nth-child(3n+3)
+            .point-info
+                padding-right: 15px
+    @media (max-width: $tab)
+        width: calc(250px - #{$showroom-unit-mobile}/2)
+        &:nth-child(3n+1)
+            .point-info
+                padding-left: 0px
+        &:nth-child(3n+3)
+            .point-info
+                padding-right: 0px
+        &:first-child
+            .point-info
+                padding-left: 15px
+        &:last-child
+            .point-info
+                padding-right: 15px
+                
+    &:nth-child(2)
+        transition-delay: .1s
+    &:nth-child(3)
+        transition-delay: .2s
+    &:nth-child(4)
+        transition-delay: .3s
+    &:nth-child(5)
+        transition-delay: .4s
+
+.showrooms__item-image
+    overflow: hidden
+    height: 0
+    padding-bottom: 153%
+    will-change: transform
+    pointer-events: none
+    img
+        top: -10%
+        height: 120%
+    

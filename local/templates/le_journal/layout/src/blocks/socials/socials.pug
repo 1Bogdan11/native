@@ -1,0 +1,6 @@
+mixin socials(data)
+    ul.socials&attributes(attributes)
+        each item in data
+            li.socials__item(class=item.className)
+                a(href=item.link)
+                    +svg(item.name)

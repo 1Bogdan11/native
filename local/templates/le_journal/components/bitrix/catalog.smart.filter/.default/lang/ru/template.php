@@ -1,0 +1,7 @@
+<?php
+
+$MESS['CATALOG_SECTION_FILTER_SIZE_MODAL_LINK'] = 'Таблица размеров';
+$MESS['CATALOG_SECTION_FILTER_ORDER'] = 'Сортировать';
+$MESS['CATALOG_SECTION_FILTER_RESET'] = 'Сбросить';
+$MESS['CATALOG_SECTION_FILTER_APPLY'] = 'Применить';
+$MESS['CATALOG_SECTION_FILTER_COUNT'] = 'Найдено 0 товаров';

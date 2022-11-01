@@ -1,0 +1,27 @@
+.collections-item
+    display: grid
+    grid-gap: 15px
+    @media (max-width: $tab)
+        grid-gap: 8px
+
+.collections-item__image
+    overflow: hidden
+    position: relative
+    height: $card-height
+    background-color: $grey-3
+    display: flex
+    img
+        position: absolute
+        object-fit: cover
+        object-position: center
+        top: -10%
+        left: 0
+        width: 100%
+        height: 120%
+
+.collections-item__title
+    font-weight: 400
+    color: black
+    font-size: 16px
+    @media (max-width: $tab)
+        font-size: 14px

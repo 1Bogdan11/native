@@ -1,0 +1,81 @@
+extends ../templates/template-contacts.pug
+block content
+  .contacts.js-contacts
+    .contacts__aside
+      .aside-tabs.aside-tabs--partial
+        .aside-tabs__links.media-min--tab
+          +back({link: false}).js-back
+          button.aside-tabs__link.is-active(data-tab="contacts") Контакты
+          button.aside-tabs__link(data-tab="requisites") Реквизиты
+        .aside-tabs__area
+          .aside-tabs__content(data-tab-content="contacts").is-active
+            a(href="#").link-circle Адреса магазинов
+            .contacts__head 
+              h1.contacts__head_title Напишите нам
+              .contacts__head_description Для вопросов, отзывов и предложений
+            .contacts__content
+              .contacts__content_part
+                form.contacts__form
+                  +input({
+                    type: "text",
+                    required: true,
+                    label: "Имя"
+                  })
+                  +input({
+                    type: "email",
+                    required: true,
+                    label: "E-mail"
+                  })
+                  +input({
+                    type: "text",
+                    required: true,
+                    label: "Сообщение"
+                  })
+                  
+              .contacts__content_bottom
+                .contacts__links 
+                  a(href="#").contacts__link.contacts__link--phone 8 800 600-32-69
+                  a(href="#").contacts__link.contacts__link--email info@lejournalintime.com
+
+          .aside-tabs__content(data-tab-content="requisites")
+            .contacts__head 
+              .contacts__head_title Реквизиты
+              .contacts__head_description ООО «Нэйтив»
+            .contacts__content
+              .contact-requisites
+                .contact__requisites_part
+                  .contact__requisites_row 
+                    .contact__requisites_title ОГРН
+                    .contact__requisites_value 1057746807898
+                  .contact__requisites_row 
+                    .contact__requisites_title ИНН
+                    .contact__requisites_value 7724542709
+                  .contact__requisites_row 
+                    .contact__requisites_title КПП
+                    .contact__requisites_value 774301001
+                .contact__requisites_part
+                  .contact__requisites_row 
+                    .contact__requisites_title Генеральный директор
+                    .contact__requisites_value Войнич Наталья Сергеевна
+                .contact__requisites_part
+                  .contact__requisites_row 
+                    .contact__requisites_title Фактический адрес
+                    .contact__requisites_value 125493, г. Москва, ул. Авангардная, д. 3, офис 2301
+                  .contact__requisites_row 
+                    .contact__requisites_title Юридический адрес
+                    .contact__requisites_value 125212, г. Москва, Кронштадтский бульвар, д. 16А, этаж 2, пом. №1, ком. 7
+                .contact__requisites_part
+                  .contact__requisites_row 
+                    .contact__requisites_title Расчетный счет
+                    .contact__requisites_value 40702810402810000217
+                  .contact__requisites_row 
+                    .contact__requisites_title Кор. счет
+                    .contact__requisites_value 30101810200000000593
+                  .contact__requisites_row 
+                    .contact__requisites_title БИК
+                    .contact__requisites_value 044525593
+
+    .contacts__map.media-max--tab
+      +map(data-map="single")
+      a(href="#").contacts__email
+        +svg("mail")

@@ -1,0 +1,68 @@
+.collection-head
+    width: 900px
+    margin: 0 auto
+    display: grid
+    grid-gap: 40px
+    padding: 0 $unit 70px
+    @media (max-width: $tab)
+        width: 100%
+        grid-gap: 15px
+        padding: 0 $unit 40px
+    .star-title
+        padding-top: 0
+        +yo('font-size', (320px: 30px, 375px: 32px, 1440px: 64px))
+
+.collection-head__text
+    +garamond(r)
+    line-height: 120%
+    transition-delay: .8s
+    +yo('font-size', (320px: 16px, 1440px: 24px))
+    +overflow-clamp(3)
+    height: var(--text-min-height)
+    transition: $trs
+
+.collection-head__button
+    align-items: center
+    cursor: pointer
+    display: flex
+    grid-gap: 8px
+    transition-delay: 1s
+    &:before
+        content: ''
+        width: 5px
+        border-right: 1px solid rgba(0,0,0,.5)
+        border-bottom: 1px solid rgba(0,0,0,.5)
+        height: 5px
+        transform: rotate(45deg)
+        transition-duration: .4s
+    span
+        font-weight: 400
+        font-size: 14px
+        transition-duration: .4s
+        color: rgba(0,0,0,.6)
+        &:before
+            content: attr(data-default)
+    &:hover
+        span
+            color: rgba(0,0,0,1)
+        &:before
+            border-right: 1px solid rgba(0,0,0,1)
+            border-bottom: 1px solid rgba(0,0,0,1)
+
+.collection-head__content
+    display: flex
+    flex-direction: column
+    align-items: center
+    grid-gap: 15px
+    &.is-active
+        .collection-head__text
+            -webkit-line-clamp: initial
+            height: var(--text-max-height)
+        .collection-head__button
+            span:before
+                content: attr(data-active)
+            &:before
+                transform: rotate(-135deg)
+    &:not(.is-overflow)
+        .collection-head__button
+            display: none

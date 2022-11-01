@@ -1,0 +1,53 @@
+.support__header
+  display: grid
+  grid-template-columns: 620px 1fr
+  align-items: flex-end
+  height: 335px
+  margin-left: calc(var(--unit) * -1)
+  margin-right: calc(var(--unit) * -1)
+  padding: 0 var(--unit) 40px var(--unit)
+
+  background: #F6F1EB
+
+  @media (max-width: 1850px)
+    grid-template-columns: 30% 1fr
+  @media (max-width: $tab)
+    grid-template-columns: 100%
+    height: max-content
+    padding: 116px var(--unit) 0 var(--unit)
+
+.support__header-left
+  padding-right: 40px
+
+.support__header-title-wrapper
+  position: relative
+
+  width: max-content
+
+  @media (max-width: $tab)
+    display: none
+
+.support__header-welcome.t-h4
+  line-height: 42px
+  font-weight: 400
+  letter-spacing: normal
+
+  @media (max-width: $tab)
+    margin: 0 0 20px 0
+
+    line-height: 100%
+
+.support__header-title
+  line-height: 28px
+
+.support__header-title-indicator
+  position: absolute
+  left: calc(100% + 3px)
+  top: 0
+
+  display: flex
+
+  font-weight: 500
+  font-size: 14px
+  line-height: 16px
+  color: #000000

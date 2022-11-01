@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Garamond';
+  src: url("../fonts/garamond/Ebgaramondregular.woff2") format("woff2"), url("../fonts/garamond/Ebgaramondregular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Garamond';
+  src: url("../fonts/garamond/Ebgaramonditalic.woff2") format("woff2"), url("../fonts/garamond/Ebgaramonditalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Garamond';
+  src: url("../fonts/garamond/Ebgaramondmediumitalic.woff2") format("woff2"), url("../fonts/garamond/Ebgaramondmediumitalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Garamond';
+  src: url("../fonts/garamond/Ebgaramondbold.woff2") format("woff2"), url("../fonts/garamond/Ebgaramondbold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+/*# sourceMappingURL=garamond.css.map */

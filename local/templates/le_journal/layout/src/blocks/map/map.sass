@@ -1,0 +1,84 @@
+.map
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    overflow: hidden
+    &:before
+        background-color: $beige-l
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        content: ''
+        transition-duration: .6s
+        z-index: 1
+    &.is-loaded
+        &:before
+            opacity: 0
+            pointer-events: none
+
+    .mapboxgl-ctrl-group
+        position: absolute
+        bottom: 152px
+        right: 48px
+        display: grid
+        grid-gap: 8px
+        @media (max-width: $tab)
+            bottom: initial
+            top: 15px
+            right: 15px
+            grid-gap: 4px
+    
+    .mapboxgl-ctrl-zoom-in
+        position: relative
+        &:before, &:after
+            width: 30%
+            position: absolute
+            height: 2px
+            background-color: white
+            content: ''
+            +absolute-center
+        &:after
+            transform: rotate(90deg)
+
+
+    .mapboxgl-ctrl-zoom-out
+        position: relative
+        &:before
+            width: 30%
+            position: absolute
+            height: 2px
+            background-color: white
+            content: ''
+            +absolute-center
+    
+.map__marker
+    position: absolute
+    will-change: transform
+    top: -47px
+    left: 0
+    width: 70px
+    height: 70px
+    border-radius: 100%
+    background-color: $black
+    color: white
+    +garamond(r)
+    font-size: 24px
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    &:before
+        content: ""
+        position: absolute
+        border-radius: 100%
+        width: 4px
+        height: 4px
+        background-color: inherit
+        left: 0
+        right: 0
+        bottom: -10px
+        margin: auto

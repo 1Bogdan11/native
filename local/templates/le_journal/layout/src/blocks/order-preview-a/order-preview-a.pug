@@ -1,0 +1,11 @@
+mixin order-preview-a(data)
+  .order-preview-a
+    .order-preview-a__left
+      .order-preview-a__title #{data.title}
+      .order-preview-a__subtitle #{data.subtitle}
+      button(data-modal-open="active-order").order-preview-a__button Подробнее
+    .order-preview-a__images
+      each image in data.images
+        .order-preview-a__image
+          img(src=image.src, alt=image.alt)
+    .order-preview-a__price #{data.price}

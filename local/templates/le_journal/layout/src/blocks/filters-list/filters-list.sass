@@ -1,0 +1,18 @@
+.filters-list
+    display: grid
+    grid-gap: 10px
+
+.filters-list__item
+    label
+        color: rgba(0,0,0,.5)
+        transition-duration: .3s
+        width: fit-content
+        line-height: 1
+        font-weight: 400
+        cursor: pointer
+        position: relative
+
+    input
+        display: none
+        &:checked + label
+            color: rgba(0,0,0,1)

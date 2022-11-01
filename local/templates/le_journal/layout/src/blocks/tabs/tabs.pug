@@ -1,0 +1,15 @@
+mixin tabs(data)
+    .tabs.js-tabs
+        .tabs__buttons
+            span.tabs__line
+            each button in data.list 
+                if button.active
+                    button.tabs__item.js-tabs__btn.is-active !{button.title}
+                else 
+                    button.tabs__item.js-tabs__btn !{button.title}
+        .tabs__area 
+            each text in data.list
+                if text.active
+                    .tabs__content.js-tabs__content.is-active !{text.content}
+                else
+                    .tabs__content.js-tabs__content !{text.content}

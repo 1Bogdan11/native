@@ -1,0 +1,182 @@
+.basket
+    height: 100%
+    overflow-y: hidden
+    position: relative
+    display: grid
+    grid-gap: 50px
+    grid-template-rows: 1fr auto
+    @media (max-width: $tab)
+        grid-gap: 15px
+
+.basket__quantity
+    color: black
+    font-weight: 400
+
+.basket__content
+    overflow-y: inherit
+    display: grid
+    grid-gap: 12px
+    grid-template-rows: auto 1fr
+
+.basket__content_inner
+    +scrollbar
+    height: 100%
+    border-top: 1px solid rgba(0,0,0,.1)
+    border-bottom: 1px solid rgba(0,0,0,.1)
+    padding: 24px 0
+    @media (max-width: $tab)
+        padding: 16px 0 20px
+        &::-webkit-scrollbar
+            width: 0px
+
+.basket__content_inner--favorites
+    border: none
+    padding: 0
+    @media (max-width: $tab)
+        padding: 0 0 100px
+
+.basket__list
+    display: grid
+    height: fit-content
+    grid-gap: 24px
+    @media (max-width: $tab)
+        grid-gap: 16px
+
+.basket__list_item--open
+    z-index: 5
+
+.basket__head
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+    width: 100%
+
+.basket__clear
+    font-weight: 400
+    color: rgba(0,0,0,.5)
+    transition-duration: .4s
+    &:hover
+        color: rgba(0,0,0,1)
+
+.basket__footer
+    display: grid
+    grid-gap: 45px
+
+.basket__footer_inner
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 20px
+    position: relative
+    height: fit-content
+    align-items: flex-end
+    .button-brand
+        transition-duration: .4s
+        transition-timing-function: ease
+        @media (max-width: $tab)
+            padding: 9px 15px
+
+.basket__price
+    font-weight: 500
+    line-height: 1
+    +yo('font-size', (375px: 20px, 1440px: 36px))
+
+.basket__price--crossed
+    text-decoration: line-through
+
+.basket__footer_part
+    height: 100%
+    span
+        font-weight: 400
+        @media (max-width: $tab)
+            font-size: 12px
+
+.basket__form
+    position: relative
+    &.is-success
+        & > *
+            display: none
+        .promocode-success
+            display: flex
+    &.is-error
+        .promocode-error
+            transform: translateY(0)
+            opacity: 1
+        .input__label
+            color: black
+        .input__bar
+            background: #C53E34
+
+.basket__promocodes
+    display: grid
+    margin-top: 15px
+    grid-gap: 5px
+
+.basket__promocode
+    display: flex
+    font-size: 12px
+    font-weight: 500
+    grid-gap: 7px
+
+.basket__promocode_remove
+    position: relative
+    width: 8px
+    cursor: pointer
+    height: 8px
+    opacity: .4
+    transition-duration: .4s
+    svg
+        width: 100%
+        height: 100%
+    &:hover
+        opacity: .8
+
+.promocode-success
+    border: 1px solid rgba(0,0,0,.1)
+    display: none
+    justify-content: space-between
+    grid-gap: 20px
+    padding: 15px 20px
+    border-radius: 4px
+    width: 100%
+    align-items: center
+
+.promocode-success__part
+    display: flex
+    align-items: center
+    grid-gap: 10px
+    font-weight: 400
+    svg
+        width: 17px
+        height: 17px
+        fill: none
+        color: #008857
+
+.promocode-success__close
+    width: 12px
+    height: 12px
+    position: relative
+    svg
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+
+.promocode-error
+    bottom: -23px
+    font-size: 12px
+    display: flex
+    align-items: center
+    grid-gap: 6px
+    position: absolute
+    color: #C53E34
+    opacity: 0
+    transition-duration: .4s
+    pointer-events: none
+    transform: translateY(10px)
+    font-weight: 400
+    svg
+        width: 17px
+        height: 17px
+        fill: none
+        color: inherit

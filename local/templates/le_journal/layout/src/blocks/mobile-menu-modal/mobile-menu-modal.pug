@@ -1,0 +1,45 @@
+mixin mobile-menu-modal(data)
+    +modal('mobile-menu', 'aside')(data-scroll-disable-delay)
+        .mobile-menu__content
+            .mobile-menu__part.is-active(data-mobile-part="menu")
+                ul.mobile-menu__list
+                    li.mobile-menu__list_item
+                        a(href="/catalog.html") Каталог
+                    li.mobile-menu__list_item
+                        a(href="/collections.html") Коллекции
+                    li.mobile-menu__list_item
+                        a(href="/about.html") О бренде
+                    li.mobile-menu__list_item
+                        a(href="/diary.html") Дневник
+                    li.mobile-menu__list_item
+                        a(href="/shops.html") Магазины
+                    li.mobile-menu__list_item
+                        a(href="/contacts.html") Контакты
+                    li.mobile-menu__list_item
+                        .currency(data-modal-open="lang-modal")
+                            .currency__locale RU
+                            .currency__symbol ₽
+                .mobile-menu__bottom
+                    a(href="#").t-link 8 800 600 32 69
+                    .mobile-menu__bottom_part
+                        button.t-link(data-mobile-button="profile") Профиль
+                        button.t-link(data-mobile-button="search") Поиск
+
+            .mobile-menu__part(data-mobile-part="search")
+                .mobile-menu__search
+                    +search-form({ empty: false })
+                    .mobile-menu__suggestions
+                        .mobile-menu__suggestions_title Предложения
+                        ul.mobile-menu__suggestions_list
+                            li.mobile-menu__suggestions-item
+                                a(href="/catalog.html") Бюстгалтеры
+                            li.mobile-menu__suggestions-item
+                                a(href="/catalog.html") Черное белье
+                            li.mobile-menu__suggestions-item
+                                a(href="/catalog.html") Josephine
+
+            .mobile-menu__part(data-mobile-part="profile")
+                if data.view == "login"
+                    +profile-modal({ title: false, type: "mobile", view: "login" })
+                else
+                    +profile-modal({ title: false, type: "mobile", view: "registration" })

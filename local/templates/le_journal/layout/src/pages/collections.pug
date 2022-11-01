@@ -1,0 +1,11 @@
+extends ../templates/template-scroll.pug
+
+block modals
+  include ../blocks/categories-modal/collections-modal.pug
+  include ../blocks/filters-modal/filters-modal.pug
+  
+block content
+  .container.section__wrapper
+    +breadcrumbs("Каталог", "Бюстгалтеры").breadcrumbs--full
+  .container.section__wrapper
+    +catalog-section({ type: "collections" }).catalog-section--collections

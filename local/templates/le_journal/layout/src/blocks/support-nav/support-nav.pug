@@ -1,0 +1,6 @@
+mixin support-nav(list)
+  .support__main-left(data-scroll, data-scroll-sticky, data-scroll-target=".support__main")
+    nav.support__nav
+      each item in list
+        a(href=item.href data-active = item.active).support__nav-link #{item.title}
+    a(href="/").support__exit-button Выйти

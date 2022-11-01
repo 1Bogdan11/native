@@ -1,0 +1,8 @@
+extends ../templates/template-scroll.pug
+
+block content
+  .container.section__wrapper
+    +breadcrumbs("Блог").breadcrumbs--full
+  +native-h1("Блог")
+  .container.section__wrapper
+    +news-section

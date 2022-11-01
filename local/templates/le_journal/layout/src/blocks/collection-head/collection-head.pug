@@ -1,0 +1,7 @@
+mixin collection-head(data)
+    .collection-head
+        +star-title(data.title)
+        .collection-head__content.js-toggle.is-active
+            .collection-head__text.js-text-overflow(data-observe="fade-y" data-scroll) #{data.text}
+            .collection-head__button.js-toggle__btn(data-observe="fade-y" data-scroll)
+                span(data-default="Читать дальше" data-active="Скрыть")

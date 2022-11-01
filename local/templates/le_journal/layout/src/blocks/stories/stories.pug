@@ -1,0 +1,14 @@
+mixin stories(data)
+    .stories.swiper-container.js-stories
+        .stories__inner.swiper-wrapper
+            each item in data
+                .swiper-slide
+                    button.stories__prev.js-stories-prev
+                        +svg("arrow-simple")
+                    button.stories__next.js-stories-next
+                        +svg("arrow-simple")
+                    .stories__slide
+                        img.stories__slide_picture(src=item.image)
+                        .stories__slide_content
+                            span #{item.size}
+                            span Параметры модели: #{item.parameters}

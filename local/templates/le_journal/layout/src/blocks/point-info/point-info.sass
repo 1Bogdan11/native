@@ -1,0 +1,85 @@
+.point-info
+    font-weight: 400
+    display: grid
+    grid-gap: 10px
+    margin-top: 30px
+    @media (max-width: $tab)
+        margin-top: 15px
+        grid-gap: 7px
+
+.point-info__title
+    line-height: 120%
+    will-change: transform
+    font-size: 24px
+    display: block
+    transition-duration: .4s
+    width: fit-content
+    position: relative
+    @media (max-width: $tab)
+        font-size: 16px
+        font-weight: 600
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        margin: auto
+        left: 0
+        width: 7px
+        height: 7px
+        opacity: 0
+        border-radius: 100%
+        background: $black
+        transition-duration: inherit
+    &:hover
+        transform: translateX(15px)
+        &:before
+            opacity: 1
+            transform: translateX(-15px)
+
+.point-info__labels
+    display: flex
+    flex-wrap: wrap
+    grid-gap: 6px
+    @media (max-width: $tab)
+        grid-gap: 4px
+
+.point-info__content
+    font-weight: 400
+    display: grid
+    grid-gap: 10px
+    margin-top: 30px
+    @media (max-width: $tab)
+        margin-top: 15px
+        grid-gap: 7px
+
+.point-info__contacts
+    display: grid
+    grid-gap: 10px
+    @media (max-width: $tab)
+        grid-gap: 7px
+
+.point-info__contacts_part
+    display: grid
+    a
+        width: fit-content
+        &::after
+            bottom: 2px
+            background-color: #1f2020
+        &:hover
+            &.link__underline--hover,
+            & .link__underline--hover
+                &::after
+                    transform: scaleX(1) translateZ(0)
+    .button-route
+        margin-top: 15px
+        @media (max-width: $tab)
+            margin-top: 10px
+    &:first-child
+        .button-route
+            margin-top: 0
+    svg
+        width: 14px
+        height: 14px
+        margin-right: 4px
+        fill: $fiolet-l

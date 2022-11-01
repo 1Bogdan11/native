@@ -1,0 +1,117 @@
+mixin diary-section(data)
+    .diary-section(class=`diary-section--${data.type}`)
+        .diary-section__head(data-scroll data-observe="fade")
+            if data.type != "article"
+                .diary-section__part
+                    h1.diary-section__title Дневник
+                    .diary-section__date 23 дек. 2020
+            else
+                .diary-section__part
+                    .diary-section__title Другие новости
+            .diary-section__part
+                if data.type == "full" 
+                    +tags(["Новости", "Мнение", "Стиль", "Путешествия", "Дизайн"])
+        .diary-section__area
+            .diary-section__row.diary-section__row--type-1
+                +diary-card({
+                    title: "Коллекция Chrometherapy в начале следующего года",
+                    img: "assets/img/diary-section/diary-1.jpg",
+                    date: "16 декабря",
+                    category: "Новости",
+                    description: "Мыслим в унисон с трендами и в новой коллекции выбираем два оттенка серого — графит и облачный. Серый цвет открывается по-новому. Это цвет спокойствия, гармонии, осознанности и комфорта"
+                })
+                +diary-card({
+                    title: "Жизнь глазами Барбары Френкель, вице-президента Porsche Europe",
+                    img: "assets/img/diary-section/diary-2.jpg",
+                    date: "12 декабря",
+                    category: "Мнение",
+                    description: "Мир переживает невероятные изменения. В такое беспокойное время все важнее становятся навыки работы с людьми",
+                })
+                +diary-card({
+                    title: "О ценностях, удобстве и приктической пользе нового белья",
+                    date: "8 декабря",
+                    category: "Стиль",
+                    description: "Белье Le Journal Intime хочется показывать, это мода, перешагнувшая границы стеснения за то, что видно",
+                    img: "assets/img/diary-section/diary-3.jpg",
+                })
+
+            if data.type == "full"
+                .diary-section__row.diary-section__row--type-2
+                    +diary-card({
+                        title: "Коллекция Chrometherapy в начале следующего года",
+                        img: "assets/img/diary-section/diary-5.jpg",
+                        date: "16 декабря",
+                        category: "Новости",
+                        description: "Мыслим в унисон с трендами и в новой коллекции выбираем два оттенка серого — графит и облачный. "
+                    })
+                    +diary-card({
+                        title: "Жизнь глазами Барбары Френкель, вице-президента Porsche Europe",
+                        img: "assets/img/diary-section/diary-6.jpg",
+                        date: "12 декабря",
+                        category: "Мнение",
+                        description: "Мир переживает невероятные изменения. В такое беспокойное время все важнее становятся навыки работы с людьми",
+                    })
+                    +diary-card({
+                        title: "О ценностях, удобстве и приктической пользе нового белья",
+                        date: "8 декабря",
+                        category: "Стиль",
+                        description: "Белье Le Journal Intime хочется показывать, это мода, перешагнувшая границы стеснения за то, что видно",
+                        img: "assets/img/diary-section/diary-7.jpg",
+                    })
+                .diary-section__row.diary-section__row--type-3
+                    +diary-card({
+                        title: "Коллекция Chrometherapy в начале следующего года",
+                        img: "assets/img/diary-section/diary-11.jpg",
+                        date: "16 декабря",
+                        category: "Новости",
+                        description: "Мыслим в унисон с трендами и в новой коллекции выбираем два оттенка серого — графит и облачный. "
+                    })
+                    +diary-card({
+                        title: "Жизнь глазами Барбары Френкель, вице-президента Porsche Europe",
+                        img: "assets/img/diary-section/diary-12.jpg",
+                        date: "12 декабря",
+                        category: "Мнение",
+                        description: "Мир переживает невероятные изменения. В такое беспокойное время все важнее становятся навыки работы с людьми",
+                    })
+                    +diary-card({
+                        title: "О ценностях, удобстве и приктической пользе нового белья",
+                        date: "8 декабря",
+                        category: "Стиль",
+                        description: "Белье Le Journal Intime хочется показывать, это мода, перешагнувшая границы стеснения за то, что видно",
+                        img: "assets/img/diary-section/diary-4.jpg",
+                    })
+                    +diary-card({
+                        title: "Коллекция Chrometherapy в начале следующего года",
+                        img: "assets/img/diary-section/diary-13.jpg",
+                        date: "16 декабря",
+                        category: "Новости",
+                        description: "Мыслим в унисон с трендами и в новой коллекции выбираем два оттенка серого — графит и облачный. "
+                    })
+                .diary-section__row.diary-section__row--type-4
+                    +diary-card({
+                        title: "Коллекция Chrometherapy в начале следующего года",
+                        img: "assets/img/diary-section/diary-8.jpg",
+                        date: "16 декабря",
+                        category: "Новости",
+                        description: "Мыслим в унисон с трендами и в новой коллекции выбираем два оттенка серого — графит и облачный. "
+                    })
+                    +diary-card({
+                        title: "Жизнь глазами Барбары Френкель, вице-президента Porsche Europe",
+                        img: "assets/img/diary-section/diary-9.jpg",
+                        date: "12 декабря",
+                        category: "Мнение",
+                        description: "Мир переживает невероятные изменения. В такое беспокойное время все важнее становятся навыки работы с людьми",
+                    })
+                    +diary-card({
+                        title: "О ценностях, удобстве и приктической пользе нового белья",
+                        date: "8 декабря",
+                        category: "Стиль",
+                        description: "Белье Le Journal Intime хочется показывать, это мода, перешагнувшая границы стеснения за то, что видно",
+                        img: "assets/img/diary-section/diary-10.jpg",
+                    })
+                .diary-section__footer 
+                    +btn({ text: 'Показать больше' }).btn--lines
+                    +pagination({
+                        type: 'diary',
+                        pages: ['1', '2', '...', '12'],
+                    })

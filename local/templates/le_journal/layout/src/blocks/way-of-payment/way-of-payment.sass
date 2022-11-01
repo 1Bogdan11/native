@@ -1,0 +1,55 @@
+.way-of-payment
+    display: flex
+    height: 160px
+    width: 100%
+    position: relative
+    @media (max-width: $tab)
+        height: initial
+    @media (max-width: $mob)
+        flex-wrap: wrap
+
+.way-of-payment__item
+    width: 100%
+    @media (max-width: $mob)
+        width: 50%
+    label
+        height: 100%
+        transition-duration: .5s
+        border: 1px solid rgba(0,0,0,.1)
+        padding: 20px
+        display: flex
+        flex-direction: column
+        cursor: pointer
+        justify-content: space-between
+        grid-gap: 20px
+    @media (min-width: $tab + 1)
+        &:not(:first-child)
+            label
+                margin: 0 0 0 -1px
+    input
+        display: none
+    input:checked + label
+        border: 1px solid black
+
+.way-of-payment__head
+    display: grid
+    grid-gap: 8px
+    line-height: 100%
+
+.way-of-payment__title
+    font-weight: 500
+    @media (min-width: $tab + 1)
+        white-space: nowrap
+
+.way-of-payment__description
+    font-weight: 400
+
+.way-of-payment__icon
+    height: 31px
+    display: flex
+    grid-gap: 4px
+    position: relative
+    svg
+        width: 35px
+        fill: none
+        height: 100%

@@ -1,0 +1,192 @@
+extends ../templates/template-modal.pug
+block content
+    +modal('aside-modal', 'aside')(data-tabs-modal)
+        .aside-tabs
+            .aside-tabs__links.js-modal__tabs
+                a(href="/catalog.html" data-modal-tab="catalog").aside-tabs__link Каталог
+                a(href="/collections.html" data-modal-tab="collections").aside-tabs__link Коллекции
+                a(href="/shops.html" data-modal-tab="shops").aside-tabs__link Магазины
+                a(href="/search.html" data-modal-tab="search").t-button.t-button--search
+                    +svg("search")
+            .aside-tabs__area.js-modal__contents
+                .aside-tabs__content(data-modal-content="catalog")
+                    .aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-1")
+                                span Комплекты
+                    ul.aside-tabs__list 
+                        li.aside-tabs__item
+                            .aside-tabs__item_count 53
+                            a(href="/product.html" data-modal-level-open="product-2")
+                                
+                                span Бюстгальтеры
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-3") 
+                                span Пояса и корсеты
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-1") 
+                                span Боди
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-2") 
+                                span Платья
+                        li.aside-tabs__item
+                            .aside-tabs__item_count 16
+                            a(href="/product.html" data-modal-level-open="product-3")
+                                span Трусы
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-1")
+                                span Юбки
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-2") 
+                                span Шорты
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-3") 
+                                span Футболки
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-1") 
+                                span Купальники
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-2") 
+                                span Аксессуары
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-3") 
+                                span Подарочные сертификаты
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-1") 
+                                span Новинки  
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-2") 
+                                span Sale
+
+                    .aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-3")
+                                span Все товары
+
+                .aside-tabs__content(data-modal-content="collections")
+                    ul.aside-tabs__list 
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-1") 
+                                span Artemis
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-2") 
+                                span Daisy
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-3")
+                                span Dr. Tailor
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-1") 
+                                span Empress Fike
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-2") 
+                                span Invisible
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-3")
+                                span Jadi
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-1") 
+                                span Josephine
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-2") 
+                                span Marie-Antoinette
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-3") 
+                                span Monroe
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-1") 
+                                span Velvet
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-2") 
+                                span Vivien
+                        li.aside-tabs__item
+                            a(href="/product.html" data-modal-level-open="product-3") 
+                                span Yana
+
+                .aside-tabs__content(data-modal-content="shops")
+                    ul.aside-tabs__list 
+                        li.aside-tabs__item
+                            a(href="/shops.html" data-modal-level-open="showroom-1")
+                                span Шоурум на Авангардной
+                                .city Москва
+                        li.aside-tabs__item
+                            a(href="/shops.html" data-modal-level-open="showroom-2") 
+                                span Магазин на Большой Никитской
+                                .city Москва
+                        li.aside-tabs__item
+                            a(href="/shops.html" data-modal-level-open="showroom-3") 
+                                span Точки продаж
+                                .city Россия и Европа
+                    
+                    .aside-tabs__item
+                            a(href="/shop-contacts.html" data-modal-level-open)
+                                span Магазины партнеров
+
+                .aside-tabs__content(data-modal-content="search")
+                    .aside-tabs__search
+                        form
+                            +input({
+                                type: "text",
+                                required: true,
+                                label: "Найти товар"
+                            })
+                        .aside-tabs__suggestions
+                            .aside-tabs__suggestions-head Предложения
+                            ul.aside-tabs__list 
+                                li.aside-tabs__item
+                                    a(href="/product.html" data-modal-level-open="product-1") 
+                                        span Бюстгалтеры
+                                li.aside-tabs__item
+                                    a(href="/product.html" data-modal-level-open="product-2") 
+                                        span Черное белье
+                                li.aside-tabs__item
+                                    a(href="/product.html" data-modal-level-open="product-3") 
+                                        span Josephine
+
+            // Товары
+            .aside-tabs__level.aside-tabs__level--card(data-modal-level="product-1")
+                +card({
+                    title: "Delica",
+                    price: "9 500",
+                    type: "favourites",
+                    image: {
+                        src: "assets/img/card/full/card-1.jpg",
+                        type: "full"
+                    }
+                })
+            .aside-tabs__level.aside-tabs__level--card(data-modal-level="product-2")
+                +card({
+                    title: "Бюстгальтер Viki",
+                    price: "6 200",
+                    type: "favourites",
+                    image: {
+                        src: "assets/img/card/full/card-2.jpg",
+                        type: "full"
+                    }
+                })
+            .aside-tabs__level.aside-tabs__level--card(data-modal-level="product-3")
+                +card({
+                    title: "Бюстгальтер Браллет Monroe",
+                    price: "7 800",
+                    type: "favourites",
+                    image: {
+                        src: "assets/img/card/full/card-3.jpg",
+                        type: "full"
+                    }
+                })
+            // Магазины
+            .aside-tabs__level(data-modal-level="showroom-1")
+                +showrooms-item({
+                    title: "Шоурум на Авангардной",
+                    image: "assets/img/showrooms/showroom-1.jpg",
+                    type: "modal"
+                })
+            .aside-tabs__level(data-modal-level="showroom-2")
+                +showrooms-item({
+                    title: "Магазин на Большой Никитской",
+                    image: "assets/img/showrooms/showroom-3.jpg",
+                    type: "modal"
+                })
+            .aside-tabs__level(data-modal-level="showroom-3")
+                +showrooms-item({
+                    title: "Точки продаж",
+                    image: "assets/img/showrooms/showroom-2.jpg",
+                    type: "modal"
+                })

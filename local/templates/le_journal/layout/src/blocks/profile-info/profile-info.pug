@@ -1,0 +1,8 @@
+mixin profile-info(data)
+  .profile__info
+    .profile__info-header
+      p.profile__info-title #{data.title}
+      button.profile__info-edit-button.js-profile-info-edit
+    .profile__info-content
+      each item in data.items
+        input(type=item.type value=item.value data-mask=item.mask)

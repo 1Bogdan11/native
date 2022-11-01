@@ -1,0 +1,10 @@
+mixin pagination(data)
+    ul.pagination(class=`${data.type ? 'pagination--' + data.type : ''}`)
+        each page, i in data.pages
+            li.pagination__item(class=`${!i ? 'is-active' : ''} ${page === '...' ? 'pagination__item--separator' : ''}`)
+                if data.type
+                    a.btn.btn--lines(href="#")
+                        span.btn__bg
+                        span.btn__text !{page}
+                else
+                    a(href="#") !{page}

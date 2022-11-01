@@ -1,0 +1,243 @@
+.about__section
+    margin-top: 110px
+    margin-bottom: 110px
+    &:first-child
+        margin-top: 0
+    &:last-child
+        margin-bottom: 0
+    @media (max-width: $tab)
+        margin-top: 64px
+        margin-bottom: 64px
+
+.about__section-container
+    +yo('--padding', (1100px: 0px, 1440px: 80px, 1920px: 160px))
+    padding-left: var(--padding)
+    padding-right: var(--padding)
+
+.about__section-content
+    max-width: 900px
+
+    & > *
+        margin-top: 20px
+        &:first-child
+            margin-top: 0
+        @media (max-width: $tab)
+            margin-top: 14px
+
+    h2, h3
+        margin-top: 30px
+        margin-bottom: 24px
+        @media (max-width: $tab)
+            margin-top: 24px
+            margin-bottom: 24px
+
+.about__section
+    display: flex
+    +yo('--gap', (375px: 24px, 1440px: 60px, 1920px: 80px))
+    gap: var(--gap)
+    align-items: center
+    @media (max-width: $tab)
+        flex-direction: column
+        gap: 0
+    @media (min-width: $desktop-xl)
+        justify-content: center
+    .about__section-content
+        flex-shrink: 0
+        width: calc(50% - var(--gap))
+        transform: translateY(100px)
+        opacity: 0
+        transition: all 1.5s ease
+        transition-delay: .5s
+        &.visible
+            transform: translateY(0)
+            opacity: 1
+        @media (min-width: $tab + 1)
+            & + img
+                margin-right: calc(-1 * var(--padding))
+                max-width: calc(50% + var(--padding))
+        @media (max-width: $tab)
+            width: 100%
+    img
+        flex-shrink: 0
+        max-width: 50%
+        transition: all 1.5s ease
+        transition-delay: .5s
+        transform: translateY(-50px)
+        opacity: 0
+        &.visible
+            opacity: 1
+            transform: translateY(0)
+        @media (max-width: $tab)
+            max-width: 100%
+            margin-bottom: 24px
+            margin-left: auto
+            margin-right: auto
+            order: -1
+
+.about__banner-top
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    position: relative
+    gap: 20px
+    @media (max-width: $tab) 
+        flex-direction: column
+    img
+        z-index: 3
+        position: absolute
+        left: 132px
+        bottom: 0
+        top: 0
+        margin: auto 0
+        transition: all 1.5s ease
+        transition-delay: .5s
+        transform: translateY(-50px)
+        opacity: 0
+        &.visible
+            opacity: 1
+            transform: translateY(0)
+        @media (max-width: $desktop)
+            left: 35px
+        @media (max-width: $tab)
+            margin: 0 
+            position: relative
+            left: 0
+            top: 130px
+    .about__banner-top-content 
+        z-index: 2
+        padding: 98px 60px 80px 650px
+        background: #E0E9ED
+        width: 100%
+        @media (max-width: $desktop)
+            padding: 98px 60px 80px 500px
+        @media (max-width: $tab) 
+            padding: 198px 35px 80px 
+
+        h2 
+            font-size: 32px
+            font-weight: 300
+            font-family: 'PF BeauSans Pro', sans-serif
+            +yo('font-size', (375px: 20px, 1440px: 32px))
+            letter-spacing: 0.02em
+            color: #16262C
+            transform: translateY(100px)
+            opacity: 0
+            transition: all 1.5s ease
+            transition-delay: .5s
+            &.visible
+                transform: translateY(0)
+                opacity: 1
+            @media (max-width: $desktop-m)
+                text-align: center
+        ul 
+            margin-top: 48px
+            margin-left: 0
+            max-width: 1044px
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            column-gap: 50px
+            row-gap: 26px
+            transform: translateY(100px)
+            opacity: 0
+            transition: all 1.5s ease
+            transition-delay: .5s
+            &.visible
+                transform: translateY(0)
+                opacity: 1
+            @media (max-width: $desktop)
+                grid-template-columns: repeat(2, 1fr)
+            @media (max-width: $tab-sm)
+                grid-template-columns: repeat(1, 1fr)
+            li 
+                list-style-type: none
+                font-family: 'Raleway', sans-serif
+                font-size: 18px
+                font-weight: 300
+                color: #181818
+                margin-top: 0
+                letter-spacing: 0.04em
+                @media (max-width: $tab)
+                    font-size: 14px
+                &:before 
+                    background: #009BD9
+                    content: ''
+                    width: 6px
+                    height: 6px
+                    border-radius: 999px
+
+.about__banner-bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    position: relative
+    margin-top: 220px
+    @media (max-width: $tab) 
+        position: relative
+        flex-direction: column-reverse
+        margin-top: 0px
+    img
+        z-index: 3
+        right: 152px
+        bottom: -25px
+        position: absolute
+        opacity: 0
+        transition: all 1.5s ease
+        transition-delay: .5s
+        transform: translateY(-50px)
+        &.visible
+            opacity: 1
+            transform: translateY(0)
+        @media (max-width: $desktop-m) 
+            right: 75px
+        @media (max-width: $tab) 
+            position: relative
+            right: 0
+            bottom: -130px
+        
+    .about__banner-bottom-content 
+        z-index: 2
+        padding: 96px 600px 96px 80px
+        background: #E0E9ED
+        width: 100%
+        @media (max-width: $tab) 
+            padding: 196px 35px 96px
+            text-align: center
+        h2 
+            margin-bottom: 20px
+            line-height: 130%
+            font-size: 36px
+            font-family: 'PF BeauSans Pro', sans-serif
+            font-weight: 300
+            +yo('font-size', (375px: 20px, 1440px: 32px))
+            max-width: 633px
+            color: #16262C
+            transition: all 1.5s ease
+            transform: translateX(-100px)
+            transition-delay: .3s
+            opacity: 0
+            &.visible
+                opacity: 1
+                transform: translateX(0)
+            @media (max-width: $tab)
+                max-width: 100%
+        p
+            font-family: 'Raleway', sans-serif
+            font-size: 18px
+            color: #181818
+            line-height: 140%
+            max-width: 633px
+            letter-spacing: 0.04em
+            color: #16262C
+            opacity: 0.9
+            transition: all 1.5s ease
+            transform: translateX(-100px)
+            transition-delay: .3s
+            opacity: 0
+            &.visible
+                opacity: 1
+                transform: translateX(0)
+            @media (max-width: $tab)
+                font-size: 14px
+                max-width: 100%

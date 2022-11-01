@@ -1,0 +1,8 @@
+mixin plug(data)
+    .plug
+        .plug__image 
+            img(src=data.image data-scroll data-scroll-speed="-2")
+        .plug__content
+            +star-title(data.title)
+            .plug__description(data-observe="fade-y" data-scroll) #{data.description}
+            button.link__underline(data-observe="fade-y" data-scroll data-scrollto=".footer-form") #{data.link}

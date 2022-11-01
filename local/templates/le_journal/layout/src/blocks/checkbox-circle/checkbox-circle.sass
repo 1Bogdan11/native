@@ -1,0 +1,52 @@
+.checkbox-circle
+  display: flex
+  align-items: center
+  cursor: pointer
+  grid-gap: 10px
+  &__block,
+  &__switch
+    cursor: pointer
+    grid-area: col-2
+    justify-self: center
+
+  &__input:checked + &__block
+
+  &__input
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    outline: none
+    display: none
+
+  &__block
+    position: relative
+
+    display: flex
+    align-items: center
+    width: 32px
+    height: 20px
+    padding: 0 6px
+
+    border-radius: 12px
+    border: 1px solid #E5E5E5
+    border-radius: 40px
+    cursor: pointer
+    outline: none
+
+    transition: all .2s ease-in-out
+
+  &__switch
+    content: ''
+
+    width: 8px
+    height: 8px
+
+    border-radius: 50%
+    background: #1F2020
+    transition: all .2s ease-in-out
+
+  &__input:checked + &__block &__switch
+    margin-left: calc(100% - 8px)
+
+.checkbox-circle__text
+  font-weight: 400

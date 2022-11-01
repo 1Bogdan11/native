@@ -1,0 +1,8 @@
+mixin modal(name, type = 'center')
+  section.modal(class=`modal--${name} modal--${type}` data-modal=name)&attributes(attributes)
+    button.modal__overlay(type="button" data-modal-close=name)
+      button.modal__mobile-close(data-modal-close=name)
+    .modal__container
+      .modal__content
+        if block
+          block

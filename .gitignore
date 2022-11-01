@@ -1,0 +1,60 @@
+## Common
+.vercel
+.gulp
+.DS_Store*
+Icon?
+.vscode
+.idea
+*.ai
+*.gulp
+*.log
+*.psd
+*.zip
+*.sublime*
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+.env
+
+## Front-end
+/**/node_modules
+/**/npm-debug.log
+package-lock.json
+
+## Build
+/build
+/dist
+/assets
+/favicon
+/local/**/build
+/local/**/dist
+
+## Back-end
+/bitrix
+/upload
+/upload_backup
+/sandbox/*
+.htaccess*
+sitemap*.xml
+/local/templates/**/include_area/
+composer.*
+!/composer.json
+!/composer.lock
+/hacks.php
+/local/vendor
+/test.php
+/local/modules/its.maxma/result/*
+
+## Seo
+/yandex*.html
+/yandex*.txt
+/google*.html
+/google*.txt
+/cmsmagazine*.txt
+/cmsmagazine*.html
+/pinterest*.txt
+/pinterest*.html
+/robots.txt
+
+## Firebase local deploy
+.firebase
